@@ -31,8 +31,7 @@
                 app:layout_constraintBottom_toBottomOf="@id/cons1"
                 android:background="@drawable/inner_cons_shape"
                 android:layout_marginEnd="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginVertical="10dp"
                 android:layout_marginStart="20dp">
 
                 <ImageView
@@ -74,8 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginEnd="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginVertical="10dp"
                 android:layout_marginStart="20dp"
                 app:layout_constraintStart_toEndOf="@id/innercons1"
                 app:layout_constraintEnd_toStartOf="@+id/innercons3"
@@ -122,8 +120,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:layout_marginEnd="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginVertical="10dp"
                 android:layout_marginStart="20dp"
                 app:layout_constraintStart_toEndOf="@id/innercons2"
                 app:layout_constraintEnd_toEndOf="parent"

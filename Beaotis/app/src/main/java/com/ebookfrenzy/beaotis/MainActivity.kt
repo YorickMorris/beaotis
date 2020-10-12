@@ -2,12 +2,13 @@ package com.ebookfrenzy.beaotis
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , GeneratorInterface {
     private lateinit var recyclerView: RecyclerView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -20,22 +21,10 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter=adapter
         adapter.notifyDataSetChanged()
         }
-    private fun generateList(): List<ExampleItem>{
-        val list=ArrayList<ExampleItem>()
-            list.add(ExampleItem(R.drawable.teach,text1 = "Öğrenelim",
-                R.drawable.sound,text2 = "Duyduğunu İşaretle",
-                R.drawable.cardgame,text3 = "Eşleştirme"))
-            list.add(ExampleItem(R.drawable.listening,text1 = "Eğitici Şarkılar",
-                R.drawable.parchment,text2 = "Görgü Kuralları",
-                R.drawable.storytelling,text3 = "Bir Hikayem Var"))
-            list.add(ExampleItem(R.drawable.clipboard,text1 = "Kelimeyi Tamamla",
-                R.drawable.family,text2 = "Birlikte Yapalım",
-                R.drawable.binoculars,text3 = "Nesneleri Bul"))
-            list.add(ExampleItem(R.drawable.chat,text1 = "Hadi Konuşalım",
-               R.drawable.trophy,text2 = "Ödüllerim",
-               R.drawable.ic_launcher_foreground,text3 = "ABA"))
-
-
-        return list
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_main, menu)
+        return true
     }
 }
+
