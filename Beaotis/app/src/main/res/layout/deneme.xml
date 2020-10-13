@@ -69,6 +69,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/innercons2"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -116,6 +118,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/innercons3"
+                android:clickable="true"
+                android:focusable="true"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"

@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerViewAdapter(private val exampleList:List<ExampleItem>): RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
+
         val itemView= LayoutInflater.from(parent.context).inflate(R.layout.deneme,
         parent, false)
         return RecyclerViewHolder(itemView)
@@ -22,6 +23,7 @@ class RecyclerViewAdapter(private val exampleList:List<ExampleItem>): RecyclerVi
         holder.textView1.text=currentItem.text1
         holder.textView2.text=currentItem.text2
         holder.textView3.text=currentItem.text3
+        holder.itemView.setOnClickListener(){} //TODO Her bir Recycler Öğesine bir clicklistener eklemem gerekiyor.
     }
 
     override fun getItemCount() = exampleList.size
