@@ -27,4 +27,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="25dp"
         android:text="Ödüllerim"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

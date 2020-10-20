@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Beaotis</string>
+    <string name="x">1</string>
+    <string name="channel_description">Ilk kanal budur</string>
 </resources>
