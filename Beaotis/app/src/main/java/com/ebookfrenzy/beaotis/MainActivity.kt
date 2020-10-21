@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() , GeneratorInterface, OnItemClickListen
             createNotification(this)
             createNotificationChannel()
         }
-        
+
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
@@ -144,6 +144,4 @@ class MainActivity : AppCompatActivity() , GeneratorInterface, OnItemClickListen
             return currentTime
         }
     }
-
 }
-
