@@ -12,40 +12,40 @@
         <!-- MainActivity Diğer Activitylerin Parenti(BackStack için önemli) -->
         <activity android:name=".Aba"
                   android:screenOrientation="landscape"
-                  android:parentActivityName=".MainActivity"/>
+                  />
         <activity android:name=".Awards"
                   android:screenOrientation="landscape"
-                  android:parentActivityName=".MainActivity"/>
+                  />
         <activity android:name=".LetsTalk"
                   android:screenOrientation="landscape"
-                  android:parentActivityName=".MainActivity"/>
+                  />
         <activity android:name=".FindingObjects"
                   android:screenOrientation="landscape"
-                  android:parentActivityName=".MainActivity"/>
+                  />
         <activity android:name=".MakeItTogether"
                   android:screenOrientation="landscape"
                   android:parentActivityName=".MainActivity"/>
         <activity android:name=".CompleteSentence"
                   android:screenOrientation="landscape"
-                  android:parentActivityName=".MainActivity"/>
+                  />
         <activity android:name=".Story"
                   android:screenOrientation="landscape"
-                  android:parentActivityName=".MainActivity"/>
+                 />
         <activity android:name=".Etiquette"
                   android:screenOrientation="landscape"
-                  android:parentActivityName=".MainActivity"/>
+                  />
         <activity android:name=".EducationalSongs"
                   android:screenOrientation="landscape"
-                  android:parentActivityName=".MainActivity"/>
+                  />
         <activity android:name=".Pairing"
                   android:screenOrientation="landscape"
-                  android:parentActivityName=".MainActivity"/>
+                  />
         <activity android:name=".MarkYourHeard"
                   android:screenOrientation="landscape"
-                  android:parentActivityName=".MainActivity"/>
+                  />
         <activity android:name=".LetsStudyActivity"
                   android:screenOrientation="landscape"
-                  android:parentActivityName=".MainActivity"/>
+                  />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="landscape">

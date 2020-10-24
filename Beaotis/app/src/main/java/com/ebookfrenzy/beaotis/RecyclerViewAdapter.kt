@@ -56,6 +56,5 @@ class RecyclerViewAdapter( val exampleList: List<ExampleItem>,val onItemClickLis
         val innercons2: ConstraintLayout=itemView.findViewById(R.id.innercons2)
         val innercons3: ConstraintLayout=itemView.findViewById(R.id.innercons3)
 
-
     }
 }
