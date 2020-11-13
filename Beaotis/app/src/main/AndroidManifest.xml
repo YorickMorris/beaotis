@@ -10,40 +10,40 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!-- MainActivity Diğer Activitylerin Parenti(BackStack için önemli) -->
-        <activity android:name=".Aba"
+        <activity android:name=".aba.Aba"
                   android:screenOrientation="landscape"
                   />
-        <activity android:name=".Awards"
+        <activity android:name=".awards.Awards"
                   android:screenOrientation="landscape"
                   />
-        <activity android:name=".LetsTalk"
+        <activity android:name=".letstalk.LetsTalk"
                   android:screenOrientation="landscape"
                   />
-        <activity android:name=".FindingObjects"
+        <activity android:name=".findingobjects.FindingObjects"
                   android:screenOrientation="landscape"
                   />
-        <activity android:name=".MakeItTogether"
+        <activity android:name=".makeittogether.MakeItTogether"
                   android:screenOrientation="landscape"
                   android:parentActivityName=".MainActivity"/>
-        <activity android:name=".CompleteSentence"
+        <activity android:name=".completesentence.CompleteSentence"
                   android:screenOrientation="landscape"
                   />
-        <activity android:name=".Story"
+        <activity android:name=".story.Story"
                   android:screenOrientation="landscape"
                  />
-        <activity android:name=".Etiquette"
+        <activity android:name=".etiquette.Etiquette"
                   android:screenOrientation="landscape"
                   />
-        <activity android:name=".EducationalSongs"
+        <activity android:name=".educationalsongs.EducationalSongs"
                   android:screenOrientation="landscape"
                   />
-        <activity android:name=".Pairing"
+        <activity android:name=".pairing.Pairing"
                   android:screenOrientation="landscape"
                   />
-        <activity android:name=".MarkYourHeard"
+        <activity android:name=".markyourheard.MarkYourHeard"
                   android:screenOrientation="landscape"
                   />
-        <activity android:name=".LetsStudyActivity"
+        <activity android:name=".letsstudy.LetsStudyActivity"
                   android:screenOrientation="landscape"
                   />
         <activity

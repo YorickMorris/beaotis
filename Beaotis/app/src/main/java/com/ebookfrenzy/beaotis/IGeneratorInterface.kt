@@ -1,6 +1,6 @@
 package com.ebookfrenzy.beaotis
 
-interface GeneratorInterface {
+interface IGeneratorInterface {
      fun generateList(): List<ExampleItem> {
         val list = ArrayList<ExampleItem>()
         list.add(

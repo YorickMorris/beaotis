@@ -1,5 +1,5 @@
 package com.ebookfrenzy.beaotis
 
-interface OnItemClickListener {
+interface IOnItemClickListener {
      fun onItemClicked(data: ExampleItem, position: Int,coloumn: Int)
 }

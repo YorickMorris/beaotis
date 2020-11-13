@@ -1,8 +1,10 @@
-package com.ebookfrenzy.beaotis
+package com.ebookfrenzy.beaotis.makeittogether
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ebookfrenzy.beaotis.MainActivity
+import com.ebookfrenzy.beaotis.R
 import kotlinx.android.synthetic.main.activity_make_it_together.*
 
 class MakeItTogether : AppCompatActivity() {
@@ -13,7 +15,7 @@ class MakeItTogether : AppCompatActivity() {
         val context = this
 
         left_arrow8.setOnClickListener{
-            val intent= Intent(context,MainActivity::class.java)
+            val intent= Intent(context, MainActivity::class.java)
             startActivity(intent)
             finish()
         }

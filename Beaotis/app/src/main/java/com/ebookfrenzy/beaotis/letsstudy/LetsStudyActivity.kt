@@ -1,8 +1,10 @@
-package com.ebookfrenzy.beaotis
+package com.ebookfrenzy.beaotis.letsstudy
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.ebookfrenzy.beaotis.MainActivity
+import com.ebookfrenzy.beaotis.R
 import kotlinx.android.synthetic.main.activity_lets_study.*
 
 class LetsStudyActivity : AppCompatActivity() {
@@ -12,7 +14,7 @@ class LetsStudyActivity : AppCompatActivity() {
 
         val context = this
         left_arrow6.setOnClickListener{
-            val intent= Intent(context,MainActivity::class.java)
+            val intent= Intent(context, MainActivity::class.java)
             startActivity(intent)
             finish()
         }

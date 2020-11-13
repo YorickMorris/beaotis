@@ -1,11 +1,10 @@
-package com.ebookfrenzy.beaotis
+package com.ebookfrenzy.beaotis.aba
 
-import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.core.app.TaskStackBuilder
+import com.ebookfrenzy.beaotis.MainActivity
+import com.ebookfrenzy.beaotis.R
 import kotlinx.android.synthetic.main.activity_aba.*
 
 class Aba : AppCompatActivity() {
@@ -14,7 +13,7 @@ class Aba : AppCompatActivity() {
         setContentView(R.layout.activity_aba)
 
         left_arrow.setOnClickListener{
-            val intent=Intent(this,MainActivity::class.java)
+            val intent=Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
         }

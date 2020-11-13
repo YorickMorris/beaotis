@@ -16,18 +16,30 @@ import androidx.core.app.NotificationCompat.VISIBILITY_PRIVATE
 import androidx.core.app.NotificationManagerCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ebookfrenzy.beaotis.aba.Aba
+import com.ebookfrenzy.beaotis.awards.Awards
+import com.ebookfrenzy.beaotis.completesentence.CompleteSentence
+import com.ebookfrenzy.beaotis.educationalsongs.EducationalSongs
+import com.ebookfrenzy.beaotis.etiquette.Etiquette
+import com.ebookfrenzy.beaotis.findingobjects.FindingObjects
+import com.ebookfrenzy.beaotis.letsstudy.LetsStudyActivity
+import com.ebookfrenzy.beaotis.letstalk.LetsTalk
+import com.ebookfrenzy.beaotis.makeittogether.MakeItTogether
+import com.ebookfrenzy.beaotis.markyourheard.MarkYourHeard
+import com.ebookfrenzy.beaotis.pairing.Pairing
+import com.ebookfrenzy.beaotis.story.Story
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
-class MainActivity : AppCompatActivity() , GeneratorInterface, OnItemClickListener {
+class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickListener {
     private lateinit var recyclerView: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var currentTime:String=getCurrentTime()
+        val currentTime:String=getCurrentTime()
         generateList()
         if(currentTime=="9:40 ÖÖ"){
             createNotification(this)
@@ -104,7 +116,7 @@ class MainActivity : AppCompatActivity() , GeneratorInterface, OnItemClickListen
             flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
         val pendingIntent: PendingIntent = PendingIntent.getActivity(context, 0, intent, 0)
-        var builder = NotificationCompat.Builder(context, R.string.x.toString())
+        val builder = NotificationCompat.Builder(context, R.string.x.toString())
             .setSmallIcon(R.drawable.ic_baseline_view_headline_24)
             .setContentTitle("Su İçin")
             .setContentText("Vücut sağlığınızı korumak için su için. ")
@@ -124,14 +136,14 @@ class MainActivity : AppCompatActivity() , GeneratorInterface, OnItemClickListen
         }
     }
     private fun getCurrentTime():String{
-        var currentTime:String?=null
+        val currentTime:String?
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val current = LocalDateTime.now()
             val formatter = DateTimeFormatter.ofPattern("h:mm a")
             currentTime = current.format(formatter)
             return currentTime
         } else {
-            var c: Calendar = Calendar.getInstance()
+            val c: Calendar = Calendar.getInstance()
             val sHour:String=c.get(Calendar.HOUR_OF_DAY).toString()
             val sMinute:String=c.get(Calendar.MINUTE).toString()
             var sAMorPM:String=c.get(Calendar.AM_PM).toString()

@@ -8,7 +8,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewAdapter( val exampleList: List<ExampleItem>,val onItemClickListener: OnItemClickListener): RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder>(){
+class RecyclerViewAdapter(private val exampleList: List<ExampleItem>, private val IOnItemClickListener: IOnItemClickListener): RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
 
@@ -29,13 +29,13 @@ class RecyclerViewAdapter( val exampleList: List<ExampleItem>,val onItemClickLis
         holder.textView2.text=currentItem.text2
         holder.textView3.text=currentItem.text3
         holder.innercons1.setOnClickListener{
-            onItemClickListener.onItemClicked(currentItem,position,1)
+            IOnItemClickListener.onItemClicked(currentItem,position,1)
         }
         holder.innercons2.setOnClickListener {
-            onItemClickListener.onItemClicked(currentItem,position,2)
+            IOnItemClickListener.onItemClicked(currentItem,position,2)
         }
         holder.innercons3.setOnClickListener{
-            onItemClickListener.onItemClicked(currentItem,position,3)
+            IOnItemClickListener.onItemClicked(currentItem,position,3)
         }
     }
 
