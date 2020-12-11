@@ -10,47 +10,49 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!-- MainActivity Diğer Activitylerin Parenti(BackStack için önemli) -->
-        <activity android:name=".aba.Aba"
-                  android:screenOrientation="landscape"
-                  />
-        <activity android:name=".awards.Awards"
-                  android:screenOrientation="landscape"
-                  />
-        <activity android:name=".letstalk.LetsTalk"
-                  android:screenOrientation="landscape"
-                  />
-        <activity android:name=".findingobjects.FindingObjects"
-                  android:screenOrientation="landscape"
-                  />
-        <activity android:name=".makeittogether.MakeItTogether"
-                  android:screenOrientation="landscape"
-                  android:parentActivityName=".MainActivity"/>
-        <activity android:name=".completesentence.CompleteSentence"
-                  android:screenOrientation="landscape"
-                  />
-        <activity android:name=".story.Story"
-                  android:screenOrientation="landscape"
-                 />
-        <activity android:name=".etiquette.Etiquette"
-                  android:screenOrientation="landscape"
-                  />
-        <activity android:name=".educationalsongs.EducationalSongs"
-                  android:screenOrientation="landscape"
-                  />
-        <activity android:name=".pairing.Pairing"
-                  android:screenOrientation="landscape"
-                  />
-        <activity android:name=".markyourheard.MarkYourHeard"
-                  android:screenOrientation="landscape"
-                  />
-        <activity android:name=".letsstudy.LetsStudyActivity"
-                  android:screenOrientation="landscape"
-                  />
+        <activity
+            android:name=".aba.Aba"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".awards.Awards"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".letstalk.LetsTalk"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".findingobjects.FindingObjects"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".makeittogether.MakeItTogether"
+            android:parentActivityName=".MainActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".completesentence.CompleteSentence"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".story.Story"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".etiquette.Etiquette"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".educationalsongs.EducationalSongs"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".pairing.Pairing"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".markyourheard.MarkYourHeard"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".letsstudy.LetsStudyActivity"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".MainActivity"
             android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

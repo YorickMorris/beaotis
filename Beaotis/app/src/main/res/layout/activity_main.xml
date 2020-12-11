@@ -12,7 +12,8 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        app:navigationIcon="@drawable/ic_baseline_view_headline_24"
+        app:navigationIcon="@drawable/ok3"
+        app:layout_scrollFlags="scroll|enterAlways"
         app:theme="@style/AppTheme"/>
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
@@ -23,5 +24,6 @@
         android:clipToPadding="false"
         android:id="@+id/recyclerView"
         tools:listitem="@layout/deneme"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:itemCount="2" />
 </LinearLayout>

@@ -8,8 +8,12 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
+import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationCompat.VISIBILITY_PRIVATE
@@ -28,12 +32,17 @@ import com.ebookfrenzy.beaotis.makeittogether.MakeItTogether
 import com.ebookfrenzy.beaotis.markyourheard.MarkYourHeard
 import com.ebookfrenzy.beaotis.pairing.Pairing
 import com.ebookfrenzy.beaotis.story.Story
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.sign_in.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
 
+
 class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickListener {
     private lateinit var recyclerView: RecyclerView
+    val dialogFragment=SignInDialogFragment()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -53,11 +62,26 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
 
+        toolbar.setNavigationOnClickListener(View.OnClickListener {
+            dialogFragment.show(supportFragmentManager, "missiles")
+
+        })
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.menu_main, menu)
         return true
+    }
+
+    // Bu kod ebeveyn modülüne geçmeyi sağlıyor.
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId){
+            R.id.action_switch -> {
+                intent = Intent(this, LetsStudyActivity::class.java)
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
     }
     override fun onItemClicked(data: ExampleItem, position: Int, coloumn: Int) {
         Log.d("clickeditem", "$data --- $position")

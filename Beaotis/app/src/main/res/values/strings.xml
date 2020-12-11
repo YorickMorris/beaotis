@@ -2,4 +2,14 @@
     <string name="app_name">Beaotis</string>
     <string name="x">1</string>
     <string name="channel_description">Ilk kanal budur</string>
+    <string name="signIn">Giriş Yap</string>
+    <string name="cancel">İptal</string>
+    <string name="password">Şifre</string>
+    <string name="username">Kullanıcı Adı</string>
+    <string name="log_in">Giriş Yap</string>
+    <string name="forgot">Şifrenizi unuttunuz mu?<b>Şifremi Unuttum</b></string>
+    <string name="sign_up">Üye Ol</string>
+    <string name="giris_yap_image">Giriş Ekranı Fotoğrafı</string>
+    <string name="cancel_photo">Çıkmak için basılır.</string>
+    <string name="ebeveyn_giris_yazisi">BEAOTIS Ebeveyn Giriş Ekranı</string>
 </resources>

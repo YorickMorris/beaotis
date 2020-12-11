@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "720703849018",
+    "project_id": "beaotis-a4f40",
+    "storage_bucket": "beaotis-a4f40.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:720703849018:android:7cf2be668bbee16af36b03",
+        "android_client_info": {
+          "package_name": "com.ebookfrenzy.beaotis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "720703849018-1r5anfb9laapq1dn38mbt94a4redqso8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAH4enzZpoTgp8iEffRiwdH7Rz-62ec3xw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "720703849018-1r5anfb9laapq1dn38mbt94a4redqso8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
