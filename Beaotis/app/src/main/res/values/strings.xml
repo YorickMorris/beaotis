@@ -12,4 +12,6 @@
     <string name="giris_yap_image">Giriş Ekranı Fotoğrafı</string>
     <string name="cancel_photo">Çıkmak için basılır.</string>
     <string name="ebeveyn_giris_yazisi">BEAOTIS Ebeveyn Giriş Ekranı</string>
+    <string name="email_adresi">Email Adresi</string>
+    <string name="uygulama_ikonu">Uygulama İkonu</string>
 </resources>

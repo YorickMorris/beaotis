@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pink50">#FCE4EC</color>
+    <color name="pink100">#F8BBD0</color>
+    <color name="pink200">#F48FB1</color>
+    <color name="pink300">#F06292</color>
+    <color name="pink400">#EC407A</color>
+    <color name="pink500">#E91E63</color>
+    <color name="pink600">#D81B60</color>
+    <color name="pink700">#C2185B</color>
+    <color name="pink800">#AD1457</color>
+    <color name="pink900">#880E4F</color>
+    <color name="c100">#FF80AB</color>
+    <color name="c200">#FF4081</color>
+    <color name="c400">#F50057</color>
+    <color name="c700">#C51162</color>
+</resources>

@@ -8,12 +8,10 @@ import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
-import android.view.LayoutInflater
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationCompat.VISIBILITY_PRIVATE
@@ -32,8 +30,11 @@ import com.ebookfrenzy.beaotis.makeittogether.MakeItTogether
 import com.ebookfrenzy.beaotis.markyourheard.MarkYourHeard
 import com.ebookfrenzy.beaotis.pairing.Pairing
 import com.ebookfrenzy.beaotis.story.Story
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.sign_in.*
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.util.*
@@ -42,18 +43,21 @@ import java.util.*
 class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickListener {
     private lateinit var recyclerView: RecyclerView
     val dialogFragment=SignInDialogFragment()
-
+    private lateinit var auth: FirebaseAuth
+    private val tag:String="className"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        val currentTime:String=getCurrentTime()
         generateList()
-        if(currentTime=="9:40 ÖÖ"){
+        auth = Firebase.auth
+
+        //val currentTime:String=getCurrentTime()
+
+        /*if(currentTime=="9:40 ÖÖ"){
             createNotification(this)
             createNotificationChannel()
-        }
+        }*/
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -62,10 +66,10 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
 
-        toolbar.setNavigationOnClickListener(View.OnClickListener {
+        toolbar.setNavigationOnClickListener {
             dialogFragment.show(supportFragmentManager, "missiles")
-
-        })
+            Log.d(tag, "Tıklandı.")
+        }
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
@@ -180,4 +184,5 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
             return currentTime
         }
     }
+
 }

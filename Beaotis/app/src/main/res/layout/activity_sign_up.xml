@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@drawable/transitive_pink_color"
+    android:layout_height="match_parent"
+    tools:context=".SignUpActivity">
+    <ImageView
+        android:id="@+id/sign_up_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/teach"
+        android:layout_marginTop="5dp"
+        android:contentDescription="@string/uygulama_ikonu"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/first_input_layout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        />
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/first_input_layout"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintWidth_percent="0.5"
+        app:startIconDrawable="@drawable/email1"
+        android:hint="@string/email_adresi"
+        android:background="@drawable/transitive_pink_color_foreground"
+        app:startIconTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sign_up_image"
+        app:layout_constraintBottom_toTopOf="@id/first_input_layout1">
+        <!--app:startIconTint="@color/text_input_selector" -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/first_input_layout1"
+        android:layout_width="0dp"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        app:layout_constraintWidth_percent="0.5"
+        android:layout_height="wrap_content"
+        app:startIconDrawable="@drawable/doorkey"
+        android:background="@drawable/transitive_pink_color_foreground"
+        android:hint="@string/password"
+        app:startIconTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/first_input_layout"
+        app:layout_constraintBottom_toTopOf="@id/submitButton"
+        >
+        <!--app:startIconTint="@color/text_input_selector" -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sifre"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword" />
+        <!--android:text="asdafwa"-->
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.Button.Borderless"
+        app:icon="@drawable/doorkey"
+        android:text="@string/sign_up"
+        android:onClick="onItemClick"
+        app:iconTint="@null"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:textColor="@color/x"
+        app:layout_constraintTop_toBottomOf="@id/first_input_layout1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginHorizontal="100dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
