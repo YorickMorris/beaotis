@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignUpActivity"></activity>
-        <!-- MainActivity Diğer Activitylerin Parenti(BackStack için önemli) -->
+        <activity android:name=".parent.ParentActivity"></activity>
+        <activity android:name=".SignUpActivity" /> <!-- MainActivity Diğer Activitylerin Parenti(BackStack için önemli) -->
         <activity
             android:name=".aba.Aba"
             android:screenOrientation="landscape" />

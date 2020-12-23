@@ -26,6 +26,19 @@ android {
 }
 
 dependencies {
+    def nav_version = "2.3.2"
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Feature module Support
+    implementation "androidx.navigation:navigation-dynamic-features-fragment:$nav_version"
+
+    // Testing Navigation
+    androidTestImplementation "androidx.navigation:navigation-testing:$nav_version"
+
+    // Jetpack Compose Integration Eğer sorun çıkarsa bu ve bundan önceki 2 bağımlılıktan :'nin önüne -ktx  eki getir
+    implementation "androidx.navigation:navigation-compose:1.0.0-alpha04"
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation platform('com.google.firebase:firebase-bom:26.1.1')
