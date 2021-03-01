@@ -5,17 +5,19 @@ import android.net.Uri
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.ebookfrenzy.beaotis.parent.ParentActivity
 import kotlinx.android.synthetic.main.contact_us.*
 import java.lang.Exception
 
 class ContactUs : AppCompatActivity() {
+    private lateinit var intentToParentActivity:Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.contact_us)
+        intentToParentActivity=Intent(this, MainActivity::class.java)
 
-        val context = this
         left_arrow12.setOnClickListener {
-            val intent = Intent(context, MainActivity::class.java)
+            val intent = Intent(this, ParentActivity::class.java)
             startActivity(intent)
             finish()
         }
@@ -44,5 +46,9 @@ class ContactUs : AppCompatActivity() {
         }catch (e:Exception){
                 Toast.makeText(this,"Mesaj Yollanıyor...",Toast.LENGTH_LONG).show()
         }
+    }
+    override fun onBackPressed() {
+        startActivity(intentToParentActivity)
+        super.onBackPressed()
     }
 }

@@ -1,11 +1,6 @@
 package com.ebookfrenzy.beaotis
 
-import android.app.NotificationChannel
-import android.app.NotificationManager
-import android.app.PendingIntent
-import android.content.Context
 import android.content.Intent
-import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
@@ -13,9 +8,6 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationCompat.VISIBILITY_PRIVATE
-import androidx.core.app.NotificationManagerCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ebookfrenzy.beaotis.aba.Aba
@@ -31,33 +23,39 @@ import com.ebookfrenzy.beaotis.markyourheard.MarkYourHeard
 import com.ebookfrenzy.beaotis.pairing.Pairing
 import com.ebookfrenzy.beaotis.story.Story
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
-import java.time.LocalDateTime
-import java.time.format.DateTimeFormatter
-import java.util.*
 
-
-class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickListener {
+class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickListener,IFireStoreList {
     private lateinit var recyclerView: RecyclerView
-    val dialogFragment=SignInDialogFragment()
+    private val dialogFragment=SignInDialogFragment()
     private lateinit var auth: FirebaseAuth
     private val tag:String="className"
+    private val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
+       /* readData(object : MyCallback() {
+            fun onCallback(settings: UserAccountSettings) {
+                Log.d("TAG", settings.getDisplay_name())
+            }
+        })*/
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         generateList()
+
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+
         auth = Firebase.auth
-
         //val currentTime:String=getCurrentTime()
-
+        val a=getGroupOne(db)
+        println("Birinci grup= $a")
         /*if(currentTime=="9:40 ÖÖ"){
             createNotification(this)
             createNotificationChannel()
         }*/
+
 
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
@@ -67,10 +65,17 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
         adapter.notifyDataSetChanged()
 
         toolbar.setNavigationOnClickListener {
-            dialogFragment.show(supportFragmentManager, "missiles")
+            if(savedInstanceState==null){
+                dialogFragment.run { show(supportFragmentManager, "missiles") }
+            }
+
+
             Log.d(tag, "Tıklandı.")
         }
     }
+
+
+
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.menu_main, menu)
@@ -122,7 +127,12 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
         startActivity(intent)
         finish()
     }
-    private fun createNotificationChannel() {
+
+    override fun onCallBack(liste: MutableList<String>?){
+
+    }
+
+    /*private fun createNotificationChannel() {
         // Bildirim kanalı oluşturulur fakat API 26 ve üzeriyse bildirim kanalı oluşturulur.
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val name = getString(R.string.x)
@@ -136,8 +146,8 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
                 getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
             notificationManager.createNotificationChannel(channel)
         }
-    }
-    private fun createNotification(context: Context) {
+    }*/
+    /* private fun createNotification(context: Context) {
         val notificationId=0
         //Bu kod ile bildirime tıklayarak uygulama açılabilir.
         val intent = Intent(this, MainActivity::class.java).apply {
@@ -162,8 +172,8 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
             // notificationId is a unique int for each notification that you must define
             notify(notificationId, builder.build())
         }
-    }
-    private fun getCurrentTime():String{
+    }*/
+    /* private fun getCurrentTime():String{
         val currentTime:String?
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             val current = LocalDateTime.now()
@@ -183,6 +193,13 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
             println("Şu anki zaman: $currentTime")
             return currentTime
         }
+    }*/
+    override fun onResume() {
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        super.onResume()
     }
-
+    override fun onStart() {
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        super.onStart()
+    }
 }

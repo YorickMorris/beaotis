@@ -12,74 +12,46 @@
         tools:layout="@layout/sign_in" >
         <action
             android:id="@+id/action_mainActivity_to_aba"
-            app:destination="@id/aba"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/aba" />
         <action
             android:id="@+id/action_mainActivity_to_awards"
-            app:destination="@id/awards"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/awards" />
         <action
             android:id="@+id/action_mainActivity_to_completeSentence"
-            app:destination="@id/completeSentence"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/completeSentence" />
         <action
             android:id="@+id/action_mainActivity_to_educationalSongs"
-            app:destination="@id/educationalSongs"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/educationalSongs" />
         <action
             android:id="@+id/action_mainActivity_to_etiquette"
-            app:destination="@id/etiquette"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/etiquette" />
         <action
             android:id="@+id/action_mainActivity_to_findingObjects"
-            app:destination="@id/findingObjects"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/findingObjects" />
         <action
             android:id="@+id/action_mainActivity_to_letsStudyActivity"
-            app:destination="@id/letsStudyActivity"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/letsStudyActivity" />
         <action
             android:id="@+id/action_mainActivity_to_letsStudyActivity2"
-            app:destination="@id/letsStudyActivity"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/letsStudyActivity" />
         <action
             android:id="@+id/action_mainActivity_to_letsTalk"
-            app:destination="@id/letsTalk"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/letsTalk" />
         <action
             android:id="@+id/action_mainActivity_to_makeItTogether"
-            app:destination="@id/makeItTogether"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/makeItTogether" />
         <action
             android:id="@+id/action_mainActivity_to_markYourHeard"
-            app:destination="@id/markYourHeard"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/markYourHeard" />
         <action
             android:id="@+id/action_mainActivity_to_markYourHeard2"
-            app:destination="@id/markYourHeard"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/markYourHeard" />
         <action
             android:id="@+id/action_mainActivity_to_story"
-            app:destination="@id/story"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/story" />
         <action
             android:id="@+id/action_mainActivity_to_pairing"
-            app:destination="@id/pairing"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/pairing" />
         <action
             android:id="@+id/action_mainActivity_to_signInDialogFragment"
             app:destination="@id/signInDialogFragment"
@@ -162,26 +134,18 @@
         tools:layout="@layout/activity_parent" >
         <action
             android:id="@+id/action_parentActivity_to_contactUs"
-            app:destination="@id/contactUs"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit" />
+            app:destination="@id/contactUs" />
     </activity>
     <fragment
         android:id="@+id/signInDialogFragment"
         android:name="com.ebookfrenzy.beaotis.SignInDialogFragment"
         android:label="SignInDialogFragment" >
-        <action
+         <action
             android:id="@+id/action_signInDialogFragment_to_signUpActivity"
-            app:destination="@id/signUpActivity"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:destination="@id/signUpActivity" />
         <action
             android:id="@+id/action_signInDialogFragment_to_parentActivity"
-            app:destination="@id/parentActivity"
-            app:enterAnim="@anim/fragment_open_enter"
-            app:exitAnim="@anim/fragment_close_exit"
-            app:popExitAnim="@anim/nav_default_pop_exit_anim" />
+            app:destination="@id/parentActivity" />
     </fragment>
 
 </navigation>

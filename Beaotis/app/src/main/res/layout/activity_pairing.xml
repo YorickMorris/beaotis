@@ -13,6 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
     <ImageView
+        android:contentDescription="@string/geri"
         android:id="@+id/left_arrow10"
         android:layout_width="70dp"
         android:layout_height="70dp"
@@ -35,6 +36,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginEnd="25dp"
-        android:text="Eşleştirme"/>
+        android:text="@string/pairing"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

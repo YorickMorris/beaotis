@@ -13,6 +13,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
     <ImageView
+        android:contentDescription="@string/geri"
         android:id="@+id/left_arrow8"
         android:layout_width="70dp"
         android:layout_height="70dp"

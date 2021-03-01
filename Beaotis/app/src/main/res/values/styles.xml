@@ -1,8 +1,8 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar.Bridge">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="android:windowActivityTransitions">true</item>
@@ -14,7 +14,7 @@
         <item name="android:textSize">18sp</item>
         <item name="android:background">@drawable/transitive_pink_color</item>
         <item name="android:radius">4dp</item>
-        <item name="colorAccent">@color/blue</item>
+        <item name="colorAccent">@color/blue300</item>
     </style>
 
 
@@ -28,5 +28,28 @@
     <style name="NeutralButtonStyle" parent="@style/Widget.MaterialComponents.Button.TextButton.Dialog">
         <item name="android:textColor">@color/colorPrimaryDark</item>
     </style>
+    <style name="Widget.MaterialComponents.Button.OutlinedButton." parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="color">@color/blue300</item>
+    </style>
+    <style name="Widget.MaterialComponents.Button." parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/blue300</item>
+        <item name="colorAccent">@color/blue50</item>
+        <item name="alpha">0.9</item>
+        <item name="android:background">@drawable/edittext_shape</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="Theme.SplashScreenYT" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/blue600</item>
+        <item name="colorPrimaryVariant">@color/blue900</item>
+        <item name="colorOnPrimary">@color/blue_grey50</item>
+
+        <item name="colorSecondary">@color/green200</item>
+        <item name="colorSecondaryVariant">@color/blue_grey700</item>
+        <item name="colorOnSecondary">#000000</item>
+
+        <item name="android:statusBarColor" tools:TargetApi="l">?attr/colorPrimaryVariant</item>
+    </style>
+
 
 </resources>

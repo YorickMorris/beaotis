@@ -14,4 +14,25 @@
     <string name="ebeveyn_giris_yazisi">BEAOTIS Ebeveyn Giriş Ekranı</string>
     <string name="email_adresi">Email Adresi</string>
     <string name="uygulama_ikonu">Uygulama İkonu</string>
+    <string name="mark_your_heard_title">Duyduğunu İşaretle</string>
+    <string name="geri">geri</string>
+    <string name="beaotis">Beaotis</string>
+    <string name="item_1">Item 1</string>
+    <string name="item_2">Item 2</string>
+    <string name="item_3">Item 3</string>
+    <string name="item_4">Item 4</string>
+    <string name="item_5">Item 5</string>
+    <string name="title_1">Title 1</string>
+    <string name="item_6">Item 6</string>
+    <string name="item_7">Item 7</string>
+    <string name="complete_sentence">Cümleyi Tamamla</string>
+    <string name="lets_start">Hadi Başlayalım</string>
+    <string name="pairing">Eşleştirme</string>
+    <string name="no_internet_connection">İnternet Bağlantınız Bulunmamaktadır</string>
+    <string name="eposta_adresiniz">Eposta Adresiniz</string>
+    <string name="aba">ABA</string>
+    <string name="konu">Konu</string>
+    <string name="your_message">Mesajınız</string>
+    <string name="send_mail_button">Mesaj gönder butonu</string>
+    <string name="i_got_story">Bir Hikayem Var</string>
 </resources>

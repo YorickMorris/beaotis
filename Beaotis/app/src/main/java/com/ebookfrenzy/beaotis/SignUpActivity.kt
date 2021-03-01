@@ -10,25 +10,23 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_sign_up.*
-import kotlinx.android.synthetic.main.sign_in.*
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private val TAG="ClassName"
+    private val tag="ClassName"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sign_up)
         auth = Firebase.auth
         onItemClick(submitButton)
-
     }
      private fun onItemClick(view: View){
         view.setOnClickListener {
             auth.createUserWithEmailAndPassword(email.text.toString(), sifre.text.toString())
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        Log.d(TAG,"${sifre.text.toString()}")
+                        Log.d(tag, sifre.text.toString())
                         val user = auth.currentUser
                         updateUI(user)
                     } else {
@@ -42,9 +40,7 @@ class SignUpActivity : AppCompatActivity() {
     private fun updateUI(user:FirebaseUser?){
         if(user!=null){
             Toast.makeText(this,"Üyelik işlemi tamamlandı.",Toast.LENGTH_LONG).show()
-        }else{
+        }else
             Toast.makeText(this,"Üyelik işlemi tamamlanamadı.",Toast.LENGTH_LONG).show()
-        }
-
     }
 }
