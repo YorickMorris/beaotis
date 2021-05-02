@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
     private lateinit var recyclerView: RecyclerView
     private val dialogFragment=SignInDialogFragment()
     private lateinit var auth: FirebaseAuth
-    private val tag:String="className"
+    private val tag:String="MainActiviy"
     private val db = Firebase.firestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +45,7 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
         setContentView(R.layout.activity_main)
         generateList()
 
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
         auth = Firebase.auth
         //val currentTime:String=getCurrentTime()

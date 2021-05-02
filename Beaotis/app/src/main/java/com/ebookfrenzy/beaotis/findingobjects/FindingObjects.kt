@@ -6,9 +6,10 @@ import android.os.Bundle
 import android.view.View
 import com.ebookfrenzy.beaotis.MainActivity
 import com.ebookfrenzy.beaotis.R
+import com.ebookfrenzy.beaotis.letsstudy.LetsStudyActivity
 import kotlinx.android.synthetic.main.activity_finding_objects.*
 
-class FindingObjects : AppCompatActivity() {
+class FindingObjects : AppCompatActivity(),IOnFindingObjectsClickListener,IFindingObjectGenerator {
     private lateinit var intentToMainActivity:Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,4 +32,16 @@ class FindingObjects : AppCompatActivity() {
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         super.onResume()
     }
+
+    override fun onItemClicked(data: FindObjectDataClass, position: Int) {
+        when(position){
+            0->intent = Intent(this, FruitsActivity::class.java)
+            1->intent = Intent(this, VegetablesActivity::class.java)
+            2->intent = Intent(this, VehiclesActivity::class.java)
+            3->intent = Intent(this, FurnituresActivity::class.java)
+        }
+        startActivity(intent)
+        finish()
+    }
+
 }

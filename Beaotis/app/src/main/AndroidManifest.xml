@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.ebookfrenzy.beaotis">
+
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,12 +11,37 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SplashScreen"
-            android:screenOrientation="landscape"> <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity android:name=".findingobjects.FurnituresActivity"></activity>
+        <activity android:name=".findingobjects.FruitsActivity" />
+        <activity android:name=".findingobjects.VegetablesActivity" />
+        <activity android:name=".findingobjects.VehiclesActivity" />
+        <activity
+            android:name=".letsstudy.PracticesActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".letsstudy.ColorsActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".letsstudy.MathematicActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".letsstudy.SeasonsActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".letsstudy.NumbersActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".letsstudy.AlfabeActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".SplashScreen"
+            android:screenOrientation="landscape">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter></activity>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".parent.ParentActivity" />
         <activity android:name=".SignUpActivity" /> <!-- MainActivity Diğer Activitylerin Parenti(BackStack için önemli) -->
         <activity
@@ -56,9 +83,7 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".MainActivity"
-            android:screenOrientation="landscape">
-
-        </activity>
+            android:screenOrientation="landscape" />
     </application>
 
 </manifest>
