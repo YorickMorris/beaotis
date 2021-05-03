@@ -4,6 +4,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".findingobjects.FruitsActivity">
+    android:id="@+id/constFruit"
+    tools:context=".findingobjects.fruits.FruitsActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:background="@drawable/transitive_color1"
+        android:layoutAnimation="@anim/layot_animation_slide_from_right"
+        android:scrollbars="vertical"
+        android:clipToPadding="false"
+        android:id="@+id/fruitsRecyclerView"
+        tools:listitem="@layout/deneme"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintTop_toBottomOf="@id/constFruit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:itemCount="2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

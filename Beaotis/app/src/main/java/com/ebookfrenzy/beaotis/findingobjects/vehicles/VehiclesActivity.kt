@@ -1,12 +1,12 @@
-package com.ebookfrenzy.beaotis.findingobjects
+package com.ebookfrenzy.beaotis.findingobjects.vehicles
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ebookfrenzy.beaotis.R
 
-class FruitsActivity : AppCompatActivity() {
+class VehiclesActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_fruits)
+        setContentView(R.layout.activity_vehicles)
     }
 }

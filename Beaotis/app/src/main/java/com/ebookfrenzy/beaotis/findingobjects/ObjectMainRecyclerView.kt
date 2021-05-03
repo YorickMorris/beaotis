@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
@@ -16,7 +17,7 @@ class ObjectMainRecyclerView(private val exampleList: List<FindObjectDataClass>,
         viewType: Int
     ): ObjectMainRecyclerView.RecyclerViewHolder {
         val itemView= LayoutInflater.from(parent.context).inflate(
-            R.layout.activity_finding_objects,
+            R.layout.recyclerview_main_sample,
             parent, false
         )
         return RecyclerViewHolder(itemView)
@@ -40,7 +41,7 @@ class ObjectMainRecyclerView(private val exampleList: List<FindObjectDataClass>,
     inner class RecyclerViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
         val imageView1: ImageView = itemView.findViewById(R.id.imgFindObject)
         val textView1: TextView =itemView.findViewById(R.id.txtFinObject)
-        val innercons1: ConstraintLayout =itemView.findViewById(R.id.constFindingObjects)
+        val innercons1: LinearLayout =itemView.findViewById(R.id.constFindingObjects)
     }
 
 }
