@@ -18,7 +18,8 @@
         android:id="@+id/vehiclesRecyclerView"
         tools:listitem="@layout/deneme"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        app:layout_constraintTop_toBottomOf="@id/vehiclesConst"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:itemCount="2" />
