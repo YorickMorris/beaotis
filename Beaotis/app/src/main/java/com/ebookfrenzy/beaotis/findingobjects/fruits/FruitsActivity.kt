@@ -6,10 +6,10 @@ import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ebookfrenzy.beaotis.R
-import com.ebookfrenzy.beaotis.findingobjects.ObjectMainRecyclerView
 import com.ebookfrenzy.beaotis.findingobjects.SubObjectDataClass
 import com.ebookfrenzy.beaotis.findingobjects.SubObjectsClickListener
 import com.ebookfrenzy.beaotis.findingobjects.SubRecyclerView
+import com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.GroupOne
 
 class FruitsActivity : AppCompatActivity(),IFruitsGenerator,SubObjectsClickListener {
     private lateinit var intentToMainActivity: Intent
@@ -27,6 +27,10 @@ class FruitsActivity : AppCompatActivity(),IFruitsGenerator,SubObjectsClickListe
     }
 
     override fun onItemClicked(data: SubObjectDataClass, position: Int) {
-
+        when(position)
+        {
+            0->intent = Intent(this, GroupOne::class.java)
+        }
+        startActivity(intent)
     }
 }

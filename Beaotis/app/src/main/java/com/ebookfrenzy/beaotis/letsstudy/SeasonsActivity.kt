@@ -13,7 +13,7 @@ class SeasonsActivity : AppCompatActivity() ,IOnLetsStudyClickListener,ISeasonsG
         setContentView(R.layout.seasons)
     }
 
-    override fun onItemClicked(data: FindObjectDataClass, position: Int) {
+    override fun onItemClicked(data: LetsStudyExampleItem, position: Int) {
         TODO("Not yet implemented")
     }
 }

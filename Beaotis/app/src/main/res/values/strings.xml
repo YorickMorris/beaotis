@@ -35,4 +35,6 @@
     <string name="your_message">Mesajınız</string>
     <string name="send_mail_button">Mesaj gönder butonu</string>
     <string name="i_got_story">Bir Hikayem Var</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".findingobjects.furnitures.FurnituresActivity"></activity>
+        <activity android:name=".findingobjects.fruits.groupone.GroupOne"></activity>
+        <activity android:name=".findingobjects.furnitures.FurnituresActivity" />
         <activity android:name=".findingobjects.fruits.FruitsActivity" />
         <activity android:name=".findingobjects.vegetables.VegetablesActivity" />
         <activity android:name=".findingobjects.vehicles.VehiclesActivity" />

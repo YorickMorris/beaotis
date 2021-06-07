@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_findingobjects"
+    app:startDestination="@id/splashFragment1">
+
+    <fragment
+        android:id="@+id/splashFragment1"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.SplashFragment1"
+        android:label="fragment_splash1"
+        tools:layout="@layout/fragment_splash1" >
+        <action
+            android:id="@+id/action_splashFragment1_to_click1"
+            app:destination="@id/click1" />
+    </fragment>
+    <fragment
+        android:id="@+id/click1"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click1"
+        android:label="fragment_click1"
+        tools:layout="@layout/fragment_click1" >
+        <action
+            android:id="@+id/action_click1_to_splashFragment2"
+            app:destination="@id/splashFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment2"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.SplashFragment2"
+        android:label="fragment_splash2"
+        tools:layout="@layout/fragment_splash2" >
+        <action
+            android:id="@+id/action_splashFragment2_to_click2"
+            app:destination="@id/click2" />
+    </fragment>
+    <fragment
+        android:id="@+id/click2"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click2"
+        android:label="fragment_click2"
+        tools:layout="@layout/fragment_click2" >
+        <action
+            android:id="@+id/action_click2_to_click3"
+            app:destination="@id/click3" />
+    </fragment>
+    <fragment
+        android:id="@+id/click3"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click3"
+        android:label="fragment_click3"
+        tools:layout="@layout/fragment_click3" >
+        <action
+            android:id="@+id/action_click3_to_click4"
+            app:destination="@id/click4" />
+    </fragment>
+    <fragment
+        android:id="@+id/click4"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click4"
+        android:label="fragment_click4"
+        tools:layout="@layout/fragment_click4" >
+        <action
+            android:id="@+id/action_click4_to_splashFragment3"
+            app:destination="@id/splashFragment3" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment3"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.SplashFragment3"
+        android:label="fragment_splash3"
+        tools:layout="@layout/fragment_splash3" >
+        <action
+            android:id="@+id/action_splashFragment3_to_click5"
+            app:destination="@id/click5" />
+    </fragment>
+    <fragment
+        android:id="@+id/click5"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click5"
+        android:label="fragment_click5"
+        tools:layout="@layout/fragment_click5" >
+        <action
+            android:id="@+id/action_click5_to_click6"
+            app:destination="@id/click6" />
+    </fragment>
+    <fragment
+        android:id="@+id/click6"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click6"
+        android:label="fragment_click6"
+        tools:layout="@layout/fragment_click6" >
+        <action
+            android:id="@+id/action_click6_to_click7"
+            app:destination="@id/click7" />
+    </fragment>
+    <fragment
+        android:id="@+id/click7"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click7"
+        android:label="fragment_click7"
+        tools:layout="@layout/fragment_click7" >
+        <action
+            android:id="@+id/action_click7_to_click8"
+            app:destination="@id/click8" />
+    </fragment>
+    <fragment
+        android:id="@+id/click8"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click8"
+        android:label="fragment_click8"
+        tools:layout="@layout/fragment_click8" />
+</navigation>

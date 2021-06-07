@@ -23,7 +23,7 @@ class NumbersActivity : AppCompatActivity() ,IOnLetsStudyClickListener ,INumbers
         adapter.notifyDataSetChanged()
     }
 
-    override fun onItemClicked(data: FindObjectDataClass, position: Int) {
+    override fun onItemClicked(data: LetsStudyExampleItem, position: Int) {
         //Her bir iteme tıklandığında ses çıkartma işlemi burada olacak.
         /*when(position){
             0->

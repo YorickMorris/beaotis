@@ -1,5 +1,6 @@
 package com.ebookfrenzy.beaotis.letsstudy
 
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
@@ -9,6 +10,7 @@ import com.ebookfrenzy.beaotis.RecyclerViewAdapter
 import com.ebookfrenzy.beaotis.findingobjects.FindObjectDataClass
 
 class AlfabeActivity : AppCompatActivity(),IOnLetsStudyClickListener,IAlfabeGenerator {
+    private var mPlayer: MediaPlayer? = null
     private lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,11 +26,15 @@ class AlfabeActivity : AppCompatActivity(),IOnLetsStudyClickListener,IAlfabeGene
         adapter.notifyDataSetChanged()
     }
 
-    override fun onItemClicked(data: FindObjectDataClass, position: Int) {
+    override fun onItemClicked(data: LetsStudyExampleItem, position: Int) {
         //Her bir iteme tıklandığında ses çıkartma işlemi burada olacak.
-        /*when(position){
-            0->
-            1->
+        when(position){
+            0-> {
+                mPlayer=MediaPlayer.create(this, R.raw.armuttelaffuz)
+                mPlayer?.start()
+            }
+
+            /*1->
             2->
             3->
             4->
@@ -55,7 +61,7 @@ class AlfabeActivity : AppCompatActivity(),IOnLetsStudyClickListener,IAlfabeGene
             25->
             26->
             27->
-            28->
-        }*/
+            28->*/
+        }
     }
 }

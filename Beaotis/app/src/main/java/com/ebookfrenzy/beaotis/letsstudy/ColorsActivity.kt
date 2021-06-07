@@ -13,7 +13,7 @@ class ColorsActivity : AppCompatActivity() ,IOnLetsStudyClickListener,IColorsGen
         setContentView(R.layout.activity_colors)
     }
 
-    override fun onItemClicked(data: FindObjectDataClass, position: Int) {
+    override fun onItemClicked(data: LetsStudyExampleItem, position: Int) {
         TODO("Not yet implemented")
     }
 }
