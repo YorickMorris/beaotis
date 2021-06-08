@@ -17,7 +17,7 @@ class SplashFragment3 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mPlayer=MediaPlayer.create(activity, R.raw.ananas)
+        mPlayer=MediaPlayer.create(activity, R.raw.ananastelaffuz)
         mPlayer?.start()
         Handler().postDelayed({
 

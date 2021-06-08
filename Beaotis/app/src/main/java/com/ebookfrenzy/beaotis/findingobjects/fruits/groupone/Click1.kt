@@ -34,7 +34,7 @@ class Click1 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mPlayer=MediaPlayer.create(activity, R.raw.elmatelaffuz)
+        mPlayer=MediaPlayer.create(activity, R.raw.elma)
         mPlayer?.start()
 
 

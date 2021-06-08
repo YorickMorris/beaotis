@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import com.ebookfrenzy.beaotis.R
 import kotlinx.android.synthetic.main.fragment_click8.view.*
 
@@ -17,11 +18,11 @@ class Click8 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mPlayer= MediaPlayer.create(activity, R.raw.ananastelaffuz)
+        mPlayer= MediaPlayer.create(activity, R.raw.ananas)
         mPlayer?.start()
         val view= inflater.inflate(R.layout.fragment_click8, container, false)
-        view.ananasTextView4.setOnClickListener{
-
+        view.imageViewFruitsAnanas3.setOnClickListener{
+            findNavController().navigate(R.id.action_click8_to_fruitsActivity)
         }
         return view
     }

@@ -32,7 +32,7 @@ class SplashFragment1 : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        mPlayer=MediaPlayer.create(activity, R.raw.elma)
+        mPlayer=MediaPlayer.create(activity, R.raw.elmatelaffuz)
         mPlayer?.start()
 
 

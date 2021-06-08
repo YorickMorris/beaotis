@@ -17,7 +17,7 @@ class Click7 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mPlayer=MediaPlayer.create(activity, R.raw.armuttelaffuz)
+        mPlayer=MediaPlayer.create(activity, R.raw.armut)
         mPlayer?.start()
         // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_click7, container, false)

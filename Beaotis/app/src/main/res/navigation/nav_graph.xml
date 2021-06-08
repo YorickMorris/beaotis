@@ -9,7 +9,7 @@
         android:id="@+id/mainActivity"
         android:name="com.ebookfrenzy.beaotis.MainActivity"
         android:label="activity_main"
-        tools:layout="@layout/sign_in" >
+        tools:layout="@layout/activity_main" >
         <action
             android:id="@+id/action_mainActivity_to_aba"
             app:destination="@id/aba" />
@@ -86,7 +86,9 @@
         android:id="@+id/findingObjects"
         android:name="com.ebookfrenzy.beaotis.findingobjects.FindingObjects"
         android:label="activity_finding_objects"
-        tools:layout="@layout/activity_finding_objects" />
+        tools:layout="@layout/activity_finding_objects"
+        />
+    <include app:graph="@navigation/nav_findingobjects"/>
     <activity
         android:id="@+id/letsStudyActivity"
         android:name="com.ebookfrenzy.beaotis.letsstudy.LetsStudyActivity"
@@ -122,20 +124,6 @@
         android:name="com.ebookfrenzy.beaotis.story.Story"
         android:label="activity_story"
         tools:layout="@layout/activity_story" />
-    <activity
-        android:id="@+id/contactUs"
-        android:name="com.ebookfrenzy.beaotis.ContactUs"
-        android:label="contact_us"
-        tools:layout="@layout/contact_us" />
-    <activity
-        android:id="@+id/parentActivity"
-        android:name="com.ebookfrenzy.beaotis.parent.ParentActivity"
-        android:label="activity_parent"
-        tools:layout="@layout/activity_parent" >
-        <action
-            android:id="@+id/action_parentActivity_to_contactUs"
-            app:destination="@id/contactUs" />
-    </activity>
     <fragment
         android:id="@+id/signInDialogFragment"
         android:name="com.ebookfrenzy.beaotis.SignInDialogFragment"
@@ -145,7 +133,24 @@
             app:destination="@id/signUpActivity" />
         <action
             android:id="@+id/action_signInDialogFragment_to_parentActivity"
-            app:destination="@id/parentActivity" />
+            app:destination="@id/navigation" />
     </fragment>
+    <navigation android:id="@+id/navigation"
+        app:startDestination="@id/parentActivity">
+        <activity
+            android:id="@+id/parentActivity"
+            android:name="com.ebookfrenzy.beaotis.parent.ParentActivity"
+            android:label="activity_parent"
+            tools:layout="@layout/activity_parent">
+            <action
+                android:id="@+id/action_parentActivity_to_contactUs"
+                app:destination="@id/contactUs" />
+        </activity>
+        <activity
+            android:id="@+id/contactUs"
+            android:name="com.ebookfrenzy.beaotis.ContactUs"
+            android:label="contact_us"
+            tools:layout="@layout/contact_us" />
+    </navigation>
 
 </navigation>

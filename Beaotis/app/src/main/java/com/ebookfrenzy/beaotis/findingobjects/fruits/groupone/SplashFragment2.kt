@@ -17,7 +17,7 @@ class SplashFragment2 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mPlayer=MediaPlayer.create(activity, R.raw.armut)
+        mPlayer=MediaPlayer.create(activity, R.raw.armuttelaffuz)
         mPlayer?.start()
 
         Handler().postDelayed({
