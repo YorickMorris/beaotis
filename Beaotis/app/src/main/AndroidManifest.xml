@@ -11,11 +11,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".findingobjects.fruits.groupone.GroupOne"></activity>
-        <activity android:name=".findingobjects.furnitures.FurnituresActivity" />
-        <activity android:name=".findingobjects.fruits.FruitsActivity" />
-        <activity android:name=".findingobjects.vegetables.VegetablesActivity" />
-        <activity android:name=".findingobjects.vehicles.VehiclesActivity" />
+        <activity android:name=".findingobjects.fruits.groupone.GroupOne"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".findingobjects.furnitures.FurnituresActivity"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".findingobjects.fruits.FruitsActivity"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".findingobjects.vegetables.VegetablesActivity"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".findingobjects.vehicles.VehiclesActivity"
+            android:screenOrientation="landscape"/>
         <activity
             android:name=".letsstudy.PracticesActivity"
             android:screenOrientation="landscape" />

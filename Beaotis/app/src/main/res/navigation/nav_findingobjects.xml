@@ -100,14 +100,22 @@
         android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click8"
         android:label="fragment_click8"
         tools:layout="@layout/fragment_click8" >
-
         <action
-            android:id="@+id/action_click8_to_fruitsActivity"
-            app:destination="@id/fruitsActivity" />
+            android:id="@+id/action_click8_to_splashFragment4"
+            app:destination="@id/splashFragment4" />
     </fragment>
     <activity
         android:id="@+id/fruitsActivity"
         android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.FruitsActivity"
         android:label="activity_fruits"
         tools:layout="@layout/activity_fruits" />
+    <fragment
+        android:id="@+id/splashFragment4"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.SplashFragment4"
+        android:label="fragment_splash4"
+        tools:layout="@layout/fragment_splash4" >
+        <action
+            android:id="@+id/action_splashFragment4_to_fruitsActivity"
+            app:destination="@id/fruitsActivity" />
+    </fragment>
 </navigation>

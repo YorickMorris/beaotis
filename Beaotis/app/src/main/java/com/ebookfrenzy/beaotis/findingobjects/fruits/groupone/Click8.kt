@@ -22,7 +22,8 @@ class Click8 : Fragment() {
         mPlayer?.start()
         val view= inflater.inflate(R.layout.fragment_click8, container, false)
         view.imageViewFruitsAnanas3.setOnClickListener{
-            findNavController().navigate(R.id.action_click8_to_fruitsActivity)
+            findNavController().navigate(R.id.action_click8_to_splashFragment4)
+
         }
         return view
     }
