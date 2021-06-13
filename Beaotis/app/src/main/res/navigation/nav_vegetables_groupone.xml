@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_vegetables_groupone"
+    app:startDestination="@id/vegetablesSplash11">
+
+    <fragment
+        android:id="@+id/vegetablesSplash11"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.VegetablesSplash11"
+        android:label="fragment_vegetables_splash11"
+        tools:layout="@layout/fragment_vegetables_splash11" >
+        <action
+            android:id="@+id/action_vegetablesSplash11_to_vegetablesClick11"
+            app:destination="@id/vegetablesClick11" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegetablesClick11"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.VegetablesClick11"
+        android:label="fragment_vegetables_click11"
+        tools:layout="@layout/fragment_vegetables_click11" >
+        <action
+            android:id="@+id/action_vegetablesClick11_to_vegetablesSplash12"
+            app:destination="@id/vegetablesSplash12" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegetablesSplash12"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.VegetablesSplash12"
+        android:label="fragment_vegetables_splash12"
+        tools:layout="@layout/fragment_vegetables_splash12" >
+        <action
+            android:id="@+id/action_vegetablesSplash12_to_vegetablesClick12"
+            app:destination="@id/vegetablesClick12" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegetablesClick12"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.VegetablesClick12"
+        android:label="fragment_vegetables_click12"
+        tools:layout="@layout/fragment_vegetables_click12" >
+        <action
+            android:id="@+id/action_vegetablesClick12_to_vegetablesClick13"
+            app:destination="@id/vegetablesClick13" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegetablesClick13"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.VegetablesClick13"
+        android:label="fragment_vegetables_click13"
+        tools:layout="@layout/fragment_vegetables_click13" >
+        <action
+            android:id="@+id/action_vegetablesClick13_to_vegetablesClick14"
+            app:destination="@id/vegetablesClick14" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegetablesClick14"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.VegetablesClick14"
+        android:label="fragment_vegetables_click14"
+        tools:layout="@layout/fragment_vegetables_click14" >
+        <action
+            android:id="@+id/action_vegetablesClick14_to_vegetablesSplash13"
+            app:destination="@id/vegetablesSplash13" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegetablesSplash13"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.VegetablesSplash13"
+        android:label="fragment_vegetables_splash13"
+        tools:layout="@layout/fragment_vegetables_splash13" >
+        <action
+            android:id="@+id/action_vegetablesSplash13_to_vegetablesClick15"
+            app:destination="@id/vegetablesClick15" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegetablesClick15"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.VegetablesClick15"
+        android:label="fragment_vegetables_click15"
+        tools:layout="@layout/fragment_vegetables_click15" >
+        <action
+            android:id="@+id/action_vegetablesClick15_to_vegetablesClick16"
+            app:destination="@id/vegetablesClick16" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegetablesClick16"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.VegetablesClick16"
+        android:label="fragment_vegetables_click16"
+        tools:layout="@layout/fragment_vegetables_click16" >
+        <action
+            android:id="@+id/action_vegetablesClick16_to_vegetablesClick17"
+            app:destination="@id/vegetablesClick17" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegetablesClick17"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.VegetablesClick17"
+        android:label="fragment_vegetables_click17"
+        tools:layout="@layout/fragment_vegetables_click17" >
+        <action
+            android:id="@+id/action_vegetablesClick17_to_vegetablesClick18"
+            app:destination="@id/vegetablesClick18" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegetablesClick18"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.VegetablesClick18"
+        android:label="fragment_vegetables_click18"
+        tools:layout="@layout/fragment_vegetables_click18" >
+        <action
+            android:id="@+id/action_vegetablesClick18_to_vegetablesSplash14"
+            app:destination="@id/vegetablesSplash14" />
+    </fragment>
+    <fragment
+        android:id="@+id/vegetablesSplash14"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.VegetablesSplash14"
+        android:label="fragment_vegetables_splash14"
+        tools:layout="@layout/fragment_vegetables_splash14" >
+        <action
+            android:id="@+id/action_vegetablesSplash14_to_vegetablesActivity"
+            app:destination="@id/vegetablesActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/vegetablesActivity"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.VegetablesActivity"
+        android:label="activity_vegetables"
+        tools:layout="@layout/activity_vegetables" />
+</navigation>

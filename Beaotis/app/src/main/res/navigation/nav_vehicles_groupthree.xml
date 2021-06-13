@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_vehicles_groupthree"
+    app:startDestination="@id/vehiclesSplash31">
+
+    <fragment
+        android:id="@+id/vehiclesSplash31"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.VehiclesSplash31"
+        android:label="fragment_vehicles_splash31"
+        tools:layout="@layout/fragment_vehicles_splash31" >
+        <action
+            android:id="@+id/action_vehiclesSplash31_to_vehiclesClick31"
+            app:destination="@id/vehiclesClick31" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehiclesClick31"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.VehiclesClick31"
+        android:label="fragment_vehicles_click31"
+        tools:layout="@layout/fragment_vehicles_click31" >
+        <action
+            android:id="@+id/action_vehiclesClick31_to_vehiclesSplash32"
+            app:destination="@id/vehiclesSplash32" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehiclesSplash32"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.VehiclesSplash32"
+        android:label="fragment_vehicles_splash32"
+        tools:layout="@layout/fragment_vehicles_splash32" >
+        <action
+            android:id="@+id/action_vehiclesSplash32_to_vehiclesClick32"
+            app:destination="@id/vehiclesClick32" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehiclesClick32"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.VehiclesClick32"
+        android:label="fragment_vehicles_click32"
+        tools:layout="@layout/fragment_vehicles_click32" >
+        <action
+            android:id="@+id/action_vehiclesClick32_to_vehiclesClick33"
+            app:destination="@id/vehiclesClick33" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehiclesClick33"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.VehiclesClick33"
+        android:label="fragment_vehicles_click33"
+        tools:layout="@layout/fragment_vehicles_click33" >
+        <action
+            android:id="@+id/action_vehiclesClick33_to_vehiclesClick34"
+            app:destination="@id/vehiclesClick34" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehiclesClick34"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.VehiclesClick34"
+        android:label="fragment_vehicles_click34"
+        tools:layout="@layout/fragment_vehicles_click34" >
+        <action
+            android:id="@+id/action_vehiclesClick34_to_vehiclesSplash33"
+            app:destination="@id/vehiclesSplash33" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehiclesSplash33"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.VehiclesSplash33"
+        android:label="fragment_vehicles_splash33"
+        tools:layout="@layout/fragment_vehicles_splash33" >
+        <action
+            android:id="@+id/action_vehiclesSplash33_to_vehiclesClick35"
+            app:destination="@id/vehiclesClick35" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehiclesClick35"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.VehiclesClick35"
+        android:label="fragment_vehicles_click35"
+        tools:layout="@layout/fragment_vehicles_click35" >
+        <action
+            android:id="@+id/action_vehiclesClick35_to_vehiclesClick36"
+            app:destination="@id/vehiclesClick36" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehiclesClick36"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.VehiclesClick36"
+        android:label="fragment_vehicles_click36"
+        tools:layout="@layout/fragment_vehicles_click36" >
+        <action
+            android:id="@+id/action_vehiclesClick36_to_vehiclesClick37"
+            app:destination="@id/vehiclesClick37" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehiclesClick37"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.VehiclesClick37"
+        android:label="fragment_vehicles_click37"
+        tools:layout="@layout/fragment_vehicles_click37" >
+        <action
+            android:id="@+id/action_vehiclesClick37_to_vehiclesClick38"
+            app:destination="@id/vehiclesClick38" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehiclesClick38"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.VehiclesClick38"
+        android:label="fragment_vehicles_click38"
+        tools:layout="@layout/fragment_vehicles_click38" >
+        <action
+            android:id="@+id/action_vehiclesClick38_to_vehiclesSplash34"
+            app:destination="@id/vehiclesSplash34" />
+    </fragment>
+    <fragment
+        android:id="@+id/vehiclesSplash34"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.VehiclesSplash34"
+        android:label="fragment_vehicles_splash34"
+        tools:layout="@layout/fragment_vehicles_splash34" >
+        <action
+            android:id="@+id/action_vehiclesSplash34_to_vehiclesActivity2"
+            app:destination="@id/vehiclesActivity2" />
+    </fragment>
+    <activity
+        android:id="@+id/vehiclesActivity2"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.VehiclesActivity"
+        android:label="activity_vehicles"
+        tools:layout="@layout/activity_vehicles" />
+</navigation>

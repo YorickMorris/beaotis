@@ -10,6 +10,8 @@ import com.ebookfrenzy.beaotis.findingobjects.SubObjectDataClass
 import com.ebookfrenzy.beaotis.findingobjects.SubObjectsClickListener
 import com.ebookfrenzy.beaotis.findingobjects.SubRecyclerView
 import com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.GroupOne
+import com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.GroupThree
+import com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.GroupTwo
 
 class FruitsActivity : AppCompatActivity(),IFruitsGenerator,SubObjectsClickListener {
     private lateinit var intentToMainActivity: Intent
@@ -30,6 +32,8 @@ class FruitsActivity : AppCompatActivity(),IFruitsGenerator,SubObjectsClickListe
         when(position)
         {
             0->intent = Intent(this, GroupOne::class.java)
+            1->intent = Intent(this, GroupTwo::class.java)
+            2->intent = Intent(this, GroupThree::class.java)
         }
         startActivity(intent)
     }

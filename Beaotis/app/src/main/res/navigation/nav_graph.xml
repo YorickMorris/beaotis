@@ -89,6 +89,17 @@
         tools:layout="@layout/activity_finding_objects"
         />
     <include app:graph="@navigation/nav_findingobjects"/>
+    <include app:graph="@navigation/nav_fruit_groupthree"/>
+    <include app:graph="@navigation/nav_fruit_grouptwo"/>
+    <include app:graph="@navigation/nav_furnitures_groupone"/>
+    <include app:graph="@navigation/nav_furnitures_grouptwo"/>
+    <include app:graph="@navigation/nav_furnitures_groupthree"/>
+    <include app:graph="@navigation/nav_vegetables_groupone"/>
+    <include app:graph="@navigation/nav_vegetables_grouptwo"/>
+    <include app:graph="@navigation/nav_vegetables_groupthree"/>
+    <include app:graph="@navigation/nav_vehicles_groupone"/>
+    <include app:graph="@navigation/nav_vehicles_grouptwo"/>
+    <include app:graph="@navigation/nav_vehicles_groupthree"/>
     <activity
         android:id="@+id/letsStudyActivity"
         android:name="com.ebookfrenzy.beaotis.letsstudy.LetsStudyActivity"

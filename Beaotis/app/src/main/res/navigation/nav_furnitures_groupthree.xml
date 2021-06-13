@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_furnitures_groupthree"
+    app:startDestination="@id/furnituresSplash31">
+
+    <fragment
+        android:id="@+id/furnituresSplash31"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.FurnituresSplash31"
+        android:label="fragment_furnitures_splash31"
+        tools:layout="@layout/fragment_furnitures_splash31" >
+        <action
+            android:id="@+id/action_furnituresSplash31_to_furnituresClick31"
+            app:destination="@id/furnituresClick31" />
+    </fragment>
+    <fragment
+        android:id="@+id/furnituresClick31"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.FurnituresClick31"
+        android:label="fragment_furnitures_click31"
+        tools:layout="@layout/fragment_furnitures_click31" >
+        <action
+            android:id="@+id/action_furnituresClick31_to_furnituresSplash32"
+            app:destination="@id/furnituresSplash32" />
+    </fragment>
+    <fragment
+        android:id="@+id/furnituresSplash32"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.FurnituresSplash32"
+        android:label="fragment_furnitures_splash32"
+        tools:layout="@layout/fragment_furnitures_splash32" >
+        <action
+            android:id="@+id/action_furnituresSplash32_to_furnituresClick32"
+            app:destination="@id/furnituresClick32" />
+    </fragment>
+    <fragment
+        android:id="@+id/furnituresClick32"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.FurnituresClick32"
+        android:label="fragment_furnitures_click32"
+        tools:layout="@layout/fragment_furnitures_click32" >
+        <action
+            android:id="@+id/action_furnituresClick32_to_furnituresClick33"
+            app:destination="@id/furnituresClick33" />
+    </fragment>
+    <fragment
+        android:id="@+id/furnituresClick33"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.FurnituresClick33"
+        android:label="fragment_furnitures_click33"
+        tools:layout="@layout/fragment_furnitures_click33" >
+        <action
+            android:id="@+id/action_furnituresClick33_to_furnituresClick34"
+            app:destination="@id/furnituresClick34" />
+    </fragment>
+    <fragment
+        android:id="@+id/furnituresClick34"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.FurnituresClick34"
+        android:label="fragment_furnitures_click34"
+        tools:layout="@layout/fragment_furnitures_click34" >
+        <action
+            android:id="@+id/action_furnituresClick34_to_furnituresSplash33"
+            app:destination="@id/furnituresSplash33" />
+    </fragment>
+    <fragment
+        android:id="@+id/furnituresSplash33"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.FurnituresSplash33"
+        android:label="fragment_furnitures_splash33"
+        tools:layout="@layout/fragment_furnitures_splash33" >
+        <action
+            android:id="@+id/action_furnituresSplash33_to_furnituresClick35"
+            app:destination="@id/furnituresClick35" />
+    </fragment>
+    <fragment
+        android:id="@+id/furnituresClick35"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.FurnituresClick35"
+        android:label="fragment_furnitures_click35"
+        tools:layout="@layout/fragment_furnitures_click35" >
+        <action
+            android:id="@+id/action_furnituresClick35_to_furnituresClick36"
+            app:destination="@id/furnituresClick36" />
+    </fragment>
+    <fragment
+        android:id="@+id/furnituresClick36"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.FurnituresClick36"
+        android:label="fragment_furnitures_click36"
+        tools:layout="@layout/fragment_furnitures_click36" >
+        <action
+            android:id="@+id/action_furnituresClick36_to_furnituresClick37"
+            app:destination="@id/furnituresClick37" />
+    </fragment>
+    <fragment
+        android:id="@+id/furnituresClick37"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.FurnituresClick37"
+        android:label="fragment_furnitures_click37"
+        tools:layout="@layout/fragment_furnitures_click37" >
+        <action
+            android:id="@+id/action_furnituresClick37_to_furnituresClick38"
+            app:destination="@id/furnituresClick38" />
+    </fragment>
+    <fragment
+        android:id="@+id/furnituresClick38"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.FurnituresClick38"
+        android:label="fragment_furnitures_click38"
+        tools:layout="@layout/fragment_furnitures_click38" >
+        <action
+            android:id="@+id/action_furnituresClick38_to_furnituresSplash34"
+            app:destination="@id/furnituresSplash34" />
+    </fragment>
+    <fragment
+        android:id="@+id/furnituresSplash34"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.FurnituresSplash34"
+        android:label="fragment_furnitures_splash34"
+        tools:layout="@layout/fragment_furnitures_splash34" >
+        <action
+            android:id="@+id/action_furnituresSplash34_to_furnituresActivity4"
+            app:destination="@id/furnituresActivity4" />
+    </fragment>
+    <activity
+        android:id="@+id/furnituresActivity4"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.FurnituresActivity"
+        android:label="activity_furnitures"
+        tools:layout="@layout/activity_furnitures" />
+</navigation>

@@ -10,6 +10,12 @@ import com.ebookfrenzy.beaotis.findingobjects.SubObjectDataClass
 import com.ebookfrenzy.beaotis.findingobjects.SubObjectsClickListener
 import com.ebookfrenzy.beaotis.findingobjects.SubRecyclerView
 import com.ebookfrenzy.beaotis.findingobjects.fruits.IFruitsGenerator
+import com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.GroupOne
+import com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.GroupThree
+import com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.GroupTwo
+import com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.GroupOneV
+import com.ebookfrenzy.beaotis.findingobjects.vegetables.groupthree.GroupThreeV
+import com.ebookfrenzy.beaotis.findingobjects.vegetables.grouptwo.GroupTwoV
 
 class VegetablesActivity : AppCompatActivity() , IVegetablesGenerator, SubObjectsClickListener {
     private lateinit var intentToMainActivity: Intent
@@ -27,6 +33,13 @@ class VegetablesActivity : AppCompatActivity() , IVegetablesGenerator, SubObject
     }
 
     override fun onItemClicked(data: SubObjectDataClass, position: Int) {
+        when(position)
+        {
+            0->intent = Intent(this, GroupOneV::class.java)
+            1->intent = Intent(this, GroupTwoV::class.java)
+            2->intent = Intent(this, GroupThreeV::class.java)
+        }
+        startActivity(intent)
 
     }
 }

@@ -11,16 +11,32 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".findingobjects.fruits.groupone.GroupOne"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".findingobjects.furnitures.FurnituresActivity"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".findingobjects.fruits.FruitsActivity"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".findingobjects.vegetables.VegetablesActivity"
-            android:screenOrientation="landscape"/>
-        <activity android:name=".findingobjects.vehicles.VehiclesActivity"
-            android:screenOrientation="landscape"/>
+        <activity android:name=".findingobjects.vehicles.groupthree.GroupThreeVe"></activity>
+        <activity android:name=".findingobjects.vehicles.grouptwo.GroupTwoVe" />
+        <activity android:name=".findingobjects.vehicles.groupone.GroupOneVe" />
+        <activity android:name=".findingobjects.vegetables.groupthree.GroupThreeV" />
+        <activity android:name=".findingobjects.vegetables.grouptwo.GroupTwoV" />
+        <activity android:name=".findingobjects.vegetables.groupone.GroupOneV" />
+        <activity android:name=".findingobjects.furnitures.groupthree.GroupThreeF" />
+        <activity android:name=".findingobjects.furnitures.grouptwo.GroupTwoF" />
+        <activity android:name=".findingobjects.furnitures.groupone.GroupOneF" />
+        <activity android:name=".findingobjects.fruits.groupthree.GroupThree" />
+        <activity android:name=".findingobjects.fruits.grouptwo.GroupTwo" />
+        <activity
+            android:name=".findingobjects.fruits.groupone.GroupOne"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".findingobjects.furnitures.FurnituresActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".findingobjects.fruits.FruitsActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".findingobjects.vegetables.VegetablesActivity"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name=".findingobjects.vehicles.VehiclesActivity"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".letsstudy.PracticesActivity"
             android:screenOrientation="landscape" />
