@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".findingobjects.FindingObjects">
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constFindingObjects"
         android:layout_width="match_parent"
@@ -12,7 +13,8 @@
         android:background="#4FBA6F"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/recyclerView1">
     <ImageView
         android:contentDescription="@string/geri"
         android:id="@+id/left_arrow5"
@@ -53,6 +55,7 @@
         app:layout_constraintTop_toBottomOf="@id/constFindingObjects"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:itemCount="2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

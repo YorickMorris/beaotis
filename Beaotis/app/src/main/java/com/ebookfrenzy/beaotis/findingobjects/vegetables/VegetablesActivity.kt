@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ebookfrenzy.beaotis.R
+import com.ebookfrenzy.beaotis.findingobjects.FindingObjects
 import com.ebookfrenzy.beaotis.findingobjects.SubObjectDataClass
 import com.ebookfrenzy.beaotis.findingobjects.SubObjectsClickListener
 import com.ebookfrenzy.beaotis.findingobjects.SubRecyclerView
@@ -18,12 +19,12 @@ import com.ebookfrenzy.beaotis.findingobjects.vegetables.groupthree.GroupThreeV
 import com.ebookfrenzy.beaotis.findingobjects.vegetables.grouptwo.GroupTwoV
 
 class VegetablesActivity : AppCompatActivity() , IVegetablesGenerator, SubObjectsClickListener {
-    private lateinit var intentToMainActivity: Intent
+    private lateinit var intentToFindingObjectsActivity: Intent
     private lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vegetables)
-
+        intentToFindingObjectsActivity=Intent(this, FindingObjects::class.java)
         recyclerView = findViewById(R.id.vegetablesRecyclerView)
         recyclerView.layoutManager = GridLayoutManager(this, 3)
         val adapter = SubRecyclerView(vegetables_generator(), this)
@@ -41,5 +42,9 @@ class VegetablesActivity : AppCompatActivity() , IVegetablesGenerator, SubObject
         }
         startActivity(intent)
 
+    }
+    override fun onBackPressed() {
+        startActivity(intentToFindingObjectsActivity)
+        super.onBackPressed()
     }
 }

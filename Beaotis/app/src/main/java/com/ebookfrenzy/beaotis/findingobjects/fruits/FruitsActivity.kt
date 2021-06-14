@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.ebookfrenzy.beaotis.MainActivity
 import com.ebookfrenzy.beaotis.R
+import com.ebookfrenzy.beaotis.findingobjects.FindingObjects
 import com.ebookfrenzy.beaotis.findingobjects.SubObjectDataClass
 import com.ebookfrenzy.beaotis.findingobjects.SubObjectsClickListener
 import com.ebookfrenzy.beaotis.findingobjects.SubRecyclerView
@@ -14,12 +16,12 @@ import com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.GroupThree
 import com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.GroupTwo
 
 class FruitsActivity : AppCompatActivity(),IFruitsGenerator,SubObjectsClickListener {
-    private lateinit var intentToMainActivity: Intent
+    private lateinit var intentToFindingObjectsActivity: Intent
     private lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_fruits)
-
+        intentToFindingObjectsActivity=Intent(this, FindingObjects::class.java)
         recyclerView = findViewById(R.id.fruitsRecyclerView)
         recyclerView.layoutManager = GridLayoutManager(this, 3)
         val adapter =SubRecyclerView(fruit_generator(), this)
@@ -36,5 +38,9 @@ class FruitsActivity : AppCompatActivity(),IFruitsGenerator,SubObjectsClickListe
             2->intent = Intent(this, GroupThree::class.java)
         }
         startActivity(intent)
+    }
+    override fun onBackPressed() {
+        startActivity(intentToFindingObjectsActivity)
+        super.onBackPressed()
     }
 }

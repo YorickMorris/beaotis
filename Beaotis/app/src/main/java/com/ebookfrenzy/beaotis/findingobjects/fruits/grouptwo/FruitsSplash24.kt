@@ -24,7 +24,7 @@ class FruitsSplash24 : Fragment() {
 
         Handler().postDelayed({
 
-            findNavController().navigate(R.id.action_fruitsSplash24_to_furnituresActivity2)
+            findNavController().navigate(R.id.action_fruitsSplash24_to_fruitsActivity3)
 
 
         }, 3000)

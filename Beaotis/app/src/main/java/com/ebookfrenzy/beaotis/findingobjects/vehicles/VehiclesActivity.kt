@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ebookfrenzy.beaotis.R
+import com.ebookfrenzy.beaotis.findingobjects.FindingObjects
 import com.ebookfrenzy.beaotis.findingobjects.SubObjectDataClass
 import com.ebookfrenzy.beaotis.findingobjects.SubObjectsClickListener
 import com.ebookfrenzy.beaotis.findingobjects.SubRecyclerView
@@ -18,12 +19,12 @@ import com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.GroupThreeVe
 import com.ebookfrenzy.beaotis.findingobjects.vehicles.grouptwo.GroupTwoVe
 
 class VehiclesActivity : AppCompatActivity() , IVehiclesGenerator, SubObjectsClickListener {
-    private lateinit var intentToMainActivity: Intent
+    private lateinit var intentToFindingObjectsActivity: Intent
     private lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vehicles)
-
+        intentToFindingObjectsActivity=Intent(this, FindingObjects::class.java)
         recyclerView = findViewById(R.id.vehiclesRecyclerView)
         recyclerView.layoutManager = GridLayoutManager(this, 3)
         val adapter = SubRecyclerView(vehicles_generator(), this)
@@ -41,5 +42,9 @@ class VehiclesActivity : AppCompatActivity() , IVehiclesGenerator, SubObjectsCli
         }
         startActivity(intent)
 
+    }
+    override fun onBackPressed() {
+        startActivity(intentToFindingObjectsActivity)
+        super.onBackPressed()
     }
 }

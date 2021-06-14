@@ -110,11 +110,11 @@
         android:label="fragment_furnitures_splash34"
         tools:layout="@layout/fragment_furnitures_splash34" >
         <action
-            android:id="@+id/action_furnituresSplash34_to_furnituresActivity4"
-            app:destination="@id/furnituresActivity4" />
+            android:id="@+id/action_furnituresSplash34_to_furnituresActivity2"
+            app:destination="@id/furnituresActivity2" />
     </fragment>
     <activity
-        android:id="@+id/furnituresActivity4"
+        android:id="@+id/furnituresActivity2"
         android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.FurnituresActivity"
         android:label="activity_furnitures"
         tools:layout="@layout/activity_furnitures" />

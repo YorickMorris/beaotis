@@ -110,12 +110,12 @@
         android:label="fragment_fruits_splash34"
         tools:layout="@layout/fragment_fruits_splash34" >
         <action
-            android:id="@+id/action_fruitsSplash34_to_furnituresActivity"
-            app:destination="@id/furnituresActivity" />
+            android:id="@+id/action_fruitsSplash34_to_fruitsActivity2"
+            app:destination="@id/fruitsActivity2" />
     </fragment>
     <activity
-        android:id="@+id/furnituresActivity"
-        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.FurnituresActivity"
-        android:label="activity_furnitures"
-        tools:layout="@layout/activity_furnitures" />
+        android:id="@+id/fruitsActivity2"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.FruitsActivity"
+        android:label="activity_fruits"
+        tools:layout="@layout/activity_fruits" />
 </navigation>
