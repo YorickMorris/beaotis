@@ -6,9 +6,9 @@ import com.ebookfrenzy.beaotis.findingobjects.SubObjectDataClass
 interface IVehiclesGenerator {
     fun vehicles_generator():List<SubObjectDataClass>{
         val list=ArrayList<SubObjectDataClass>()
-        list.add(SubObjectDataClass(R.drawable.doorkey1))
-        list.add(SubObjectDataClass(R.drawable.doorkey1))
-        list.add(SubObjectDataClass(R.drawable.doorkey1))
+        list.add(SubObjectDataClass(R.drawable.vehiclesgroup1))
+        list.add(SubObjectDataClass(R.drawable.vehiclesgroup2))
+        list.add(SubObjectDataClass(R.drawable.vehiclesgroup3))
         return list
     }
 }
