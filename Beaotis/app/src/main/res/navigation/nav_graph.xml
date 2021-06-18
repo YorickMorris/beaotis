@@ -238,5 +238,25 @@
         android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.grouptwo.GroupTwoVe"
         android:label="activity_group_two_ve"
         tools:layout="@layout/activity_group_two_ve" />
+    <activity
+        android:id="@+id/fruitsActivity4"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.FruitsActivity"
+        android:label="activity_fruits"
+        tools:layout="@layout/activity_fruits" />
+    <activity
+        android:id="@+id/furnituresActivity"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.FurnituresActivity"
+        android:label="activity_furnitures"
+        tools:layout="@layout/activity_furnitures" />
+    <activity
+        android:id="@+id/vegetablesActivity4"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.VegetablesActivity"
+        android:label="activity_vegetables"
+        tools:layout="@layout/activity_vegetables" />
+    <activity
+        android:id="@+id/vehiclesActivity4"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.VehiclesActivity"
+        android:label="activity_vehicles"
+        tools:layout="@layout/activity_vehicles" />
 
 </navigation>
