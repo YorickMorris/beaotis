@@ -17,12 +17,10 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
     val list=mixed_generateList()
     var hataListe = mutableListOf<String>()
     var sayac=0
-    //karışık ve mixed_geneRateList tipinde bir liste oluştur ona göre onclick methodunda çağır.
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_group_mixed)
-
-
 
 
         mPlayer= MediaPlayer.create(this, list[0].soundResource)

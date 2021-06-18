@@ -51,6 +51,5 @@
         android:scrollbars="vertical"
         android:clipToPadding="false"
         tools:itemCount="2"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutLetsStudy2"
         />
 </LinearLayout>

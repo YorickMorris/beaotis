@@ -88,18 +88,33 @@
         android:label="activity_finding_objects"
         tools:layout="@layout/activity_finding_objects"
         />
-    <include app:graph="@navigation/nav_findingobjects"/>
+
+    <include app:graph="@navigation/nav_findingobjects" />
+
     <include app:graph="@navigation/nav_fruit_groupthree"/>
+
     <include app:graph="@navigation/nav_fruit_grouptwo"/>
+
     <include app:graph="@navigation/nav_furnitures_groupone"/>
+
     <include app:graph="@navigation/nav_furnitures_grouptwo"/>
+
     <include app:graph="@navigation/nav_furnitures_groupthree"/>
+
+
     <include app:graph="@navigation/nav_vegetables_groupone"/>
+
     <include app:graph="@navigation/nav_vegetables_grouptwo"/>
+
+
     <include app:graph="@navigation/nav_vegetables_groupthree"/>
+
     <include app:graph="@navigation/nav_vehicles_groupone"/>
+
     <include app:graph="@navigation/nav_vehicles_grouptwo"/>
+
     <include app:graph="@navigation/nav_vehicles_groupthree"/>
+
     <activity
         android:id="@+id/letsStudyActivity"
         android:name="com.ebookfrenzy.beaotis.letsstudy.LetsStudyActivity"
@@ -163,5 +178,65 @@
             android:label="contact_us"
             tools:layout="@layout/contact_us" />
     </navigation>
+    <activity
+        android:id="@+id/groupOne"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.GroupOne"
+        android:label="activity_group_one"
+        tools:layout="@layout/activity_group_one" />
+    <activity
+        android:id="@+id/groupThree"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.GroupThree"
+        android:label="activity_group_three"
+        tools:layout="@layout/activity_group_three" />
+    <activity
+        android:id="@+id/groupTwo"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.GroupTwo"
+        android:label="activity_group_two"
+        tools:layout="@layout/activity_group_two" />
+    <activity
+        android:id="@+id/groupOneF"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupone.GroupOneF"
+        android:label="activity_group_one_f"
+        tools:layout="@layout/activity_group_one_f" />
+    <activity
+        android:id="@+id/groupTwoF"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.grouptwo.GroupTwoF"
+        android:label="activity_group_two_f"
+        tools:layout="@layout/activity_group_two_f" />
+    <activity
+        android:id="@+id/groupThreeF"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.GroupThreeF"
+        android:label="activity_group_three_f"
+        tools:layout="@layout/activity_group_three_f" />
+    <activity
+        android:id="@+id/groupOneV"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.GroupOneV"
+        android:label="activity_group_one_v"
+        tools:layout="@layout/activity_group_one_v" />
+    <activity
+        android:id="@+id/groupTwoV"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.grouptwo.GroupTwoV"
+        android:label="activity_group_two_v"
+        tools:layout="@layout/activity_group_two_v" />
+    <activity
+        android:id="@+id/groupThreeV"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupthree.GroupThreeV"
+        android:label="activity_group_three_v"
+        tools:layout="@layout/activity_group_three_v" />
+    <activity
+        android:id="@+id/groupOneVe"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupone.GroupOneVe"
+        android:label="activity_group_one_ve"
+        tools:layout="@layout/activity_group_one_ve" />
+    <activity
+        android:id="@+id/groupThreeVe"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.GroupThreeVe"
+        android:label="activity_group_three_ve"
+        tools:layout="@layout/activity_group_three_ve" />
+    <activity
+        android:id="@+id/groupTwoVe"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.grouptwo.GroupTwoVe"
+        android:label="activity_group_two_ve"
+        tools:layout="@layout/activity_group_two_ve" />
 
 </navigation>
