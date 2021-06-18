@@ -12,7 +12,6 @@ class SubRecyclerView(private val exampleList: List<SubObjectDataClass>, private
 
     inner class RecyclerViewHolder(itemView:View):RecyclerView.ViewHolder(itemView){
         val imageView1: ImageView = itemView.findViewById(R.id.subFindObject)
-        val innercons1: LinearLayout =itemView.findViewById(R.id.layoutFindingObjects)
     }
 
     override fun onCreateViewHolder(
@@ -28,7 +27,7 @@ class SubRecyclerView(private val exampleList: List<SubObjectDataClass>, private
     override fun onBindViewHolder(holder: SubRecyclerView.RecyclerViewHolder, position: Int) {
         val currentItem = exampleList[position]
         holder.imageView1.setImageResource(currentItem.imageResource1)
-        holder.innercons1.setOnClickListener{
+        holder.imageView1.setOnClickListener{
             IOnItemClickListener.onItemClicked(currentItem,position)
         }
     }

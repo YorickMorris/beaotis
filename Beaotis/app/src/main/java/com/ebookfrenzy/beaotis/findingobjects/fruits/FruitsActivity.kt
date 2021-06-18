@@ -36,8 +36,10 @@ class FruitsActivity : AppCompatActivity(),IFruitsGenerator,SubObjectsClickListe
             0->intent = Intent(this, GroupOne::class.java)
             1->intent = Intent(this, GroupTwo::class.java)
             2->intent = Intent(this, GroupThree::class.java)
+            3->intent = Intent(this, GroupMixed::class.java)
         }
         startActivity(intent)
+        finish()
     }
     override fun onBackPressed() {
         startActivity(intentToFindingObjectsActivity)
