@@ -1,5 +1,6 @@
 package com.ebookfrenzy.beaotis.letsstudy
 
+import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,15 +9,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ebookfrenzy.beaotis.R
 import com.ebookfrenzy.beaotis.RecyclerViewAdapter
 import com.ebookfrenzy.beaotis.findingobjects.FindObjectDataClass
+import com.ebookfrenzy.beaotis.findingobjects.FindingObjects
 
 class AlfabeActivity : AppCompatActivity(),IOnLetsStudyClickListener,IAlfabeGenerator {
     private var mPlayer: MediaPlayer? = null
+    private lateinit var intentToLetsStudyObjectsActivity: Intent
     private lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_alfabe)
 
+        intentToLetsStudyObjectsActivity=Intent(this, LetsStudyActivity::class.java)
         generateList()
+
         recyclerView = findViewById(R.id.alfabeRecyclerView)
         //GridLayoutManager olacak.
         recyclerView.layoutManager = GridLayoutManager(this, 3)
@@ -63,5 +68,10 @@ class AlfabeActivity : AppCompatActivity(),IOnLetsStudyClickListener,IAlfabeGene
             27->
             28->*/
         }
+    }
+    override fun onBackPressed() {
+        startActivity(intentToLetsStudyObjectsActivity)
+        finish()
+        super.onBackPressed()
     }
 }

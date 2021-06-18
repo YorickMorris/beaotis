@@ -1,5 +1,6 @@
 package com.ebookfrenzy.beaotis.letsstudy
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
@@ -9,10 +10,11 @@ import com.ebookfrenzy.beaotis.findingobjects.FindObjectDataClass
 
 class NumbersActivity : AppCompatActivity() ,IOnLetsStudyClickListener ,INumbersGenerator{
     private lateinit var recyclerView: RecyclerView
+    private lateinit var intentToLetsStudyObjectsActivity: Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_numbers)
-
+        intentToLetsStudyObjectsActivity=Intent(this, LetsStudyActivity::class.java)
         generateList()
         recyclerView = findViewById(R.id.numbersRecyclerView)
         //GridLayoutManager olacak.
@@ -56,5 +58,10 @@ class NumbersActivity : AppCompatActivity() ,IOnLetsStudyClickListener ,INumbers
             27->
             28->
         }*/
+    }
+    override fun onBackPressed() {
+        startActivity(intentToLetsStudyObjectsActivity)
+        finish()
+        super.onBackPressed()
     }
 }
