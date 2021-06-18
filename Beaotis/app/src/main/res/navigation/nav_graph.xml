@@ -87,7 +87,20 @@
         android:name="com.ebookfrenzy.beaotis.findingobjects.FindingObjects"
         android:label="activity_finding_objects"
         tools:layout="@layout/activity_finding_objects"
-        />
+        >
+        <action
+            android:id="@+id/action_findingObjects_to_fruitsActivity4"
+            app:destination="@id/fruitsActivity4" />
+        <action
+            android:id="@+id/action_findingObjects_to_furnituresActivity"
+            app:destination="@id/furnituresActivity" />
+        <action
+            android:id="@+id/action_findingObjects_to_vegetablesActivity4"
+            app:destination="@id/vegetablesActivity4" />
+        <action
+            android:id="@+id/action_findingObjects_to_vehiclesActivity4"
+            app:destination="@id/vehiclesActivity4" />
+    </activity>
 
     <include app:graph="@navigation/nav_findingobjects" />
 
@@ -182,81 +195,169 @@
         android:id="@+id/groupOne"
         android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.GroupOne"
         android:label="activity_group_one"
-        tools:layout="@layout/activity_group_one" />
+        tools:layout="@layout/activity_group_one" >
+        <action
+            android:id="@+id/action_groupOne_to_nav_findingobjects"
+            app:destination="@id/nav_findingobjects" />
+    </activity>
     <activity
         android:id="@+id/groupThree"
         android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.GroupThree"
         android:label="activity_group_three"
-        tools:layout="@layout/activity_group_three" />
+        tools:layout="@layout/activity_group_three" >
+        <action
+            android:id="@+id/action_groupThree_to_nav_fruit_groupthree"
+            app:destination="@id/nav_fruit_groupthree" />
+    </activity>
     <activity
         android:id="@+id/groupTwo"
         android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.GroupTwo"
         android:label="activity_group_two"
-        tools:layout="@layout/activity_group_two" />
+        tools:layout="@layout/activity_group_two" >
+        <action
+            android:id="@+id/action_groupTwo_to_nav_fruit_grouptwo"
+            app:destination="@id/nav_fruit_grouptwo" />
+    </activity>
     <activity
         android:id="@+id/groupOneF"
         android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupone.GroupOneF"
         android:label="activity_group_one_f"
-        tools:layout="@layout/activity_group_one_f" />
+        tools:layout="@layout/activity_group_one_f" >
+        <action
+            android:id="@+id/action_groupOneF_to_nav_furnitures_groupone"
+            app:destination="@id/nav_furnitures_groupone" />
+    </activity>
     <activity
         android:id="@+id/groupTwoF"
         android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.grouptwo.GroupTwoF"
         android:label="activity_group_two_f"
-        tools:layout="@layout/activity_group_two_f" />
+        tools:layout="@layout/activity_group_two_f" >
+        <action
+            android:id="@+id/action_groupTwoF_to_nav_furnitures_grouptwo"
+            app:destination="@id/nav_furnitures_grouptwo" />
+    </activity>
     <activity
         android:id="@+id/groupThreeF"
         android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.groupthree.GroupThreeF"
         android:label="activity_group_three_f"
-        tools:layout="@layout/activity_group_three_f" />
+        tools:layout="@layout/activity_group_three_f" >
+        <action
+            android:id="@+id/action_groupThreeF_to_nav_furnitures_groupthree"
+            app:destination="@id/nav_furnitures_groupthree" />
+    </activity>
     <activity
         android:id="@+id/groupOneV"
         android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupone.GroupOneV"
         android:label="activity_group_one_v"
-        tools:layout="@layout/activity_group_one_v" />
+        tools:layout="@layout/activity_group_one_v" >
+        <action
+            android:id="@+id/action_groupOneV_to_nav_vegetables_groupone"
+            app:destination="@id/nav_vegetables_groupone" />
+    </activity>
     <activity
         android:id="@+id/groupTwoV"
         android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.grouptwo.GroupTwoV"
         android:label="activity_group_two_v"
-        tools:layout="@layout/activity_group_two_v" />
+        tools:layout="@layout/activity_group_two_v" >
+        <action
+            android:id="@+id/action_groupTwoV_to_nav_vegetables_grouptwo"
+            app:destination="@id/nav_vegetables_grouptwo" />
+    </activity>
     <activity
         android:id="@+id/groupThreeV"
         android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.groupthree.GroupThreeV"
         android:label="activity_group_three_v"
-        tools:layout="@layout/activity_group_three_v" />
+        tools:layout="@layout/activity_group_three_v" >
+        <action
+            android:id="@+id/action_groupThreeV_to_nav_vegetables_groupthree"
+            app:destination="@id/nav_vegetables_groupthree" />
+    </activity>
     <activity
         android:id="@+id/groupOneVe"
         android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupone.GroupOneVe"
         android:label="activity_group_one_ve"
-        tools:layout="@layout/activity_group_one_ve" />
+        tools:layout="@layout/activity_group_one_ve" >
+        <action
+            android:id="@+id/action_groupOneVe_to_nav_vehicles_groupone"
+            app:destination="@id/nav_vehicles_groupone" />
+    </activity>
     <activity
         android:id="@+id/groupThreeVe"
         android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.groupthree.GroupThreeVe"
         android:label="activity_group_three_ve"
-        tools:layout="@layout/activity_group_three_ve" />
+        tools:layout="@layout/activity_group_three_ve" >
+        <action
+            android:id="@+id/action_groupThreeVe_to_nav_vehicles_groupthree"
+            app:destination="@id/nav_vehicles_groupthree" />
+    </activity>
     <activity
         android:id="@+id/groupTwoVe"
         android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.grouptwo.GroupTwoVe"
         android:label="activity_group_two_ve"
-        tools:layout="@layout/activity_group_two_ve" />
+        tools:layout="@layout/activity_group_two_ve" >
+        <action
+            android:id="@+id/action_groupTwoVe_to_nav_vehicles_grouptwo"
+            app:destination="@id/nav_vehicles_grouptwo" />
+    </activity>
     <activity
         android:id="@+id/fruitsActivity4"
         android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.FruitsActivity"
         android:label="activity_fruits"
-        tools:layout="@layout/activity_fruits" />
+        tools:layout="@layout/activity_fruits" >
+        <action
+            android:id="@+id/action_fruitsActivity4_to_groupOne"
+            app:destination="@id/groupOne" />
+        <action
+            android:id="@+id/action_fruitsActivity4_to_groupThree"
+            app:destination="@id/groupThree" />
+        <action
+            android:id="@+id/action_fruitsActivity4_to_groupTwo"
+            app:destination="@id/groupTwo" />
+    </activity>
     <activity
         android:id="@+id/furnituresActivity"
         android:name="com.ebookfrenzy.beaotis.findingobjects.furnitures.FurnituresActivity"
         android:label="activity_furnitures"
-        tools:layout="@layout/activity_furnitures" />
+        tools:layout="@layout/activity_furnitures" >
+        <action
+            android:id="@+id/action_furnituresActivity_to_groupOneF"
+            app:destination="@id/groupOneF" />
+        <action
+            android:id="@+id/action_furnituresActivity_to_groupThreeF"
+            app:destination="@id/groupThreeF" />
+        <action
+            android:id="@+id/action_furnituresActivity_to_groupTwoF"
+            app:destination="@id/groupTwoF" />
+    </activity>
     <activity
         android:id="@+id/vegetablesActivity4"
         android:name="com.ebookfrenzy.beaotis.findingobjects.vegetables.VegetablesActivity"
         android:label="activity_vegetables"
-        tools:layout="@layout/activity_vegetables" />
+        tools:layout="@layout/activity_vegetables" >
+        <action
+            android:id="@+id/action_vegetablesActivity4_to_groupOneV"
+            app:destination="@id/groupOneV" />
+        <action
+            android:id="@+id/action_vegetablesActivity4_to_groupThreeV"
+            app:destination="@id/groupThreeV" />
+        <action
+            android:id="@+id/action_vegetablesActivity4_to_groupTwoV"
+            app:destination="@id/groupTwoV" />
+    </activity>
     <activity
         android:id="@+id/vehiclesActivity4"
         android:name="com.ebookfrenzy.beaotis.findingobjects.vehicles.VehiclesActivity"
         android:label="activity_vehicles"
-        tools:layout="@layout/activity_vehicles" />
+        tools:layout="@layout/activity_vehicles" >
+        <action
+            android:id="@+id/action_vehiclesActivity4_to_groupOneVe"
+            app:destination="@id/groupOneVe" />
+        <action
+            android:id="@+id/action_vehiclesActivity4_to_groupThreeVe"
+            app:destination="@id/groupThreeVe" />
+        <action
+            android:id="@+id/action_vehiclesActivity4_to_groupTwoVe"
+            app:destination="@id/groupTwoVe" />
+    </activity>
 
 </navigation>
