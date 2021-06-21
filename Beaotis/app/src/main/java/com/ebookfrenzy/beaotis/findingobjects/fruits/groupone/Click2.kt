@@ -25,7 +25,8 @@ class Click2 : Fragment() {
 
         view.imageViewFruitsArmut.setOnClickListener {
             findNavController().navigate(R.id.action_click2_to_click3)
-
+            mPlayer?.stop()
+            mPlayer?.release()
         }
         return view
     }
@@ -33,8 +34,13 @@ class Click2 : Fragment() {
     override fun onDestroy() {
 
         mPlayer?.stop()
-
+        mPlayer?.release()
         super.onDestroy()
+    }
+    override fun onDetach() {
+        mPlayer?.stop()
+        mPlayer?.release()
+        super.onDetach()
     }
 
 }

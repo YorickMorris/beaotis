@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_splash1" >
         <action
             android:id="@+id/action_splashFragment1_to_click1"
-            app:destination="@id/click1" />
+            app:destination="@+id/click1"
+            app:popUpTo="@+id/click1"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/click1"
@@ -21,7 +23,9 @@
         tools:layout="@layout/fragment_click1" >
         <action
             android:id="@+id/action_click1_to_splashFragment2"
-            app:destination="@id/splashFragment2" />
+            app:destination="@id/splashFragment2"
+            app:popUpTo="@+id/splashFragment2"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment2"
@@ -30,7 +34,9 @@
         tools:layout="@layout/fragment_splash2" >
         <action
             android:id="@+id/action_splashFragment2_to_click2"
-            app:destination="@id/click2" />
+            app:destination="@id/click2"
+            app:popUpTo="@+id/click2"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/click2"
@@ -39,7 +45,9 @@
         tools:layout="@layout/fragment_click2" >
         <action
             android:id="@+id/action_click2_to_click3"
-            app:destination="@id/click3" />
+            app:destination="@id/click3"
+            app:popUpTo="@+id/click3"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/click3"
@@ -48,7 +56,9 @@
         tools:layout="@layout/fragment_click3" >
         <action
             android:id="@+id/action_click3_to_click4"
-            app:destination="@id/click4" />
+            app:destination="@id/click4"
+            app:popUpTo="@+id/click4"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/click4"
@@ -57,7 +67,9 @@
         tools:layout="@layout/fragment_click4" >
         <action
             android:id="@+id/action_click4_to_splashFragment3"
-            app:destination="@id/splashFragment3" />
+            app:destination="@id/splashFragment3"
+            app:popUpTo="@+id/splashFragment3"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/splashFragment3"
@@ -66,7 +78,9 @@
         tools:layout="@layout/fragment_splash3" >
         <action
             android:id="@+id/action_splashFragment3_to_click5"
-            app:destination="@id/click5" />
+            app:destination="@id/click5"
+            app:popUpTo="@+id/click5"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/click5"
@@ -75,7 +89,9 @@
         tools:layout="@layout/fragment_click5" >
         <action
             android:id="@+id/action_click5_to_click6"
-            app:destination="@id/click6" />
+            app:destination="@id/click6"
+            app:popUpTo="@+id/click6"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/click6"
@@ -84,7 +100,9 @@
         tools:layout="@layout/fragment_click6" >
         <action
             android:id="@+id/action_click6_to_click7"
-            app:destination="@id/click7" />
+            app:destination="@id/click7"
+            app:popUpTo="@+id/click7"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/click7"
@@ -93,7 +111,9 @@
         tools:layout="@layout/fragment_click7" >
         <action
             android:id="@+id/action_click7_to_click8"
-            app:destination="@id/click8" />
+            app:destination="@id/click8"
+            app:popUpTo="@+id/click8"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/click8"
@@ -102,7 +122,9 @@
         tools:layout="@layout/fragment_click8" >
         <action
             android:id="@+id/action_click8_to_splashFragment4"
-            app:destination="@id/splashFragment4" />
+            app:destination="@id/splashFragment4"
+            app:popUpTo="@+id/splashFragment4"
+            app:popUpToInclusive="true" />
     </fragment>
     <activity
         android:id="@+id/fruitsActivity"

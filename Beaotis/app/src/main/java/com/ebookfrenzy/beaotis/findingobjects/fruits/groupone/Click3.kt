@@ -24,13 +24,21 @@ class Click3 : Fragment() {
         val view= inflater.inflate(R.layout.fragment_click3, container, false)
         view.imageViewFruitsElma1.setOnClickListener{
             findNavController().navigate(R.id.action_click3_to_click4)
+            mPlayer?.stop()
+            mPlayer?.release()
         }
         return view
     }
     override fun onDestroy() {
 
         mPlayer?.stop()
-
+        mPlayer?.release()
         super.onDestroy()
     }
+    override fun onDetach() {
+        mPlayer?.stop()
+        mPlayer?.release()
+        super.onDetach()
+    }
+
 }

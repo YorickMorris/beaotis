@@ -4,6 +4,7 @@ import android.content.Intent
 import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,19 +15,21 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
     private lateinit var intentToFruitsActivity: Intent
     private lateinit var recyclerView: RecyclerView
     private var mPlayer: MediaPlayer? = null
-    val list = mixed_generateList()
+    val list:MutableList<Int> = getSoundResources(mixed_generateList())
     var hataListe = mutableListOf<String>()
     var sayac = 0
+    private var mediaPlayer:MediaPlayer?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_group_mixed)
 
 
-        mPlayer = MediaPlayer.create(this, list[0].soundResource)
+        mPlayer = MediaPlayer.create(this, list[0])
         mPlayer?.start()
         mPlayer?.setOnCompletionListener {
             mPlayer?.stop()
+            mPlayer?.release()
         }
 
         intentToFruitsActivity = Intent(this, FruitsActivity::class.java)
@@ -50,33 +53,43 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
     }
 
     override fun onItemClicked(data: FindingObjectsDataClass, position: Int) {
-        sayac = 0
-        if (sayac == 0) {
-            list.shuffled()
+
+    /*    if (sayac == 0) {
+            Log.d("x","LİSTE KARILDI!")
+            Log.d("Liste karılmadan önce: ","$list")
+            list.shuffle()
+            Log.d("Liste karıldıktan sonra","$list")
             sayac++
-        }
+        }*/
 
         //Eğer basması istendiği nesneye basmışsa doğru dedirt.
         //Yanlışsa bir şey yapma.
         //Ardından bir sonraki meyveyi seçmesi istensin.
-
-        if (data.soundResource == list[position].soundResource) {
-            mPlayer = MediaPlayer.create(this, R.raw.balontelaffuz)//Tebrikler
-            mPlayer?.setOnCompletionListener {
-                mPlayer?.stop()
+        Log.d("Data.Onclick SES","$list")
+        if (data.soundResource == list[position]) {
+            Log.d("x","SES DOSYALARI EŞLEŞTİ!")
+            mediaPlayer = MediaPlayer.create(this, R.raw.balontelaffuz)//Tebrikler
+            mediaPlayer?.setOnCompletionListener {
+                mediaPlayer?.stop()
             }
+                if (position + 1 < 9) {
+                    mediaPlayer = MediaPlayer.create(
+                        this,
+                        list[position + 1]
+                    )//Bir sonraki tıklanılması istenen şey
+                    Log.d("x","BİR SONRAKİ SES OYNATILSIN!")
+                    mediaPlayer?.setOnCompletionListener {
+                        mediaPlayer?.stop()
+                    }
+                }
+            
         } else
             hataListe.add("${position} yanlış girildi.")
-        if (position + 1 < 9) {
-            mPlayer = MediaPlayer.create(
-                this,
-                list[position + 1].soundResource
-            )//Bir sonraki tıklanılması istenen şey
-            mPlayer?.setOnCompletionListener {
-                mPlayer?.stop()
-            }
 
+    }
 
-        }
+    override fun onStop() {
+        mPlayer?.release()
+        super.onStop()
     }
 }

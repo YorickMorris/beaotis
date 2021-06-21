@@ -39,7 +39,7 @@ class SplashFragment4 : Fragment(){
         Handler().postDelayed({
 
             findNavController().navigate(R.id.action_splashFragment4_to_fruitsActivity)
-
+            
 
         }, 3000)
 
@@ -76,9 +76,6 @@ class SplashFragment4 : Fragment(){
     ): Boolean {
         return false
     }*/
-    /* override fun onDestroy() {
-       clap_video.stopPlayback()
-         super.onDestroy()
-     }*/
+
 
 }

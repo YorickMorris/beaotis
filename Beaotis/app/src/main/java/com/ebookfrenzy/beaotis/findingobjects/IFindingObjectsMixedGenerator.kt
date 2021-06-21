@@ -1,10 +1,11 @@
 package com.ebookfrenzy.beaotis.findingobjects
 
+import android.util.Log
 import com.ebookfrenzy.beaotis.R
 
 interface IFindingObjectsMixedGenerator {
-    fun mixed_generateList():List<FindingObjectsDataClass>{
-        val list=ArrayList<FindingObjectsDataClass>()
+    fun mixed_generateList():MutableList<FindingObjectsDataClass>{
+        val list= mutableListOf<FindingObjectsDataClass>()
         list.add(FindingObjectsDataClass(R.drawable.ananas,R.raw.ananas))
         list.add(FindingObjectsDataClass(R.drawable.elma,R.raw.elma))
         list.add(FindingObjectsDataClass(R.drawable.armut,R.raw.armut))
@@ -16,6 +17,15 @@ interface IFindingObjectsMixedGenerator {
         list.add(FindingObjectsDataClass(R.drawable.muz,R.raw.muz))
 
         return list
+    }
+    fun getSoundResources(list:MutableList<FindingObjectsDataClass>):MutableList<Int>{
+        val newList = mutableListOf<Int>()
+        for (items in list.indices){
+            newList.add(items,list[items].soundResource)
+            Log.d("Dizi: ","$newList")
+        }
+        newList.shuffle()
+        return newList
     }
 
 }

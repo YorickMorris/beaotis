@@ -22,6 +22,8 @@ class Click6 : Fragment() {
         val view= inflater.inflate(R.layout.fragment_click6, container, false)
         view.imageViewFruitsElma3.setOnClickListener {
             findNavController().navigate(R.id.action_click6_to_click7)
+            mPlayer?.stop()
+            mPlayer?.release()
         }
 
         return view

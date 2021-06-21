@@ -23,6 +23,8 @@ class Click4 : Fragment() {
         val view= inflater.inflate(R.layout.fragment_click4, container, false)
         view.imageViewFruitsArmut2.setOnClickListener {
             findNavController().navigate(R.id.action_click4_to_splashFragment3)
+            mPlayer?.stop()
+            mPlayer?.release()
         }
         return view
     }
@@ -30,8 +32,14 @@ class Click4 : Fragment() {
     override fun onDestroy() {
 
         mPlayer?.stop()
-
+        mPlayer?.release()
         super.onDestroy()
     }
+    override fun onDetach() {
+        mPlayer?.stop()
+        mPlayer?.release()
+        super.onDetach()
+    }
+
 
 }

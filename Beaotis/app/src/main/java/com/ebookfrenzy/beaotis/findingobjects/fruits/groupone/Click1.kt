@@ -41,6 +41,8 @@ class Click1 : Fragment() {
         val view= inflater.inflate(R.layout.fragment_click1, container, false)
         view.imageViewFruitsElma.setOnClickListener {
             findNavController().navigate(R.id.action_click1_to_splashFragment2)
+            mPlayer?.stop()
+            mPlayer?.release()
         }
 
         return view
@@ -50,18 +52,13 @@ class Click1 : Fragment() {
     override fun onDestroy() {
 
         mPlayer?.stop()
-
+        mPlayer?.release()
         super.onDestroy()
     }
 
-/*    companion object {
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Click1().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }*/
+    override fun onDetach() {
+        mPlayer?.stop()
+        mPlayer?.release()
+        super.onDetach()
+    }
 }

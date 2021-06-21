@@ -22,7 +22,8 @@ class SplashFragment3 : Fragment() {
         Handler().postDelayed({
 
             findNavController().navigate(R.id.action_splashFragment3_to_click5)
-
+            mPlayer?.stop()
+            mPlayer?.release()
 
         }, 3000)
 
@@ -31,8 +32,13 @@ class SplashFragment3 : Fragment() {
     override fun onDestroy() {
 
         mPlayer?.stop()
-
+        mPlayer?.release()
         super.onDestroy()
+    }
+    override fun onDetach() {
+        mPlayer?.stop()
+        mPlayer?.release()
+        super.onDetach()
     }
 
 }

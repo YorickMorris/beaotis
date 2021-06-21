@@ -23,14 +23,21 @@ class Click5 : Fragment() {
         val view= inflater.inflate(R.layout.fragment_click5, container, false)
         view.imageViewFruitsAnanas.setOnClickListener {
             findNavController().navigate(R.id.action_click5_to_click6)
+            mPlayer?.stop()
+            mPlayer?.release()
         }
         return view
     }
     override fun onDestroy() {
 
         mPlayer?.stop()
-
+        mPlayer?.release()
         super.onDestroy()
+    }
+    override fun onDetach() {
+        mPlayer?.stop()
+        mPlayer?.release()
+        super.onDetach()
     }
 
 

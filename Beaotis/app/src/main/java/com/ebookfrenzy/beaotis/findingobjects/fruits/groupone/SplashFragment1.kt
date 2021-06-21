@@ -38,6 +38,8 @@ class SplashFragment1 : Fragment() {
 
         Handler().postDelayed({
             findNavController().navigate(R.id.action_splashFragment1_to_click1)
+            mPlayer?.stop()
+            mPlayer?.release()
         },3000)
         return inflater.inflate(R.layout.fragment_splash1, container, false)
 
@@ -45,7 +47,13 @@ class SplashFragment1 : Fragment() {
 
     override fun onDestroy() {
         mPlayer?.stop()
+        mPlayer?.release()
         super.onDestroy()
+    }
+    override fun onDetach() {
+        mPlayer?.stop()
+        mPlayer?.release()
+        super.onDetach()
     }
 
    /* companion object {
