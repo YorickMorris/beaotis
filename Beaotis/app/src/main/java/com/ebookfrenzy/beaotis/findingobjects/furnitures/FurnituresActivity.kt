@@ -40,6 +40,7 @@ class FurnituresActivity : AppCompatActivity() , IFurnituresGenerator, SubObject
             0->intent = Intent(this, GroupOneF::class.java)
             1->intent = Intent(this, GroupTwoF::class.java)
             2->intent = Intent(this, GroupThreeF::class.java)
+            3->intent = Intent(this, GroupMixedFurnitures::class.java)
         }
         startActivity(intent)
 

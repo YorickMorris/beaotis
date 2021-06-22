@@ -39,6 +39,7 @@ class VegetablesActivity : AppCompatActivity() , IVegetablesGenerator, SubObject
             0->intent = Intent(this, GroupOneV::class.java)
             1->intent = Intent(this, GroupTwoV::class.java)
             2->intent = Intent(this, GroupThreeV::class.java)
+            3->intent = Intent(this, GroupMixedVegetables::class.java)
         }
         startActivity(intent)
 

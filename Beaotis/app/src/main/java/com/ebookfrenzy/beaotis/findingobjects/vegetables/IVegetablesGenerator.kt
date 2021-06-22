@@ -9,6 +9,7 @@ interface IVegetablesGenerator {
         list.add(SubObjectDataClass(R.drawable.vegetablesgroup1))
         list.add(SubObjectDataClass(R.drawable.vegetablesgroup2))
         list.add(SubObjectDataClass(R.drawable.vegetablesgroup3))
+        list.add(SubObjectDataClass(R.drawable.doorkey1))
         return list
     }
 }

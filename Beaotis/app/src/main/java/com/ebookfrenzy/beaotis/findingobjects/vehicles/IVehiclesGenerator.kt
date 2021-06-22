@@ -9,6 +9,7 @@ interface IVehiclesGenerator {
         list.add(SubObjectDataClass(R.drawable.vehiclesgroup1))
         list.add(SubObjectDataClass(R.drawable.vehiclesgroup2))
         list.add(SubObjectDataClass(R.drawable.vehiclesgroup3))
+        list.add(SubObjectDataClass(R.drawable.doorkey1))
         return list
     }
 }

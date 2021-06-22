@@ -39,6 +39,7 @@ class VehiclesActivity : AppCompatActivity() , IVehiclesGenerator, SubObjectsCli
             0->intent = Intent(this, GroupOneVe::class.java)
             1->intent = Intent(this, GroupTwoVe::class.java)
             2->intent = Intent(this, GroupThreeVe::class.java)
+            3->intent = Intent(this, GroupMixedVehicles::class.java)
         }
         startActivity(intent)
 

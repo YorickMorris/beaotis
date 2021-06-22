@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".findingobjects.vegetables.GroupMixedVegetables"
+    android:orientation="vertical">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="4dp"
+        android:background="@drawable/transitive_color1"
+        android:layoutAnimation="@anim/layot_animation_slide_from_right"
+        android:scrollbars="vertical"
+        android:clipToPadding="false"
+        android:id="@+id/vegetablesMixedRecyclerView"
+        tools:listitem="@layout/deneme"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:itemCount="2" />
+
+</androidx.appcompat.widget.LinearLayoutCompat>

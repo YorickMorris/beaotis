@@ -11,8 +11,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".findingobjects.fruits.GroupMixed"
-            android:screenOrientation="landscape"/>
+        <activity android:name=".findingobjects.vehicles.GroupMixedVehicles"></activity>
+        <activity android:name=".findingobjects.vegetables.GroupMixedVegetables" />
+        <activity android:name=".findingobjects.furnitures.GroupMixedFurnitures" />
+        <activity
+            android:name=".findingobjects.fruits.GroupMixed"
+            android:screenOrientation="landscape" />
         <activity
             android:name=".findingobjects.vehicles.groupthree.GroupThreeVe"
             android:screenOrientation="landscape" />

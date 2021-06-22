@@ -43,20 +43,13 @@ class Click1 : Fragment() {
             mPlayer?.release()
             mPlayer=null
         }
-
-
+        
         val view= inflater.inflate(R.layout.fragment_click1, container, false)
         view.imageViewFruitsElma.setOnClickListener {
 
-
             animation(view.imageViewFruitsElma)
 
-            mPlayer?.stop()
-            mPlayer?.release()
-
-
         }
-
 
         return view
     }
@@ -73,7 +66,7 @@ class Click1 : Fragment() {
         super.onDetach()
     }
     fun animation(v:View){
-        val a=YoYo.with(Techniques.Bounce)
+         YoYo.with(Techniques.Bounce)
             .duration(700)
             .repeat(2)
             .playOn(v)
