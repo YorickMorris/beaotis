@@ -9,6 +9,7 @@ import com.ebookfrenzy.beaotis.findingobjects.fruits.FruitsActivity
 
 class GroupOne : AppCompatActivity() {
     private lateinit var intentToFruitsActivity: Intent
+
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -18,6 +19,11 @@ class GroupOne : AppCompatActivity() {
     }
     override fun onBackPressed() {
         startActivity(intentToFruitsActivity)
+
+        /*val fragmet=this.supportFragmentManager.findFragmentById(R.id.fragmentContainerView)
+        (fragmet as? IOnBackPressedListener)?.onBackPressed()?.not()?.let {
+            super.onBackPressed()
+        }*/
         super.onBackPressed()
     }
 
