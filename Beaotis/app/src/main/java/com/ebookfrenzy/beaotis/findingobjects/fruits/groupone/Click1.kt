@@ -19,6 +19,8 @@ private const val ARG_PARAM2 = "param2"
 
 class Click1 : Fragment() {
     private var mPlayer: MediaPlayer? = null
+    private val nav = R.id.action_click1_to_splashFragment2
+    private val item = R.raw.elma
 /*
     private var param1: String? = null
     private var param2: String? = null
@@ -36,17 +38,13 @@ class Click1 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        mPlayer=MediaPlayer.create(activity, R.raw.elma)
-        mPlayer?.start()
-        mPlayer?.setOnCompletionListener {
-            mPlayer?.stop()
-            mPlayer?.release()
-            mPlayer=null
-        }
-        
+        mediaPlay()
+
+
         val view= inflater.inflate(R.layout.fragment_click1, container, false)
         view.imageViewFruitsElma.setOnClickListener {
-
+            mPlayer?.stop()
+            mPlayer?.release()
             animation(view.imageViewFruitsElma)
 
         }
@@ -66,7 +64,7 @@ class Click1 : Fragment() {
         super.onDetach()
     }
     fun animation(v:View){
-         YoYo.with(Techniques.Bounce)
+         YoYo.with(Techniques.Pulse )
             .duration(700)
             .repeat(2)
             .playOn(v)
@@ -76,7 +74,17 @@ class Click1 : Fragment() {
             mPlayer?.stop()
             mPlayer?.release()
             mPlayer=null
-            findNavController().navigate(R.id.action_click1_to_splashFragment2)
+            findNavController().navigate(nav)
+        }
+    }
+
+    fun mediaPlay(){
+        mPlayer=MediaPlayer.create(activity, item)
+        mPlayer?.start()
+        mPlayer?.setOnCompletionListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            mPlayer=null
         }
     }
 
