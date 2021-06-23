@@ -15,23 +15,24 @@ import com.google.android.material.navigation.NavigationView
 import kotlinx.android.synthetic.main.activity_parent.*
 import kotlinx.android.synthetic.main.app_bar_parent.*
 
-class ParentActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener{
-    private lateinit var drawer: DrawerLayout
-    private lateinit var toggle: ActionBarDrawerToggle
+class ParentActivity : AppCompatActivity(){
+    //, NavigationView.OnNavigationItemSelectedListener
+   /* private lateinit var drawer: DrawerLayout
+    private lateinit var toggle: ActionBarDrawerToggle*/
     private lateinit var intentToMainActivity: Intent
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_parent)
         setSupportActionBar(toolbar_main)
-        toggle= ActionBarDrawerToggle(this,drawer,toolbar_main,R.string.nav_app_bar_open_drawer_description,R.string.nav_app_bar_navigate_up_description)
-        drawer.addDrawerListener(toggle)
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        /*toggle= ActionBarDrawerToggle(this,drawer,toolbar_main,R.string.nav_app_bar_open_drawer_description,R.string.nav_app_bar_navigate_up_description)
+        drawer.addDrawerListener(toggle)*/
+/*        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         supportActionBar?.setHomeButtonEnabled(true)
-        nav_view.setNavigationItemSelectedListener(this)
+        nav_view.setNavigationItemSelectedListener(this)*/
 
         intentToMainActivity=Intent(this, MainActivity::class.java)
     }
-    override fun onPostCreate(savedInstanceState: Bundle?) {
+   /* override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)
         toggle.syncState()
     }
@@ -69,5 +70,5 @@ class ParentActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelec
             startActivity(intentToMainActivity)
             super.onBackPressed()
         }
-    }
+    }*/
 }

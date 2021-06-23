@@ -41,8 +41,10 @@ class SignInDialogFragment: DialogFragment() {
                                    correctUser(task.isSuccessful)
                                    Log.d(tag1, "signInWithEmail:success")
                                    user = auth.currentUser
+                                    if(isAdded){
+                                        startActivity(intent1)
+                                    }
 
-                                   startActivity(intent1)
 
                                    //updateUI(user,view,intent1)
                                }
@@ -56,7 +58,7 @@ class SignInDialogFragment: DialogFragment() {
                    }else{
                        Toast.makeText(view.context,"Lütfen Eposta ve Şifre' yi boş bırakmayın.",Toast.LENGTH_SHORT).show()
                    }
-
+                   startActivity(intent1)
                    dialog.dismiss()
 
                    //Giriş eylemleri
