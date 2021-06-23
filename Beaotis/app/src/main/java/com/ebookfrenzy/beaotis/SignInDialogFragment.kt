@@ -13,6 +13,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
+import kotlinx.android.synthetic.main.sign_in.*
 import kotlinx.android.synthetic.main.sign_in.view.*
 import java.lang.IllegalStateException
 
@@ -37,20 +38,26 @@ class SignInDialogFragment: DialogFragment() {
                    {
                        auth.signInWithEmailAndPassword(a,b)
                            .addOnCompleteListener { task ->
+
                                if (task.isSuccessful) {
                                    correctUser(task.isSuccessful)
                                    Log.d(tag1, "signInWithEmail:success")
                                    user = auth.currentUser
                                     if(isAdded){
-                                        startActivity(intent1)
+                                        updateUI(user,view,intent)
                                     }
-
+                                   Log.d(tag1,"Eposta:$a,Şifre:$b")
+                                   dialog.dismiss()
+                                   Toast.makeText(view.context,"Giriş yapıldı.",Toast.LENGTH_SHORT).show()
 
                                    //updateUI(user,view,intent1)
                                }
+
                            }.addOnFailureListener {
                                updateUI(user,view,intent1)
                            }
+
+
                    }else if(a=="" && b!=""){
                        Toast.makeText(view.context,"Lütfen Eposta Adresinizi Girin",Toast.LENGTH_SHORT).show()
                    }else if(a!="" && b==""){
@@ -58,7 +65,7 @@ class SignInDialogFragment: DialogFragment() {
                    }else{
                        Toast.makeText(view.context,"Lütfen Eposta ve Şifre' yi boş bırakmayın.",Toast.LENGTH_SHORT).show()
                    }
-                   startActivity(intent1)
+
                    dialog.dismiss()
 
                    //Giriş eylemleri

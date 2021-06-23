@@ -9,9 +9,14 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.view.animation.Animation
+import android.widget.ImageView
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 import com.ebookfrenzy.beaotis.R
 import com.ebookfrenzy.beaotis.findingobjects.*
 
@@ -57,7 +62,9 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
         super.onBackPressed()
     }
 
-    override fun onItemClicked(data: FindingObjectsDataClass, position: Int) {
+    override fun onItemClicked(data: FindingObjectsDataClass, position: Int,imageView:ImageView) {
+        //mPlayer?.stop()
+        //mPlayer?.release()
         if(sayac==8 && data.soundResource==list[sayac]){
             mPlayer = MediaPlayer.create(this, R.raw.tebrikler)
             mPlayer?.start()
@@ -71,6 +78,7 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
             if (data.soundResource == list[sayac]) {
                 mPlayer = MediaPlayer.create(this, R.raw.tebrikler)
                 mPlayer?.start()
+                animation(imageView)
                 mPlayer?.setOnCompletionListener {
                     mPlayer?.stop()
                     mPlayer?.release()
@@ -88,6 +96,7 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
                 }
 
             } else
+                animationWrong(imageView)
                 hataListe.add("${position} yanlış girildi.")
         }
 
@@ -103,4 +112,24 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
 
         super.onDestroy()
     }
+    fun animation(imageView: ImageView){
+        YoYo.with(Techniques.Pulse )
+            .duration(700)
+            .repeat(2)
+            .playOn(imageView)
+
+    }
+    fun animationWrong(imageView: ImageView){
+        YoYo.with(Techniques.Pulse)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+            .duration(700)
+            .repeat(2)
+            .playOn(imageView)
+        mPlayer?.start()
+        mPlayer?.setOnCompletionListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            mPlayer=null
+        }
+    }
+
 }

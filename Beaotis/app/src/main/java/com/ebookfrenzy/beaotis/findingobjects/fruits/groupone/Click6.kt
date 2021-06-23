@@ -30,6 +30,16 @@ class Click6 : Fragment() {
             mPlayer?.release()
             animation(view.imageViewFruitsElma3)
         }
+        view.imageViewFruitsArmut3.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewFruitsArmut3)
+        }
+        view.imageViewFruitsAnanas1.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewFruitsAnanas1)
+        }
 
         return view
     }
@@ -51,6 +61,19 @@ class Click6 : Fragment() {
             mPlayer?.release()
             mPlayer=null
             findNavController().navigate(nav)
+        }
+    }
+    fun animationWrong(v:View){
+        YoYo.with(Techniques.Pulse)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+            .duration(700)
+            .repeat(2)
+            .playOn(v)
+        mPlayer=MediaPlayer.create(activity, R.raw.tebrikler)//Yanlış diyen ses olacak mı?
+        mPlayer?.start()
+        mPlayer?.setOnCompletionListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            mPlayer=null
         }
     }
 

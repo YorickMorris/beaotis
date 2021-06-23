@@ -5,6 +5,7 @@ import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -54,7 +55,7 @@ class GroupMixedVegetables : AppCompatActivity(), IFindingObjectsMixedOnClickLis
         super.onBackPressed()
     }
 
-    override fun onItemClicked(data: FindingObjectsDataClass, position: Int) {
+    override fun onItemClicked(data: FindingObjectsDataClass, position: Int,imageView: ImageView) {
         if(sayac==8 && data.soundResource==list[sayac]){
             mPlayer = MediaPlayer.create(this, R.raw.tebrikler)
             mPlayer?.start()

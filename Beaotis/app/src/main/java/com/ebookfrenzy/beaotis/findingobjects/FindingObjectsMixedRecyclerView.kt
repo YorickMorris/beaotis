@@ -28,7 +28,7 @@ class FindingObjectsMixedRecyclerView(private val exampleList: List<FindingObjec
         val currentItem = exampleList[position]
         holder.imageView1.setImageResource(currentItem.imageResource)
         holder.imageView1.setOnClickListener{
-            IOnItemClickListener.onItemClicked(currentItem,position)
+            IOnItemClickListener.onItemClicked(currentItem,position,holder.imageView1)
         }
     }
 
