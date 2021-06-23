@@ -9,6 +9,8 @@ import android.widget.ImageView
 import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 import com.ebookfrenzy.beaotis.R
 import com.ebookfrenzy.beaotis.findingobjects.FindingObjectsDataClass
 import com.ebookfrenzy.beaotis.findingobjects.FindingObjectsMixedRecyclerView
@@ -68,6 +70,7 @@ class GroupMixedVehicles : AppCompatActivity(), IFindingObjectsMixedOnClickListe
             if (data.soundResource == list[sayac]) {
                 mPlayer = MediaPlayer.create(this, R.raw.tebrikler)
                 mPlayer?.start()
+                animation(imageView)
                 mPlayer?.setOnCompletionListener {
                     mPlayer?.stop()
                     mPlayer?.release()
@@ -85,6 +88,7 @@ class GroupMixedVehicles : AppCompatActivity(), IFindingObjectsMixedOnClickListe
                 }
 
             } else
+                animationWrong(imageView)
                 hataListe.add("${position} yanlış girildi.")
         }
     }
@@ -96,5 +100,18 @@ class GroupMixedVehicles : AppCompatActivity(), IFindingObjectsMixedOnClickListe
     override fun onDestroy() {
 
         super.onDestroy()
+    }
+    fun animation(imageView: ImageView){
+        YoYo.with(Techniques.Pulse )
+                .duration(700)
+                .repeat(2)
+                .playOn(imageView)
+
+    }
+    fun animationWrong(imageView: ImageView){
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+                .duration(700)
+                .repeat(2)
+                .playOn(imageView)
     }
 }

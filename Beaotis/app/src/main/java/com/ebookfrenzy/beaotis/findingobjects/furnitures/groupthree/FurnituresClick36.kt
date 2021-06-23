@@ -35,6 +35,16 @@ class FurnituresClick36 : Fragment() {
             mPlayer?.release()
             animation(view.imageViewFurnituresYatak3)
         }
+        view.imageViewFurnituresSandalye3.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewFurnituresSandalye3)
+        }
+        view.imageViewFurnituresMasa1.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewFurnituresMasa1)
+        }
 
         return view
     }
@@ -67,6 +77,13 @@ class FurnituresClick36 : Fragment() {
             mPlayer?.release()
             mPlayer=null
         }
+    }
+    fun animationWrong(v:View){
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+                .duration(700)
+                .repeat(2)
+                .playOn(v)
+
     }
 
 

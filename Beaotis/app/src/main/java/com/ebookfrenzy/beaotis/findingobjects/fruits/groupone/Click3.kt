@@ -36,7 +36,7 @@ class Click3 : Fragment() {
         view.imageViewFruitsArmut1.setOnClickListener {
             mPlayer?.stop()
             mPlayer?.release()
-            animationWrong(imageViewFruitsArmut1)
+            animationWrong(view.imageViewFruitsArmut1)
         }
         return view
     }
@@ -66,17 +66,10 @@ class Click3 : Fragment() {
         }
     }
     fun animationWrong(v:View){
-        YoYo.with(Techniques.Pulse)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
             .duration(700)
             .repeat(2)
             .playOn(v)
-        mPlayer=MediaPlayer.create(activity, R.raw.tebrikler)//Yanlış diyen ses olacak mı?
-        mPlayer?.start()
-        mPlayer?.setOnCompletionListener {
-            mPlayer?.stop()
-            mPlayer?.release()
-            mPlayer=null
-        }
     }
 
     fun mediaPlay(){

@@ -31,6 +31,16 @@ class Click7 : Fragment() {
             mPlayer?.release()
             animation(view.imageViewFruitsArmut4)
         }
+        view.imageViewFruitsElma4.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewFruitsElma4)
+        }
+        view.imageViewFruitsAnanas2.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewFruitsAnanas2)
+        }
 
         return view
     }
@@ -70,5 +80,12 @@ class Click7 : Fragment() {
             mPlayer?.release()
             mPlayer=null
         }
+    }
+    fun animationWrong(v:View){
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+                .duration(700)
+                .repeat(2)
+                .playOn(v)
+
     }
 }

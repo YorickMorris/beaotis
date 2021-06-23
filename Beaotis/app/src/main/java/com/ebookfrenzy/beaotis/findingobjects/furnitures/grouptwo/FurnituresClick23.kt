@@ -36,6 +36,11 @@ class FurnituresClick23 : Fragment() {
             mPlayer?.release()
             animation(view.imageViewFurnituresPantalon1)
         }
+        view.imageViewFurnituresEtek1.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewFurnituresEtek1)
+        }
 
         return view
     }
@@ -68,6 +73,12 @@ class FurnituresClick23 : Fragment() {
             mPlayer?.release()
             mPlayer=null
         }
+    }
+    fun animationWrong(v:View){
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+                .duration(700)
+                .repeat(2)
+                .playOn(v)
     }
 
 

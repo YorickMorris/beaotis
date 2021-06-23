@@ -11,7 +11,9 @@ import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.ebookfrenzy.beaotis.R
 import kotlinx.android.synthetic.main.fragment_click1.view.*
+import kotlinx.android.synthetic.main.fragment_click3.*
 import kotlinx.android.synthetic.main.fragment_click3.view.*
+import kotlinx.android.synthetic.main.fragment_fruits_click23.*
 import kotlinx.android.synthetic.main.fragment_fruits_click23.view.*
 
 class FruitsClick23 : Fragment() {
@@ -34,6 +36,11 @@ class FruitsClick23 : Fragment() {
             mPlayer?.stop()
             mPlayer?.release()
             animation(view.imageViewFruitsMuz1)
+        }
+        view.imageViewFruitsCilek1.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewFruitsCilek1)
         }
 
         return view
@@ -67,6 +74,12 @@ class FruitsClick23 : Fragment() {
             mPlayer?.release()
             mPlayer=null
         }
+    }
+    fun animationWrong(v:View){
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+                .duration(700)
+                .repeat(2)
+                .playOn(v)
     }
 
 

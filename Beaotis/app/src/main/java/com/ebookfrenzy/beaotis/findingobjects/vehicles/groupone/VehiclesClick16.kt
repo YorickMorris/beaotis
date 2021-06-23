@@ -36,6 +36,16 @@ class VehiclesClick16 : Fragment() {
             mPlayer?.release()
             animation(view.imageViewVehiclesAraba3)
         }
+        view.imageViewVehiclesBalon3.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewVehiclesBalon3)
+        }
+        view.imageViewVehiclesBisiklet1.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewVehiclesBisiklet1)
+        }
 
         return view
     }
@@ -68,6 +78,13 @@ class VehiclesClick16 : Fragment() {
             mPlayer?.release()
             mPlayer=null
         }
+    }
+    fun animationWrong(v:View){
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+                .duration(700)
+                .repeat(2)
+                .playOn(v)
+
     }
 
 

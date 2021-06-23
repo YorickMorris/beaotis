@@ -36,6 +36,16 @@ class FruitsClick36 : Fragment() {
             mPlayer?.release()
             animation(view.imageViewFruitsKiraz3)
         }
+        view.imageViewFruitsPortakal3.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewFruitsPortakal3)
+        }
+        view.imageViewFruitsUzum1.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewFruitsUzum1)
+        }
 
         return view
     }
@@ -68,6 +78,13 @@ class FruitsClick36 : Fragment() {
             mPlayer?.release()
             mPlayer=null
         }
+    }
+    fun animationWrong(v:View){
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+                .duration(700)
+                .repeat(2)
+                .playOn(v)
+
     }
 
 

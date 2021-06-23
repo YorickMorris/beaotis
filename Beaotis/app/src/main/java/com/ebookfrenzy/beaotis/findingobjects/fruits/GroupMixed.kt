@@ -120,16 +120,10 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
 
     }
     fun animationWrong(imageView: ImageView){
-        YoYo.with(Techniques.Pulse)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
             .duration(700)
             .repeat(2)
             .playOn(imageView)
-        mPlayer?.start()
-        mPlayer?.setOnCompletionListener {
-            mPlayer?.stop()
-            mPlayer?.release()
-            mPlayer=null
-        }
     }
 
 }

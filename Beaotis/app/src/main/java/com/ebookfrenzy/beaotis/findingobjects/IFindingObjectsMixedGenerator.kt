@@ -13,7 +13,7 @@ interface IFindingObjectsMixedGenerator {
         list.add(FindingObjectsDataClass(R.drawable.uzum,R.raw.uzum))
         list.add(FindingObjectsDataClass(R.drawable.cilek,R.raw.cilek))
         list.add(FindingObjectsDataClass(R.drawable.karpuz,R.raw.karpuz))
-        list.add(FindingObjectsDataClass(R.drawable.limon,R.raw.limon))
+        list.add(FindingObjectsDataClass(R.drawable.portakal,R.raw.portakal))
         list.add(FindingObjectsDataClass(R.drawable.muz,R.raw.muz))
 
         return list

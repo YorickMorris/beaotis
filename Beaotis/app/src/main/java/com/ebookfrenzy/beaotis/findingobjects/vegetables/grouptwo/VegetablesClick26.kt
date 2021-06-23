@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.ebookfrenzy.beaotis.R
+import kotlinx.android.synthetic.main.fragment_click6.view.*
 import kotlinx.android.synthetic.main.fragment_furnitures_click26.view.*
 import kotlinx.android.synthetic.main.fragment_vegetables_click11.view.*
 import kotlinx.android.synthetic.main.fragment_vegetables_click26.view.*
@@ -34,6 +35,16 @@ class VegetablesClick26 : Fragment() {
             mPlayer?.stop()
             mPlayer?.release()
             animation(view.imageViewVegetablesBiber3)
+        }
+        view.imageViewVegetablesPatates3.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewVegetablesPatates3)
+        }
+        view.imageViewVegetablesSarimsak1.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewVegetablesSarimsak1)
         }
 
         return view
@@ -67,6 +78,13 @@ class VegetablesClick26 : Fragment() {
             mPlayer?.release()
             mPlayer=null
         }
+    }
+    fun animationWrong(v:View){
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+                .duration(700)
+                .repeat(2)
+                .playOn(v)
+
     }
 
 

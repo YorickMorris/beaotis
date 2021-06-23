@@ -32,6 +32,11 @@ class Click4 : Fragment() {
             mPlayer?.release()
             animation(view.imageViewFruitsArmut2)
         }
+        view.imageViewFruitsElma2.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewFruitsElma2)
+        }
         return view
     }
 
@@ -69,6 +74,12 @@ class Click4 : Fragment() {
             mPlayer?.release()
             mPlayer=null
         }
+    }
+    fun animationWrong(v:View){
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+                .duration(700)
+                .repeat(2)
+                .playOn(v)
     }
 
 

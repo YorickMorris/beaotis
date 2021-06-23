@@ -10,6 +10,7 @@ import androidx.navigation.fragment.findNavController
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.ebookfrenzy.beaotis.R
+import kotlinx.android.synthetic.main.fragment_click6.view.*
 import kotlinx.android.synthetic.main.fragment_click8.view.*
 import kotlinx.android.synthetic.main.fragment_vehicles_click11.view.*
 import kotlinx.android.synthetic.main.fragment_vehicles_click28.view.*
@@ -35,6 +36,16 @@ class VehiclesClick28 : Fragment() {
             mPlayer?.release()
             animation(view.imageViewVehiclesMotorsiklet3)
 
+        }
+        view.imageViewVehiclesGemi5.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewVehiclesGemi5)
+        }
+        view.imageViewVehiclesKamyon5.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewVehiclesKamyon5)
         }
         return view
     }
@@ -68,6 +79,13 @@ class VehiclesClick28 : Fragment() {
             mPlayer?.release()
             mPlayer=null
         }
+    }
+    fun animationWrong(v:View){
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+                .duration(700)
+                .repeat(2)
+                .playOn(v)
+
     }
 
 

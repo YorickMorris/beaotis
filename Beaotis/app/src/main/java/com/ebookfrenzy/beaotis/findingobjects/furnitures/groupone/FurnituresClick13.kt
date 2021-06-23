@@ -10,8 +10,10 @@ import androidx.navigation.fragment.findNavController
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.ebookfrenzy.beaotis.R
+import kotlinx.android.synthetic.main.fragment_click3.*
 import kotlinx.android.synthetic.main.fragment_click3.view.*
 import kotlinx.android.synthetic.main.fragment_furnitures_click11.view.*
+import kotlinx.android.synthetic.main.fragment_furnitures_click13.*
 import kotlinx.android.synthetic.main.fragment_furnitures_click13.view.*
 
 
@@ -35,6 +37,11 @@ class FurnituresClick13 : Fragment() {
             mPlayer?.stop()
             mPlayer?.release()
             animation(view.imageViewFurnituresBicak1)
+        }
+        view.imageViewFurnituresCatal1.setOnClickListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            animationWrong(view.imageViewFurnituresCatal1)
         }
 
         return view
@@ -68,6 +75,12 @@ class FurnituresClick13 : Fragment() {
             mPlayer?.release()
             mPlayer=null
         }
+    }
+    fun animationWrong(v:View){
+        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+                .duration(700)
+                .repeat(2)
+                .playOn(v)
     }
 
 
