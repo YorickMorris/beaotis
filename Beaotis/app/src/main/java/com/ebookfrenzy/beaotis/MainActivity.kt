@@ -7,6 +7,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -21,14 +22,16 @@ import com.ebookfrenzy.beaotis.letstalk.LetsTalk
 import com.ebookfrenzy.beaotis.makeittogether.MakeItTogether
 import com.ebookfrenzy.beaotis.markyourheard.MarkYourHeard
 import com.ebookfrenzy.beaotis.pairing.Pairing
+import com.ebookfrenzy.beaotis.parent.ParentActivity
 import com.ebookfrenzy.beaotis.story.Story
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickListener,IFireStoreList {
+class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickListener,IFireStoreList,SignInDialogFragment.IGirisYap {
     private lateinit var recyclerView: RecyclerView
     private val dialogFragment=SignInDialogFragment()
     private lateinit var auth: FirebaseAuth
@@ -202,4 +205,15 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         super.onStart()
     }
+
+    override fun girisYap(user: FirebaseUser?) {
+        Log.d("Kullanıcı", "Kullanıcı: $user")
+        Toast.makeText(this,"userIdentification", Toast.LENGTH_SHORT).show()
+        if (user!=null){
+            intent = Intent(this, ParentActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
+    }
+
 }

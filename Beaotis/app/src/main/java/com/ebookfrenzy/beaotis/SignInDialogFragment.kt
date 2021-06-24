@@ -2,6 +2,7 @@ package com.ebookfrenzy.beaotis
 
 import android.app.AlertDialog
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -20,6 +21,11 @@ import java.lang.IllegalStateException
 class SignInDialogFragment: DialogFragment() {
     private lateinit var auth: FirebaseAuth
     private val tag1:String="className"
+
+    interface IGirisYap{
+        fun girisYap(user:FirebaseUser?)
+    }
+    var giris:IGirisYap?=null
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         var user:FirebaseUser?=null
         Log.d(tag,"Tıklandı. 1")
@@ -49,6 +55,10 @@ class SignInDialogFragment: DialogFragment() {
                                    Log.d(tag1,"Eposta:$a,Şifre:$b")
                                    dialog.dismiss()
                                    Toast.makeText(view.context,"Giriş yapıldı.",Toast.LENGTH_SHORT).show()
+                                   if (user!=null){
+                                       Log.d(tag1, "$user")
+                                       giris?.girisYap(user)
+                                   }
 
                                    //updateUI(user,view,intent1)
                                }
@@ -95,5 +105,14 @@ class SignInDialogFragment: DialogFragment() {
     }
     private fun correctUser(isSuccessful:Boolean):Boolean{
         return isSuccessful
+    }
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        try{
+            giris = activity as IGirisYap?
+        }catch (e:ClassCastException){
+            Log.d("TAG","onAttach: ${e.message}")
+        }
+
     }
 }
