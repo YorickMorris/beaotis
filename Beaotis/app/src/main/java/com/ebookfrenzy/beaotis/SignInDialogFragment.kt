@@ -23,7 +23,7 @@ class SignInDialogFragment: DialogFragment() {
     private val tag1:String="className"
 
     interface IGirisYap{
-        fun girisYap(user:FirebaseUser?)
+        fun girisYap(user:FirebaseUser?):FirebaseUser?
     }
     var giris:IGirisYap?=null
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {

@@ -4,26 +4,35 @@ import android.content.Intent
 import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import com.ebookfrenzy.beaotis.MainActivity
 import com.ebookfrenzy.beaotis.R
+import com.ebookfrenzy.beaotis.SignInDialogFragment
 import com.google.android.material.navigation.NavigationView
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.ktx.auth
+import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_parent.*
 import kotlinx.android.synthetic.main.app_bar_parent.*
 
-class ParentActivity : AppCompatActivity(){
+class ParentActivity : AppCompatActivity(),SignInDialogFragment.IGirisYap{
     //, NavigationView.OnNavigationItemSelectedListener
    /* private lateinit var drawer: DrawerLayout
     private lateinit var toggle: ActionBarDrawerToggle*/
     private lateinit var intentToMainActivity: Intent
+    private var user:FirebaseUser?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_parent)
-        setSupportActionBar(toolbar_main)
+        user=girisYap(user)
+        Log.d("Kullanıcı girdi", "Kullanıcı: $user")
         /*toggle= ActionBarDrawerToggle(this,drawer,toolbar_main,R.string.nav_app_bar_open_drawer_description,R.string.nav_app_bar_navigate_up_description)
         drawer.addDrawerListener(toggle)*/
 /*        supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -71,4 +80,26 @@ class ParentActivity : AppCompatActivity(){
             super.onBackPressed()
         }
     }*/
+   override fun onBackPressed() {
+       startActivity(intentToMainActivity)
+       finish()
+       super.onBackPressed()
+   }
+
+    fun clickLogOut(view: View) {
+        if (FirebaseAuth.getInstance().currentUser!=null){
+            Firebase.auth.signOut()
+            startActivity(intentToMainActivity)
+            finish()
+        }else{
+            Toast.makeText(this,"Kullanıcı bulunamadı!", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    override fun girisYap(user: FirebaseUser?):FirebaseUser? {
+
+        return user
+    }
+
+
 }

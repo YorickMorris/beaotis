@@ -92,8 +92,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".parent.ParentActivity" />
-        <activity android:name=".SignUpActivity" /> <!-- MainActivity Diğer Activitylerin Parenti(BackStack için önemli) -->
+        <activity android:name=".parent.ParentActivity"
+            android:screenOrientation="landscape" />
+        <activity android:name=".SignUpActivity"
+            android:screenOrientation="landscape"/> <!-- MainActivity Diğer Activitylerin Parenti(BackStack için önemli) -->
         <activity
             android:name=".aba.Aba"
             android:screenOrientation="landscape" />

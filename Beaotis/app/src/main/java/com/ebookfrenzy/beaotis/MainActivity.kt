@@ -37,6 +37,7 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
     private lateinit var auth: FirebaseAuth
     private val tag:String="MainActiviy"
     private val db = Firebase.firestore
+    private var user:FirebaseUser?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
        /* readData(object : MyCallback() {
@@ -68,9 +69,17 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
         adapter.notifyDataSetChanged()
 
         toolbar.setNavigationOnClickListener {
-            if(savedInstanceState==null){
-                dialogFragment.run { show(supportFragmentManager, "missiles") }
+            if (FirebaseAuth.getInstance().currentUser!=null){
+                intent = Intent(this, ParentActivity::class.java)
+                startActivity(intent)
+                finish()
+            }else{
+                if(savedInstanceState==null){
+                    dialogFragment.run { show(supportFragmentManager, "missiles") }
+                }
             }
+
+
 
 
             Log.d(tag, "Tıklandı.")
@@ -206,14 +215,14 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
         super.onStart()
     }
 
-    override fun girisYap(user: FirebaseUser?) {
+    override fun girisYap(user: FirebaseUser?):FirebaseUser? {
         Log.d("Kullanıcı", "Kullanıcı: $user")
-        Toast.makeText(this,"userIdentification", Toast.LENGTH_SHORT).show()
         if (user!=null){
             intent = Intent(this, ParentActivity::class.java)
             startActivity(intent)
             finish()
         }
+        return user
     }
 
 }

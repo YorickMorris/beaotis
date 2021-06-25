@@ -5,21 +5,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".parent.ParentActivity">
-    <androidx.drawerlayout.widget.DrawerLayout
-        android:id="@+id/drawer_layout"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:openDrawer="start">
-        <include
-            layout="@layout/app_bar_parent"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-        <com.google.android.material.navigation.NavigationView
-            android:id="@+id/nav_view"
+        android:layout_height="80dp"
+        android:background="#4FBA6F"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        <ImageView
+            android:contentDescription="@string/geri"
+            android:id="@+id/left_arrow"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:padding="10dp"
+            android:src="@drawable/left"
+            android:layout_marginVertical="5dp"
+            android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+            android:id="@+id/parentActivity"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="start"
-            app:headerLayout="@layout/nav_header_parent"
-            app:menu="@menu/activity_parent_drawer" />
-    </androidx.drawerlayout.widget.DrawerLayout>
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:textSize="25sp"
+            android:maxLines="1"
+            android:layout_marginVertical="30dp"
+            android:layout_gravity="center"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/left_arrow"
+            app:layout_constraintEnd_toStartOf="@id/imgLogOuT"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:text="Ebeveyn Modülü"/>
+        <ImageView
+            android:id="@+id/imgLogOuT"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:src="@mipmap/ic_launcher"
+            android:scaleType="centerCrop"
+            android:padding="5dp"
+            android:layout_marginHorizontal="5dp"
+            android:layout_marginVertical="5dp"
+            android:onClick="clickLogOut"
+            android:background="@drawable/images_shape"
+            app:layout_constrainedWidth="true"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
