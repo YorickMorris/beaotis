@@ -27,9 +27,12 @@ import com.ebookfrenzy.beaotis.story.Story
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.FieldValue
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_main.*
+import java.text.SimpleDateFormat
+import java.util.*
 
 class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickListener,IFireStoreList,SignInDialogFragment.IGirisYap {
     private lateinit var recyclerView: RecyclerView
@@ -38,6 +41,15 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
     private val tag:String="MainActiviy"
     private val db = Firebase.firestore
     private var user:FirebaseUser?=null
+    //private val docRef = db.collection("uploads").document("1").get()
+    //private val list:MutableList<>
+    //private val timestamp: FieldValue = FieldValue.serverTimestamp()
+    private val c:Date=Calendar.getInstance().time
+    private val df:SimpleDateFormat= SimpleDateFormat("dd-MMM-yyyy",Locale.CANADA)
+    private val formatDate=df.format(c)
+    private var dogruSayac=0
+    private var yanlisSayac=0
+    private val a="groupMixFruits"
 
     override fun onCreate(savedInstanceState: Bundle?) {
        /* readData(object : MyCallback() {
@@ -49,6 +61,19 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
         setContentView(R.layout.activity_main)
         generateList()
 
+
+
+
+       /* db.collection("x").add(mapOf(
+            "created" to timestamp
+        )).addOnSuccessListener {
+
+            val id=it.id
+        }*/
+
+
+        //Log.d("Kullanıcı", "Kullanıcı: ${timestamp.toString()}")
+        Log.d("Formatted Date", "Formatlanmış Tarih: $formatDate")
         //window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
 
         auth = Firebase.auth
@@ -224,5 +249,7 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
         }
         return user
     }
+
+
 
 }

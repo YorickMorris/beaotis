@@ -1,5 +1,6 @@
 package com.ebookfrenzy.beaotis
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -8,15 +9,20 @@ import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.ktx.auth
+import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
     private val tag="ClassName"
-
+    private lateinit var intentToMainActivity: Intent
+    private val db = Firebase.firestore
+    private val docCollectionRef = db.collection("useIds")
+    //private val userInfo= hashMapOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        intentToMainActivity=Intent(this, MainActivity::class.java)
         setContentView(R.layout.activity_sign_up)
         auth = Firebase.auth
         onItemClick(submitButton)
@@ -26,6 +32,7 @@ class SignUpActivity : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(email.text.toString(), sifre.text.toString())
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
+                        //docCollectionRef.add()
                         Log.d(tag, sifre.text.toString())
                         val user = auth.currentUser
                         updateUI(user)
@@ -43,4 +50,10 @@ class SignUpActivity : AppCompatActivity() {
         }else
             Toast.makeText(this,"Üyelik işlemi tamamlanamadı.",Toast.LENGTH_LONG).show()
     }
+    override fun onBackPressed() {
+        startActivity(intentToMainActivity)
+        finish()
+        super.onBackPressed()
+    }
+
 }

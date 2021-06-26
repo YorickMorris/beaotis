@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".findingobjects.vehicles.GroupMixedVehicles"></activity>
+        <activity android:name=".parent.SonucFruitsActivity"></activity>
+        <activity android:name=".findingobjects.vehicles.GroupMixedVehicles" />
         <activity android:name=".findingobjects.vegetables.GroupMixedVegetables" />
         <activity android:name=".findingobjects.furnitures.GroupMixedFurnitures" />
         <activity
@@ -92,10 +93,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".parent.ParentActivity"
+        <activity
+            android:name=".parent.ParentActivity"
             android:screenOrientation="landscape" />
-        <activity android:name=".SignUpActivity"
-            android:screenOrientation="landscape"/> <!-- MainActivity Diğer Activitylerin Parenti(BackStack için önemli) -->
+        <activity
+            android:name=".SignUpActivity"
+            android:screenOrientation="landscape" /> <!-- MainActivity Diğer Activitylerin Parenti(BackStack için önemli) -->
         <activity
             android:name=".aba.Aba"
             android:screenOrientation="landscape" />
