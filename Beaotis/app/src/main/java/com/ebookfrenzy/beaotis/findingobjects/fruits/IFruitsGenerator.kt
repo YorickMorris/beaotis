@@ -9,7 +9,7 @@ interface IFruitsGenerator {
         list.add(SubObjectDataClass(R.drawable.fruitsgroup1))
         list.add(SubObjectDataClass(R.drawable.fruitsgroup2))
         list.add(SubObjectDataClass(R.drawable.fruitsgroup3))
-        list.add(SubObjectDataClass(R.drawable.doorkey))
+        list.add(SubObjectDataClass(R.drawable.fruitsmix))
         return list
     }
 }

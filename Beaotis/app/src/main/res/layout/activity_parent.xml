@@ -43,7 +43,7 @@
             android:id="@+id/imgLogOuT"
             android:layout_width="wrap_content"
             android:layout_height="80dp"
-            android:src="@mipmap/ic_launcher"
+            android:src="@drawable/cikis"
             android:scaleType="centerCrop"
             android:padding="5dp"
             android:layout_marginHorizontal="5dp"

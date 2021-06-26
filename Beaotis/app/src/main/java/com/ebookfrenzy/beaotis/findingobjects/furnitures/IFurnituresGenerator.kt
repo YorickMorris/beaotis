@@ -9,7 +9,7 @@ interface IFurnituresGenerator {
         list.add(SubObjectDataClass(R.drawable.furnituresgroup1))
         list.add(SubObjectDataClass(R.drawable.furnituresgroup2))
         list.add(SubObjectDataClass(R.drawable.furnituresgroup3))
-        list.add(SubObjectDataClass(R.drawable.doorkey1))
+        list.add(SubObjectDataClass(R.drawable.furnituresmix))
         return list
     }
 }

@@ -57,6 +57,11 @@ class ParentActivity : AppCompatActivity(),SignInDialogFragment.IGirisYap,IOnFin
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
 
+        left_arrow.setOnClickListener {
+            startActivity(intentToMainActivity)
+            finish()
+        }
+
     }
    /* override fun onPostCreate(savedInstanceState: Bundle?) {
         super.onPostCreate(savedInstanceState)

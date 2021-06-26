@@ -40,13 +40,10 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
     private var sayacYanlis:Int=0
     private val timestamp: FieldValue =FieldValue.serverTimestamp()
     private val db = Firebase.firestore
-    private var activityAcmaSayisi:Int=1
-    var sayac1=0
     private val c: Date = Calendar.getInstance().time
     private val df: SimpleDateFormat = SimpleDateFormat("dd-MMM-yyyy", Locale.CANADA)
     private val formatDate=df.format(c)
     private val ab="groupMixFruits"
-    private var x:Long?=0
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -97,13 +94,19 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
         //mPlayer?.stop()
         //mPlayer?.release()
         if(sayac==8 && data.soundResource==list[sayac]){
+            sayacDogru++
+            animation(imageView)
             mPlayer = MediaPlayer.create(this, R.raw.tebrikler)
             mPlayer?.start()
             mPlayer?.setOnCompletionListener {
                 mPlayer?.stop()
                 mPlayer?.release()
                 mPlayer=null
+                onBackPressed()
             }
+        }else if(sayac==8 && data.soundResource!=list[sayac]){
+            animationWrong(imageView)
+            sayacYanlis++
         }
         if(sayac!=8){
             if (data.soundResource == list[sayac]) {
@@ -144,9 +147,6 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
     }
 
     override fun onDestroy() {
-        Log.d("TAGLA", "onDestroy Çağrıldı")
-        Log.d("TAGLA", "$sayacDogru")
-        Log.d("TAGLA", "$sayacYanlis")
 
         if(FirebaseAuth.getInstance().currentUser!=null){
             db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).
