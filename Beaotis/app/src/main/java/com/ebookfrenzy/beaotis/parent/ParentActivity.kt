@@ -21,6 +21,7 @@ import com.ebookfrenzy.beaotis.SignInDialogFragment
 import com.ebookfrenzy.beaotis.findingobjects.FindObjectDataClass
 import com.ebookfrenzy.beaotis.findingobjects.IOnFindingObjectsClickListener
 import com.ebookfrenzy.beaotis.findingobjects.ObjectMainRecyclerView
+import com.ebookfrenzy.beaotis.letsstudy.LetsStudyActivity
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -124,7 +125,11 @@ class ParentActivity : AppCompatActivity(),SignInDialogFragment.IGirisYap,IOnFin
     }
 
     override fun onItemClicked(data: FindObjectDataClass, position: Int) {
-
+        when(position){
+            0->intent = Intent(this, SonucFruitsActivity::class.java)
+        }
+        startActivity(intent)
+        finish()
 
     }
     //FireStore Liste çekme
