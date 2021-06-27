@@ -26,12 +26,12 @@ class Click3 : Fragment() {
     ): View? {
         mediaPlay()
 
-
         val view= inflater.inflate(R.layout.fragment_click3, container, false)
         view.imageViewFruitsElma1.setOnClickListener{
             mPlayer?.stop()
             mPlayer?.release()
             animation(view.imageViewFruitsElma1)
+            
         }
         view.imageViewFruitsArmut1.setOnClickListener {
             mPlayer?.stop()

@@ -127,6 +127,9 @@ class ParentActivity : AppCompatActivity(),SignInDialogFragment.IGirisYap,IOnFin
     override fun onItemClicked(data: FindObjectDataClass, position: Int) {
         when(position){
             0->intent = Intent(this, SonucFruitsActivity::class.java)
+            1->intent = Intent(this, SonucVegetablesActivity::class.java)
+            2->intent = Intent(this, SonucVehiclesActivity::class.java)
+            3->intent = Intent(this, SonucFurnituresActivity::class.java)
         }
         startActivity(intent)
         finish()

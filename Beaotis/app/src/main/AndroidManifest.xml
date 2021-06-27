@@ -11,7 +11,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".parent.SonucFruitsActivity"></activity>
+        <activity android:name=".parent.SonucVehiclesActivity"></activity>
+        <activity android:name=".parent.SonucVegetablesActivity" />
+        <activity android:name=".parent.SonucFurnituresActivity" />
+        <activity android:name=".parent.SonucFruitsActivity" />
         <activity android:name=".findingobjects.vehicles.GroupMixedVehicles" />
         <activity android:name=".findingobjects.vegetables.GroupMixedVegetables" />
         <activity android:name=".findingobjects.furnitures.GroupMixedFurnitures" />

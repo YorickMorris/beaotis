@@ -1,13 +1,11 @@
 package com.ebookfrenzy.beaotis.parent
 
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import com.ebookfrenzy.beaotis.MainActivity
 import com.ebookfrenzy.beaotis.R
 import com.github.mikephil.charting.components.XAxis
-import com.github.mikephil.charting.components.YAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
@@ -17,26 +15,25 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_sonuc_fruits.*
+import kotlinx.android.synthetic.main.activity_sonuc_fruits.barChart
+import kotlinx.android.synthetic.main.activity_sonuc_furnitures.*
 
+class SonucFurnituresActivity : AppCompatActivity() {
 
-class SonucFruitsActivity : AppCompatActivity() {
     var barEntry= arrayListOf<BarEntry>()//Bu liste ise başarı yüzdeliği olacak.
     private val db = Firebase.firestore
-    private val ab="groupMixFruits"
+    private val ab="groupMixFurnitures"
     private val tarihlerList2= arrayListOf<String>()
     private var basarilar= arrayListOf<Float>()
     private var sayac=1
     private var sayac1=1
     private lateinit var intentToParentActivity: Intent
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sonuc_fruits)
-
+        setContentView(R.layout.activity_sonuc_furnitures)
         intentToParentActivity=Intent(this, ParentActivity::class.java)
-        
+
         if(FirebaseAuth.getInstance().currentUser!=null&& sayac1==1){
             db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).
             collection(ab).get()
@@ -68,33 +65,33 @@ class SonucFruitsActivity : AppCompatActivity() {
                         }
                         Log.d("Sayac: ",  "$sayac")
                         if(sayac<=tarihlerList2.size){
-                            val barDataSet=BarDataSet(barEntry,"Başarı Oranları")
+                            val barDataSet= BarDataSet(barEntry,"Başarı Oranları")
                             barDataSet.valueTextSize=10f
                             barDataSet.setColors(*ColorTemplate.MATERIAL_COLORS)
 
-                            val barData=BarData(barDataSet)
-                            barChart.data=barData
+                            val barData= BarData(barDataSet)
+                            barChartFurnitures.data=barData
                             sayac++
-                            barChart.animateY(1500)
-                            barChart.setFitBars(true)
-                            barChart.description.text="Başarı Seviyesi"
+                            barChartFurnitures.animateY(1500)
+                            barChartFurnitures.setFitBars(true)
+                            barChartFurnitures.description.text="Başarı Seviyesi"
                             //barChart.xAxis.granularity=1f
-                            barChart.xAxis.setAvoidFirstLastClipping(true)
+                            barChartFurnitures.xAxis.setAvoidFirstLastClipping(true)
                             //barData.barWidth=0.43f
-                            barChart.axisLeft.axisMaximum=100f
-                            barChart.axisLeft.axisMinimum=0f
-                            barChart.axisRight.axisMaximum=100f
-                            barChart.axisRight.axisMinimum=0f
+                            barChartFurnitures.axisLeft.axisMaximum=100f
+                            barChartFurnitures.axisLeft.axisMinimum=0f
+                            barChartFurnitures.axisRight.axisMaximum=100f
+                            barChartFurnitures.axisRight.axisMinimum=0f
 
-                            barChart.xAxis.isGranularityEnabled=true
-                            barChart.xAxis.setCenterAxisLabels(false)
-
-
-                            barChart.xAxis.valueFormatter=IndexAxisValueFormatter(tarihlerList2)
+                            barChartFurnitures.xAxis.isGranularityEnabled=true
+                            barChartFurnitures.xAxis.setCenterAxisLabels(false)
 
 
+                            barChartFurnitures.xAxis.valueFormatter= IndexAxisValueFormatter(tarihlerList2)
 
-                            barChart.xAxis.position= XAxis.XAxisPosition.BOTTOM
+
+
+                            barChartFurnitures.xAxis.position= XAxis.XAxisPosition.BOTTOM
                             Log.d("Listenerİçi", tarihlerList2.toString())
 
                         }
@@ -108,23 +105,10 @@ class SonucFruitsActivity : AppCompatActivity() {
 
 
         }
-
-
     }
     override fun onBackPressed() {
         startActivity(intentToParentActivity)
         finish()
         super.onBackPressed()
     }
-    /*fun foo(callback:(MutableList<String>) -> Unit) {
-
-    }*/
-    /*fun getAreaCount(tarihler:ArrayList<String>):ArrayList<String>{
-
-        for (i in 0 until tarihler.size) label.add(areaList.get(i).getTopicName()){
-
-        }
-        return tarihler
-    }*/
-
 }
