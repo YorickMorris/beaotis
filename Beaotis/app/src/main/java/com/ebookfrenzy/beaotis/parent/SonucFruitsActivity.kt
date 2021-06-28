@@ -100,7 +100,6 @@ class SonucFruitsActivity : AppCompatActivity() {
                         if(basarilar.size>=8 && basarilar.sum()/basarilar.size>=80f){
                             tavsiyeler.add("Çocuğunuz bu uygulamada yeterli başarıyı göstermiştir.")
                             tavsiyeler.add("Çocuğunuz bu aktivitede gösterdiği başarıyı diğer gruplarda da gösteriyorsa ‘Öğrenelim’ kısmındaki aktivitelere başlayabilir.")
-                            tavsiyeler.add("")
                             Log.d("Ortalama ", " Ortalama: " +
                                     "${basarilar.sum()/basarilar.size}")
                         }
@@ -108,7 +107,6 @@ class SonucFruitsActivity : AppCompatActivity() {
                         Log.d("Başarı ", " bugünkü başarı: " +
                                 "${basarilar.sum()/basarilar.size}")
                         if(basarilar[basarilar.lastIndex]<=50f){
-                            tavsiyeler.add("")
                             tavsiyeler.add(olumsuz)
 
                         }else if(basarilar[basarilar.lastIndex]>=80f&&bitirmeSayisi>=5){
