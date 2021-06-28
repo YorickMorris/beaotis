@@ -40,12 +40,7 @@ class Click3 : Fragment() {
         }
         return view
     }
-    override fun onDestroy() {
 
-        mPlayer?.stop()
-        mPlayer?.release()
-        super.onDestroy()
-    }
     override fun onDetach() {
         mPlayer?.stop()
         mPlayer?.release()
@@ -66,7 +61,7 @@ class Click3 : Fragment() {
         }
     }
     fun animationWrong(v:View){
-        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)
             .duration(700)
             .repeat(2)
             .playOn(v)

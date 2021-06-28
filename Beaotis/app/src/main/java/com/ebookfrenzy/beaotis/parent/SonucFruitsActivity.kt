@@ -65,7 +65,6 @@ class SonucFruitsActivity : AppCompatActivity() {
                                 val x=((b/(c+(a*9f)))* 100f).toDouble()
                                 bitirmeSayisi+=a
 
-                                //list_viewFruits.adapter=adapter
                                 Log.d("Başarı x: ",  "$x")
                                 basarilar.add(x.toFloat())
                             }
@@ -173,9 +172,7 @@ class SonucFruitsActivity : AppCompatActivity() {
                 }
             Log.d("ListenerDışı", tarihlerList2.toString())
 
-
         }
-
 
     }
     override fun onBackPressed() {
@@ -183,16 +180,7 @@ class SonucFruitsActivity : AppCompatActivity() {
         finish()
         super.onBackPressed()
     }
-    /*fun foo(callback:(MutableList<String>) -> Unit) {
 
-    }*/
-    /*fun getAreaCount(tarihler:ArrayList<String>):ArrayList<String>{
-
-        for (i in 0 until tarihler.size) label.add(areaList.get(i).getTopicName()){
-
-        }
-        return tarihler
-    }*/
     fun comparison(list:ArrayList<Float>):Float{
         var a=0f
         var b=0f

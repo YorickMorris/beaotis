@@ -24,17 +24,13 @@ class FurnituresSplash22 : Fragment() {
         mPlayer?.start()
 
         Handler().postDelayed({
-
             findNavController().navigate(R.id.action_furnituresSplash22_to_furnituresClick22)
         }, 3000)
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_furnitures_splash22, container, false)
     }
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
 

@@ -28,13 +28,11 @@ class VehiclesSplash21 : Fragment() {
             findNavController().navigate(R.id.action_vehiclesSplash21_to_vehiclesClick21)
         },3000)
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_vehicles_splash21, container, false)
     }
     override fun onDestroy() {
         mPlayer?.stop()
         super.onDestroy()
     }
-
 
 }

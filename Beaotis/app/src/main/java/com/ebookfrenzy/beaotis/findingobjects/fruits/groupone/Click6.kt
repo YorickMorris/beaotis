@@ -44,9 +44,7 @@ class Click6 : Fragment() {
         return view
     }
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
     fun animation(v:View){
@@ -64,11 +62,10 @@ class Click6 : Fragment() {
         }
     }
     fun animationWrong(v:View){
-        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)
             .duration(700)
             .repeat(2)
             .playOn(v)
-
     }
 
     fun mediaPlay(){

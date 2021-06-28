@@ -13,16 +13,11 @@ import java.lang.Exception
 class SplashScreen : AppCompatActivity(){
     private lateinit var intentToMainActivity:Intent
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
-        // Status barı saklamak için. Mümkünse programatik yapıp xml ile ayarla.
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-        Log.d("onCreate", "onCreate methoduna girildi.(SplashScreen)")
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
-        try{
-            //val videoHolder:VideoView= VideoView(this)
 
+        try{
             val videoPath="android.resource://$packageName/raw/p720"
             video_view.setVideoPath(videoPath)
             Log.d("Video Url", videoPath)
@@ -37,6 +32,7 @@ class SplashScreen : AppCompatActivity(){
         }catch (ex:Exception){
             jump()
         }
+
     }
     private fun jump(){
         if(isFinishing)
@@ -49,6 +45,12 @@ class SplashScreen : AppCompatActivity(){
     override fun onTouchEvent(event: MotionEvent?): Boolean {
         jump()
         return true
+    }
+
+    override fun onStart() {
+        // Status barı saklamak için. Mümkünse programatik yapıp xml ile ayarla.
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        super.onStart()
     }
 
 }

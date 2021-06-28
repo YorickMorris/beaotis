@@ -15,11 +15,7 @@ import kotlinx.android.synthetic.main.activity_sign_up.*
 
 class SignUpActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
-    private val tag="ClassName"
     private lateinit var intentToMainActivity: Intent
-    private val db = Firebase.firestore
-    private val docCollectionRef = db.collection("useIds")
-    //private val userInfo= hashMapOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         intentToMainActivity=Intent(this, MainActivity::class.java)
@@ -32,8 +28,6 @@ class SignUpActivity : AppCompatActivity() {
             auth.createUserWithEmailAndPassword(email.text.toString(), sifre.text.toString())
                 .addOnCompleteListener(this) { task ->
                     if (task.isSuccessful) {
-                        //docCollectionRef.add()
-                        Log.d(tag, sifre.text.toString())
                         val user = auth.currentUser
                         updateUI(user)
                     } else {
@@ -55,5 +49,4 @@ class SignUpActivity : AppCompatActivity() {
         finish()
         super.onBackPressed()
     }
-
 }

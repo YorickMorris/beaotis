@@ -31,11 +31,9 @@ class GroupMixedVehicles : AppCompatActivity(), IFindingObjectsMixedOnClickListe
     private lateinit var recyclerView: RecyclerView
     private var mPlayer: MediaPlayer?=null
     val list:MutableList<Int> = getSoundResources(mixed_vehicles())
-    var hataListe = mutableListOf<String>()
     var sayac = 0
     private var sayacDogru:Int=0
     private var sayacYanlis:Int=0
-    private val timestamp: FieldValue = FieldValue.serverTimestamp()
     private val db = Firebase.firestore
     private val c: Date = Calendar.getInstance().time
     private val df: SimpleDateFormat = SimpleDateFormat("dd-MMM-yyyy", Locale.CANADA)
@@ -63,8 +61,7 @@ class GroupMixedVehicles : AppCompatActivity(), IFindingObjectsMixedOnClickListe
 
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
-        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-        //val adapter = SubRecyclerView(fruit_generator(), this)
+
     }
     override fun onBackPressed() {
         startActivity(intentToVehiclesActivity)
@@ -176,9 +173,14 @@ class GroupMixedVehicles : AppCompatActivity(), IFindingObjectsMixedOnClickListe
 
     }
     fun animationWrong(imageView: ImageView){
-        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)
                 .duration(700)
                 .repeat(2)
                 .playOn(imageView)
+    }
+
+    override fun onStart() {
+        window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
+        super.onStart()
     }
 }

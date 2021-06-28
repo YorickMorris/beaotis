@@ -24,19 +24,13 @@ class FruitsSlapsh33 : Fragment() {
         mPlayer?.start()
 
         Handler().postDelayed({
-
             findNavController().navigate(R.id.action_fruitsSlapsh33_to_fruitsClick35)
-
-
         }, 3000)
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_fruits_slapsh33, container, false)
     }
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
 

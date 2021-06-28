@@ -23,18 +23,13 @@ class FurnituresSplash23 : Fragment() {
         mPlayer=MediaPlayer.create(activity, R.raw.tisorttelaffuz)
         mPlayer?.start()
         Handler().postDelayed({
-
             findNavController().navigate(R.id.action_furnituresSplash23_to_furnituresClick25)
-
-
         }, 3000)
-        // Inflate the layout for this fragment
+
         return inflater.inflate(R.layout.fragment_furnitures_splash23, container, false)
     }
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
 

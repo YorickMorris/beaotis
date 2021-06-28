@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".parent.SonucVehiclesActivity"></activity>
+        <activity android:name=".parent.SonucVehiclesActivity"/>
         <activity android:name=".parent.SonucVegetablesActivity" />
         <activity android:name=".parent.SonucFurnituresActivity" />
         <activity android:name=".parent.SonucFruitsActivity" />
@@ -103,23 +103,7 @@
             android:name=".SignUpActivity"
             android:screenOrientation="landscape" /> <!-- MainActivity Diğer Activitylerin Parenti(BackStack için önemli) -->
         <activity
-            android:name=".aba.Aba"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".awards.Awards"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".letstalk.LetsTalk"
-            android:screenOrientation="landscape" />
-        <activity
             android:name=".findingobjects.FindingObjects"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".makeittogether.MakeItTogether"
-            android:parentActivityName=".MainActivity"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".completesentence.CompleteSentence"
             android:screenOrientation="landscape" />
         <activity
             android:name=".story.Story"
@@ -132,9 +116,6 @@
             android:screenOrientation="landscape" />
         <activity
             android:name=".pairing.Pairing"
-            android:screenOrientation="landscape" />
-        <activity
-            android:name=".markyourheard.MarkYourHeard"
             android:screenOrientation="landscape" />
         <activity
             android:name=".letsstudy.LetsStudyActivity"

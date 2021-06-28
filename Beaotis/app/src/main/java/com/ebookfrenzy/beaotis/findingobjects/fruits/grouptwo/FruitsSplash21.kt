@@ -26,7 +26,6 @@ class FruitsSplash21 : Fragment() {
             findNavController().navigate(R.id.action_fruitsSplash21_to_fruitsClick21)
         },3000)
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_fruits_splash21, container, false)
     }
 

@@ -27,8 +27,6 @@ class FurnituresClick35 : Fragment() {
     ): View? {
         mediaPlay()
 
-
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_furnitures_click35, container, false)
         view.imageViewFurnituresMasa.setOnClickListener {
             mPlayer?.stop()
@@ -38,9 +36,7 @@ class FurnituresClick35 : Fragment() {
         return view
     }
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
     fun animation(v:View){

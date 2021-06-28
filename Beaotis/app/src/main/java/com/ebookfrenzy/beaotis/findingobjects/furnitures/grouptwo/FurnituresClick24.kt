@@ -27,8 +27,6 @@ class FurnituresClick24 : Fragment() {
     ): View? {
         mediaPlay()
 
-
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_furnitures_click24, container, false)
 
         view.imageViewFurnituresEtek2.setOnClickListener {
@@ -45,9 +43,7 @@ class FurnituresClick24 : Fragment() {
         return view
     }
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
     fun animation(v:View){
@@ -75,11 +71,9 @@ class FurnituresClick24 : Fragment() {
         }
     }
     fun animationWrong(v:View){
-        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)
                 .duration(700)
                 .repeat(2)
                 .playOn(v)
     }
-
-
 }

@@ -29,13 +29,10 @@ class FurnituresSplash13 : Fragment() {
 
         }, 3000)
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_furnitures_splash13, container, false)
     }
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
 

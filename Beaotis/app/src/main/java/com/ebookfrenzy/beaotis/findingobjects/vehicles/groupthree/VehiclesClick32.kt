@@ -27,7 +27,6 @@ class VehiclesClick32 : Fragment() {
     ): View? {
         mediaPlay()
 
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_vehicles_click32, container, false)
 
         view.imageViewVehiclesTren.setOnClickListener {
@@ -40,9 +39,7 @@ class VehiclesClick32 : Fragment() {
     }
 
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
     fun animation(v:View){
@@ -69,6 +66,5 @@ class VehiclesClick32 : Fragment() {
             mPlayer=null
         }
     }
-
 
 }

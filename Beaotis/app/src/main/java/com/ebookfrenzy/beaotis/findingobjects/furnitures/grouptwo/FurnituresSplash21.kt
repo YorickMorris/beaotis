@@ -27,7 +27,6 @@ class FurnituresSplash21 : Fragment() {
             findNavController().navigate(R.id.action_furnituresSplash21_to_furnituresClick21)
         },3000)
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_furnitures_splash21, container, false)
     }
 

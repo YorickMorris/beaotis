@@ -28,8 +28,6 @@ class FurnituresClick38 : Fragment() {
     ): View? {
         mediaPlay()
 
-
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_furnitures_click38, container, false)
         view.imageViewFurnituresMasa3.setOnClickListener{
             mPlayer?.stop()
@@ -51,9 +49,7 @@ class FurnituresClick38 : Fragment() {
     }
 
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
     fun animation(v:View){
@@ -81,7 +77,7 @@ class FurnituresClick38 : Fragment() {
         }
     }
     fun animationWrong(v:View){
-        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)
                 .duration(700)
                 .repeat(2)
                 .playOn(v)

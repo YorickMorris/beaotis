@@ -27,8 +27,6 @@ class FurnituresClick25 : Fragment() {
     ): View? {
         mediaPlay()
 
-
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_furnitures_click25, container, false)
 
         view.imageViewFurnituresTisort.setOnClickListener {
@@ -69,6 +67,5 @@ class FurnituresClick25 : Fragment() {
             mPlayer=null
         }
     }
-
 
 }

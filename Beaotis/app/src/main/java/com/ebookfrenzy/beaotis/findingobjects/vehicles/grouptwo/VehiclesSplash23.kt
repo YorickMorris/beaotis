@@ -23,21 +23,15 @@ class VehiclesSplash23 : Fragment() {
         mPlayer=MediaPlayer.create(activity, R.raw.motorsiklettelaffuz)
         mPlayer?.start()
         Handler().postDelayed({
-
             findNavController().navigate(R.id.action_vehiclesSplash23_to_vehiclesClick25)
-
 
         }, 3000)
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_vehicles_splash23, container, false)
     }
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
-
 
 }

@@ -31,23 +31,13 @@ import kotlinx.android.synthetic.main.activity_parent.*
 import kotlinx.android.synthetic.main.app_bar_parent.*
 
 class ParentActivity : AppCompatActivity(),SignInDialogFragment.IGirisYap,IOnFindingObjectsClickListener,IParentActivityGenerator{
-    //, NavigationView.OnNavigationItemSelectedListener
-   /* private lateinit var drawer: DrawerLayout
-    private lateinit var toggle: ActionBarDrawerToggle*/
     private lateinit var intentToMainActivity: Intent
-    private var user:FirebaseUser?=null
     private lateinit var recyclerView: RecyclerView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_parent)
 
         Log.d("Kullanıcı girdi", "Kullanıcı: ${FirebaseAuth.getInstance().currentUser}")
-
-        /*toggle= ActionBarDrawerToggle(this,drawer,toolbar_main,R.string.nav_app_bar_open_drawer_description,R.string.nav_app_bar_navigate_up_description)
-        drawer.addDrawerListener(toggle)*/
-/*        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        supportActionBar?.setHomeButtonEnabled(true)
-        nav_view.setNavigationItemSelectedListener(this)*/
 
         intentToMainActivity=Intent(this, MainActivity::class.java)
 
@@ -64,45 +54,7 @@ class ParentActivity : AppCompatActivity(),SignInDialogFragment.IGirisYap,IOnFin
         }
 
     }
-   /* override fun onPostCreate(savedInstanceState: Bundle?) {
-        super.onPostCreate(savedInstanceState)
-        toggle.syncState()
-    }
 
-    override fun onConfigurationChanged(newConfig: Configuration) {
-        super.onConfigurationChanged(newConfig)
-        toggle.onConfigurationChanged(newConfig)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (toggle.onOptionsItemSelected(item)) {
-            return true
-        }
-        return super.onOptionsItemSelected(item)
-    }
-
-    override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.nav_item_one->Toast.makeText(this, "Clicked item one", Toast.LENGTH_SHORT).show()
-            R.id.nav_item_two->Toast.makeText(this, "Clicked item one", Toast.LENGTH_SHORT).show()
-            R.id.nav_item_three->Toast.makeText(this, "Clicked item one", Toast.LENGTH_SHORT).show()
-            R.id.nav_item_four->Toast.makeText(this, "Clicked item one", Toast.LENGTH_SHORT).show()
-            R.id.nav_item_five->Toast.makeText(this, "Clicked item one", Toast.LENGTH_SHORT).show()
-            R.id.nav_item_six->Toast.makeText(this, "Clicked item one", Toast.LENGTH_SHORT).show()
-            R.id.nav_item_seven->Toast.makeText(this, "Clicked item one", Toast.LENGTH_SHORT).show()
-        }
-        drawer.closeDrawer(GravityCompat.START)//Tıklanıldığında drawer' ı kapatmak için kullanılır.
-        return true
-    }
-    override fun onBackPressed() {
-
-        if (drawer.isDrawerOpen(GravityCompat.START)) {
-            drawer.closeDrawer(GravityCompat.START)
-        } else {
-            startActivity(intentToMainActivity)
-            super.onBackPressed()
-        }
-    }*/
    override fun onBackPressed() {
        startActivity(intentToMainActivity)
        finish()
@@ -120,7 +72,6 @@ class ParentActivity : AppCompatActivity(),SignInDialogFragment.IGirisYap,IOnFin
     }
 
     override fun girisYap(user: FirebaseUser?):FirebaseUser? {
-
         return user
     }
 
@@ -133,27 +84,5 @@ class ParentActivity : AppCompatActivity(),SignInDialogFragment.IGirisYap,IOnFin
         }
         startActivity(intent)
         finish()
-
     }
-    //FireStore Liste çekme
-    /*
-    private fun getFirestoreList():MutableList<String>?{
-       docRef.addOnSuccessListener {
-           if(it!=null){
-               println("HEY")
-               cards = it.get("uploadList") as MutableList<String>?
-               cards!!.addAll(cards!!)
-               println(cards)
-               cards!!.shuffle()
-               println(cards)
-
-           }else{
-               println("NOOO")
-           }
-       }
-       return cards
-   }
-     */
-
-
 }

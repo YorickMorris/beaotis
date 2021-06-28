@@ -60,13 +60,11 @@ class SignInDialogFragment: DialogFragment() {
                                        giris?.girisYap(user)
                                    }
 
-                                   //updateUI(user,view,intent1)
                                }
 
                            }.addOnFailureListener {
                                updateUI(user,view,intent1)
                            }
-
 
                    }else if(a=="" && b!=""){
                        Toast.makeText(view.context,"Lütfen Eposta Adresinizi Girin",Toast.LENGTH_SHORT).show()
@@ -77,8 +75,6 @@ class SignInDialogFragment: DialogFragment() {
                    }
 
                    dialog.dismiss()
-
-                   //Giriş eylemleri
                }
                 .setNeutralButton(R.string.sign_up) { dialog, _ ->
                     startActivity(intent)

@@ -24,7 +24,6 @@ class Click7 : Fragment() {
     ): View? {
         mediaPlay()
 
-        // Inflate the layout for this fragment
         val view= inflater.inflate(R.layout.fragment_click7, container, false)
         view.imageViewFruitsArmut4.setOnClickListener {
             mPlayer?.stop()
@@ -82,7 +81,7 @@ class Click7 : Fragment() {
         }
     }
     fun animationWrong(v:View){
-        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)
                 .duration(700)
                 .repeat(2)
                 .playOn(v)

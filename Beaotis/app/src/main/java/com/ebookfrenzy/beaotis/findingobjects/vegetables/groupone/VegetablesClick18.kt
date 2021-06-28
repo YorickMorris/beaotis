@@ -28,8 +28,6 @@ class VegetablesClick18 : Fragment() {
     ): View? {
         mediaPlay()
 
-
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_vegetables_click18, container, false)
 
         view.imageViewVegetablesLimon3.setOnClickListener{
@@ -52,9 +50,7 @@ class VegetablesClick18 : Fragment() {
         return view
     }
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
     fun animation(v:View){
@@ -82,12 +78,10 @@ class VegetablesClick18 : Fragment() {
         }
     }
     fun animationWrong(v:View){
-        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)
                 .duration(700)
                 .repeat(2)
                 .playOn(v)
 
     }
-
-
 }

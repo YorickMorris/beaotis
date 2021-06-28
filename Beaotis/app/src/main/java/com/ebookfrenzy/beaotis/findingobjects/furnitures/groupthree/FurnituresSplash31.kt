@@ -26,7 +26,6 @@ class FurnituresSplash31 : Fragment() {
             findNavController().navigate(R.id.action_furnituresSplash31_to_furnituresClick31)
         },3000)
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_furnitures_splash31, container, false)
     }
     override fun onDestroy() {

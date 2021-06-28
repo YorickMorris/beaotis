@@ -27,7 +27,6 @@ class VehiclesClick15 : Fragment() {
     ): View? {
         mediaPlay()
 
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_vehicles_click15, container, false)
 
         view.imageViewVehiclesBisiklet.setOnClickListener {
@@ -67,6 +66,4 @@ class VehiclesClick15 : Fragment() {
             mPlayer=null
         }
     }
-
-
 }

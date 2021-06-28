@@ -27,7 +27,6 @@ class VehiclesClick13 : Fragment() {
     ): View? {
         mediaPlay()
 
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_vehicles_click13, container, false)
 
         view.imageViewVehiclesAraba1.setOnClickListener{
@@ -73,11 +72,9 @@ class VehiclesClick13 : Fragment() {
         }
     }
     fun animationWrong(v:View){
-        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)
                 .duration(700)
                 .repeat(2)
                 .playOn(v)
     }
-
-
 }

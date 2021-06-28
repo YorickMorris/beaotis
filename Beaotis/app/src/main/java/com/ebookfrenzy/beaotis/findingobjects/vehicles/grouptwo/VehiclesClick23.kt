@@ -27,7 +27,6 @@ class VehiclesClick23 : Fragment() {
     ): View? {
         mediaPlay()
 
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_vehicles_click23, container, false)
 
         view.imageViewVehiclesGemi1.setOnClickListener{
@@ -43,9 +42,7 @@ class VehiclesClick23 : Fragment() {
         return view
     }
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
     fun animation(v:View){
@@ -78,6 +75,5 @@ class VehiclesClick23 : Fragment() {
                 .repeat(2)
                 .playOn(v)
     }
-
 
 }

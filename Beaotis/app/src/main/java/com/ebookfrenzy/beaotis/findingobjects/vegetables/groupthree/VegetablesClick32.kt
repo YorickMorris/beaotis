@@ -27,8 +27,6 @@ class VegetablesClick32 : Fragment() {
     ): View? {
         mediaPlay()
 
-
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_vegetables_click32, container, false)
 
         view.imageViewVegetablesSalatalik.setOnClickListener {
@@ -40,9 +38,7 @@ class VegetablesClick32 : Fragment() {
         return view
     }
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
     fun animation(v:View){
@@ -69,6 +65,4 @@ class VegetablesClick32 : Fragment() {
             mPlayer=null
         }
     }
-
-
 }

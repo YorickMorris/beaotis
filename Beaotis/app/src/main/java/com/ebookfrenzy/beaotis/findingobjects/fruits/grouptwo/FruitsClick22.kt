@@ -26,9 +26,6 @@ class FruitsClick22 : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         mediaPlay()
-
-
-        // Inflate the layout for this fragment
         val view = inflater.inflate(R.layout.fragment_fruits_click22, container, false)
 
         view.imageViewFruitsCilek.setOnClickListener {
@@ -41,9 +38,7 @@ class FruitsClick22 : Fragment() {
         return view
     }
     override fun onDestroy() {
-
         mPlayer?.stop()
-
         super.onDestroy()
     }
     fun animation(v:View){

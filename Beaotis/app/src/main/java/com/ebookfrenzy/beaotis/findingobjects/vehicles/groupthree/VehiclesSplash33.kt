@@ -29,7 +29,6 @@ class VehiclesSplash33 : Fragment() {
 
         }, 3000)
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_vehicles_splash33, container, false)
     }
     override fun onDestroy() {
@@ -38,6 +37,4 @@ class VehiclesSplash33 : Fragment() {
 
         super.onDestroy()
     }
-
-
 }

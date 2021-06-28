@@ -25,7 +25,6 @@ class Click4 : Fragment() {
     ): View? {
         mediaPlay()
 
-
         val view= inflater.inflate(R.layout.fragment_click4, container, false)
         view.imageViewFruitsArmut2.setOnClickListener {
             mPlayer?.stop()
@@ -40,12 +39,6 @@ class Click4 : Fragment() {
         return view
     }
 
-    override fun onDestroy() {
-
-        mPlayer?.stop()
-        mPlayer?.release()
-        super.onDestroy()
-    }
     override fun onDetach() {
         mPlayer?.stop()
         mPlayer?.release()
@@ -76,7 +69,7 @@ class Click4 : Fragment() {
         }
     }
     fun animationWrong(v:View){
-        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)
                 .duration(700)
                 .repeat(2)
                 .playOn(v)

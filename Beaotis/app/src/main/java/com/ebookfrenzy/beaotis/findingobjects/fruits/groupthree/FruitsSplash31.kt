@@ -27,7 +27,6 @@ class FruitsSplash31 : Fragment() {
             findNavController().navigate(R.id.action_fruitsSplash31_to_fruitsClick31)
         },3000)
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_fruits_splash31, container, false)
     }
     override fun onDestroy() {

@@ -11,15 +11,6 @@
         android:label="activity_main"
         tools:layout="@layout/activity_main" >
         <action
-            android:id="@+id/action_mainActivity_to_aba"
-            app:destination="@id/aba" />
-        <action
-            android:id="@+id/action_mainActivity_to_awards"
-            app:destination="@id/awards" />
-        <action
-            android:id="@+id/action_mainActivity_to_completeSentence"
-            app:destination="@id/completeSentence" />
-        <action
             android:id="@+id/action_mainActivity_to_educationalSongs"
             app:destination="@id/educationalSongs" />
         <action
@@ -32,21 +23,6 @@
             android:id="@+id/action_mainActivity_to_letsStudyActivity"
             app:destination="@id/letsStudyActivity" />
         <action
-            android:id="@+id/action_mainActivity_to_letsStudyActivity2"
-            app:destination="@id/letsStudyActivity" />
-        <action
-            android:id="@+id/action_mainActivity_to_letsTalk"
-            app:destination="@id/letsTalk" />
-        <action
-            android:id="@+id/action_mainActivity_to_makeItTogether"
-            app:destination="@id/makeItTogether" />
-        <action
-            android:id="@+id/action_mainActivity_to_markYourHeard"
-            app:destination="@id/markYourHeard" />
-        <action
-            android:id="@+id/action_mainActivity_to_markYourHeard2"
-            app:destination="@id/markYourHeard" />
-        <action
             android:id="@+id/action_mainActivity_to_story"
             app:destination="@id/story" />
         <action
@@ -57,21 +33,6 @@
             app:destination="@id/signInDialogFragment"
             app:popUpTo="@id/signInDialogFragment" />
     </activity>
-    <activity
-        android:id="@+id/aba"
-        android:name="com.ebookfrenzy.beaotis.aba.Aba"
-        android:label="activity_aba"
-        tools:layout="@layout/activity_aba" />
-    <activity
-        android:id="@+id/awards"
-        android:name="com.ebookfrenzy.beaotis.awards.Awards"
-        android:label="activity_awards"
-        tools:layout="@layout/activity_awards" />
-    <activity
-        android:id="@+id/completeSentence"
-        android:name="com.ebookfrenzy.beaotis.completesentence.CompleteSentence"
-        android:label="activity_complete_sentence"
-        tools:layout="@layout/activity_complete_sentence" />
     <activity
         android:id="@+id/educationalSongs"
         android:name="com.ebookfrenzy.beaotis.educationalsongs.EducationalSongs"
@@ -133,16 +94,6 @@
         android:name="com.ebookfrenzy.beaotis.letsstudy.LetsStudyActivity"
         android:label="activity_lets_study"
         tools:layout="@layout/activity_lets_study" />
-    <activity
-        android:id="@+id/letsTalk"
-        android:name="com.ebookfrenzy.beaotis.letstalk.LetsTalk"
-        android:label="activity_lets_talk"
-        tools:layout="@layout/activity_lets_talk" />
-    <activity
-        android:id="@+id/makeItTogether"
-        android:name="com.ebookfrenzy.beaotis.makeittogether.MakeItTogether"
-        android:label="activity_make_it_together"
-        tools:layout="@layout/activity_make_it_together" />
     <activity
         android:id="@+id/markYourHeard"
         android:name="com.ebookfrenzy.beaotis.markyourheard.MarkYourHeard"
@@ -358,6 +309,7 @@
         <action
             android:id="@+id/action_vehiclesActivity4_to_groupTwoVe"
             app:destination="@id/groupTwoVe" />
+
     </activity>
 
 </navigation>

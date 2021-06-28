@@ -27,13 +27,10 @@ class VegetablesSplash11 : Fragment() {
             findNavController().navigate(R.id.action_vegetablesSplash11_to_vegetablesClick11)
         },3000)
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_vegetables_splash11, container, false)
     }
     override fun onDestroy() {
         mPlayer?.stop()
         super.onDestroy()
     }
-
-
 }

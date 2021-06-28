@@ -19,18 +19,14 @@ class FruitsSplash34 : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
+
         val view = inflater.inflate(R.layout.fragment_fruits_splash34, container, false)
 
         Handler().postDelayed({
-
             findNavController().navigate(R.id.action_fruitsSplash34_to_fruitsActivity2)
-
-
         }, 3000)
 
         return view
     }
-
 
 }

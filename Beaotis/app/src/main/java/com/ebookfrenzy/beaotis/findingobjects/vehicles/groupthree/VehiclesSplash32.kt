@@ -24,11 +24,9 @@ class VehiclesSplash32 : Fragment() {
         mPlayer?.start()
 
         Handler().postDelayed({
-
             findNavController().navigate(R.id.action_vehiclesSplash32_to_vehiclesClick32)
         }, 3000)
 
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_vehicles_splash32, container, false)
     }
     override fun onDestroy() {
@@ -37,6 +35,5 @@ class VehiclesSplash32 : Fragment() {
 
         super.onDestroy()
     }
-
 
 }

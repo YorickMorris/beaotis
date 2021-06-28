@@ -12,27 +12,10 @@ import com.daimajia.androidanimations.library.YoYo
 import com.ebookfrenzy.beaotis.R
 import kotlinx.android.synthetic.main.fragment_click1.view.*
 
-/*
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-*/
-
 class Click1 : Fragment() {
     private var mPlayer: MediaPlayer? = null
     private val nav = R.id.action_click1_to_splashFragment2
     private val item = R.raw.elma
-/*
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
-*/
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,22 +23,14 @@ class Click1 : Fragment() {
     ): View? {
         mediaPlay()
 
-
         val view= inflater.inflate(R.layout.fragment_click1, container, false)
         view.imageViewFruitsElma.setOnClickListener {
             mPlayer?.stop()
             mPlayer?.release()
             animation(view.imageViewFruitsElma)
-
         }
 
         return view
-    }
-
-
-    override fun onDestroy() {
-        mPlayer?.release()
-        super.onDestroy()
     }
 
     override fun onDetach() {
