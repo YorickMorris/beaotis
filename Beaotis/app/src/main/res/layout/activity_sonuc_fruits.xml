@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".parent.SonucFruitsActivity">
 <com.github.mikephil.charting.charts.BarChart
     android:id="@+id/barChart"
@@ -14,6 +15,18 @@
     app:layout_constraintEnd_toEndOf="parent"
 
     />
+    <ListView
+        android:id="@+id/list_viewFruits"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:layoutAnimation="@anim/layot_animation_slide_from_right"
+        android:clipToPadding="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/barChart"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
