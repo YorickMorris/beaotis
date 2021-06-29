@@ -3,6 +3,7 @@ package com.ebookfrenzy.beaotis.letsstudy
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.ebookfrenzy.beaotis.R
 import com.ebookfrenzy.beaotis.findingobjects.FindObjectDataClass
@@ -17,7 +18,7 @@ class ColorsActivity : AppCompatActivity() ,IOnLetsStudyClickListener,IColorsGen
         intentToLetsStudyObjectsActivity=Intent(this, LetsStudyActivity::class.java)
     }
 
-    override fun onItemClicked(data: LetsStudyExampleItem, position: Int) {
+    override fun onItemClicked(data: LetsStudyExampleItem, position: Int,imageView: ImageView) {
         TODO("Not yet implemented")
     }
     override fun onBackPressed() {

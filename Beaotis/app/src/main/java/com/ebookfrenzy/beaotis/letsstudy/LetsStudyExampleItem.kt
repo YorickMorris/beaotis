@@ -1,3 +1,5 @@
 package com.ebookfrenzy.beaotis.letsstudy
 
-data class LetsStudyExampleItem(val imageView:Int)
+import android.widget.ImageView
+
+data class LetsStudyExampleItem(val imageView:Int,val soundResource:Int,var imageViewAnimation: ImageView?=null)

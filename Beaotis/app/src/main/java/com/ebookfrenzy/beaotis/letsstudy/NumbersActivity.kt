@@ -1,14 +1,19 @@
 package com.ebookfrenzy.beaotis.letsstudy
 
 import android.content.Intent
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.daimajia.androidanimations.library.Techniques
+import com.daimajia.androidanimations.library.YoYo
 import com.ebookfrenzy.beaotis.R
 import com.ebookfrenzy.beaotis.findingobjects.FindObjectDataClass
 
 class NumbersActivity : AppCompatActivity() ,IOnLetsStudyClickListener ,INumbersGenerator{
+    private var mPlayer: MediaPlayer? = null
     private lateinit var recyclerView: RecyclerView
     private lateinit var intentToLetsStudyObjectsActivity: Intent
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,43 +30,28 @@ class NumbersActivity : AppCompatActivity() ,IOnLetsStudyClickListener ,INumbers
         adapter.notifyDataSetChanged()
     }
 
-    override fun onItemClicked(data: LetsStudyExampleItem, position: Int) {
+    override fun onItemClicked(data: LetsStudyExampleItem, position: Int,imageView: ImageView) {
         //Her bir iteme tıklandığında ses çıkartma işlemi burada olacak.
-        /*when(position){
-            0->
-            1->
-            2->
-            3->
-            4->
-            5->
-            6->
-            7->
-            8->
-            9->
-            10->
-            11->
-            12->
-            13->
-            14->
-            15->
-            16->
-            17->
-            18->
-            19->
-            20->
-            21->
-            22->
-            23->
-            24->
-            25->
-            26->
-            27->
-            28->
-        }*/
+        mPlayer = MediaPlayer.create(this, data.soundResource)
+        mPlayer?.start()
+        animation(imageView)
+        mPlayer?.setOnCompletionListener {
+            mPlayer?.stop()
+            mPlayer?.release()
+            mPlayer=null
+
+        }
     }
     override fun onBackPressed() {
         startActivity(intentToLetsStudyObjectsActivity)
         finish()
         super.onBackPressed()
+    }
+    fun animation(imageView: ImageView){
+        YoYo.with(Techniques.Pulse )
+            .duration(700)
+            .repeat(2)
+            .playOn(imageView)
+
     }
 }

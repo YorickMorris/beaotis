@@ -29,7 +29,7 @@ class LetsStudyRecyclerView(private val ogeList: List<LetsStudyExampleItem>, pri
             //Her bir resme basıldığında ses çıkarmasını istiyorum.
             //Eğer bu RecyclerView' i sadece bir amaç için kullanmak isteseydim burada Firebae Listesini alırdım.
             //Ancak bunu birkaç yerde kullanacağımdan burada firebase kodlarını koşmayacağım.
-            IOnItemClickListener.onItemClicked(currentItem,position)
+            IOnItemClickListener.onItemClicked(currentItem,position,holder.image)
         }
     }
 

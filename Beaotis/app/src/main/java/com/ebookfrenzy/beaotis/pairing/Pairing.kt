@@ -60,7 +60,7 @@ class Pairing : AppCompatActivity() {
 
     private fun updateModels(position: Int) {
         val card = cards[position]
-        // Error checking:
+        // Hata Kontrolü:
         if (card.isFaceUp) {
             Toast.makeText(this, "Yanlış Hamle!", Toast.LENGTH_SHORT).show()
             return
