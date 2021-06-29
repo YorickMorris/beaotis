@@ -41,7 +41,7 @@ class Story : YouTubeBaseActivity(),YouTubePlayer.OnInitializedListener,YouTubeP
     ) {
         //onVideoEnded fonksiyonu çalışmazsa burda fonksiyonu koştur.
         if (!p2) {
-            p1?.cueVideo("fhWaJi1Hsfo") // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
+            p1?.cueVideo("N4F8x0iR0nk&ab") // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
         }
     }
 

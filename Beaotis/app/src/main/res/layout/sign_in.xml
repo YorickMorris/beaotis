@@ -43,7 +43,7 @@
         android:textColorHint="#9CFFFFFF"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="4dp"
-        android:hint="@string/username"
+        android:hint="@string/eposta"
         app:layout_constraintBottom_toTopOf="@+id/sifreGir"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

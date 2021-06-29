@@ -13,6 +13,7 @@
         <action
             android:id="@+id/action_mainActivity_to_educationalSongs"
             app:destination="@id/educationalSongs" />
+
         <action
             android:id="@+id/action_mainActivity_to_etiquette"
             app:destination="@id/etiquette" />
@@ -94,11 +95,7 @@
         android:name="com.ebookfrenzy.beaotis.letsstudy.LetsStudyActivity"
         android:label="activity_lets_study"
         tools:layout="@layout/activity_lets_study" />
-    <activity
-        android:id="@+id/markYourHeard"
-        android:name="com.ebookfrenzy.beaotis.markyourheard.MarkYourHeard"
-        android:label="activity_mark_your_heard"
-        tools:layout="@layout/activity_mark_your_heard" />
+
     <activity
         android:id="@+id/pairing"
         android:name="com.ebookfrenzy.beaotis.pairing.Pairing"
@@ -132,15 +129,7 @@
             android:name="com.ebookfrenzy.beaotis.parent.ParentActivity"
             android:label="activity_parent"
             tools:layout="@layout/activity_parent">
-            <action
-                android:id="@+id/action_parentActivity_to_contactUs"
-                app:destination="@id/contactUs" />
         </activity>
-        <activity
-            android:id="@+id/contactUs"
-            android:name="com.ebookfrenzy.beaotis.ContactUs"
-            android:label="contact_us"
-            tools:layout="@layout/contact_us" />
     </navigation>
     <activity
         android:id="@+id/groupOne"
@@ -310,6 +299,15 @@
             android:id="@+id/action_vehiclesActivity4_to_groupTwoVe"
             app:destination="@id/groupTwoVe" />
 
+    </activity>
+    <activity
+        android:id="@+id/splashScreen"
+        android:name="com.ebookfrenzy.beaotis.SplashScreen"
+        android:label="activity_splash_screen"
+        tools:layout="@layout/activity_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenActivity_to_mainActivity"
+            app:destination="@id/mainActivity" />
     </activity>
 
 </navigation>
