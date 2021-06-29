@@ -74,11 +74,12 @@ class GroupMixedVegetables : AppCompatActivity(), IFindingObjectsMixedOnClickLis
 
     override fun onItemClicked(data: FindingObjectsDataClass, position: Int,imageView: ImageView) {
         if(sayac==8 && data.soundResource==list[sayac]){
-            sayacDogru++
+
             animation(imageView)
             mPlayer = MediaPlayer.create(this, R.raw.tebrikler)
             mPlayer?.start()
             mPlayer?.setOnCompletionListener {
+                sayacDogru++
                 mPlayer?.stop()
                 mPlayer?.release()
                 mPlayer=null
@@ -90,7 +91,7 @@ class GroupMixedVegetables : AppCompatActivity(), IFindingObjectsMixedOnClickLis
         }
         if(sayac!=8){
             if (data.soundResource == list[sayac]) {
-                sayacDogru++
+
                 mPlayer = MediaPlayer.create(this, R.raw.tebrikler)
                 mPlayer?.start()
                 animation(imageView)
@@ -102,6 +103,7 @@ class GroupMixedVegetables : AppCompatActivity(), IFindingObjectsMixedOnClickLis
                     mPlayer = MediaPlayer.create(this, list[sayac+1])
                     mPlayer?.start()
                     mPlayer?.setOnCompletionListener {
+                        sayacDogru++
                         mPlayer?.stop()
                         mPlayer?.release()
                         mPlayer=null
