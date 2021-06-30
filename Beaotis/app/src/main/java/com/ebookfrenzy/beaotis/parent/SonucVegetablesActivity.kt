@@ -103,7 +103,8 @@ class SonucVegetablesActivity : AppCompatActivity() {
                             Log.d("Başarı ", " bugünkü başarı: " +
                                     "${basarilar.sum()/basarilar.size}")
                             if(basarilar[basarilar.lastIndex]<=50f){
-                                tavsiyeler.add(olumsuz)
+                                tavsiyeler.add("Çocuğunuzun günlük başarısı beklenilenin altındadır. Çocuğunuzun uygulamayı doğru bir şekilde " +
+                                        "kullandığından emin olunuz.")
 
                             }else if(basarilar[basarilar.lastIndex]>=80f&&bitirmeSayisi>=5){
                                 tavsiyeler.add("Çocuğunuz bu aktivitede bugün gerekli başarıyı göstermektedir.")

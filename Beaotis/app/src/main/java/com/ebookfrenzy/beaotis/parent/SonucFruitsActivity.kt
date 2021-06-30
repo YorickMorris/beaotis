@@ -119,7 +119,8 @@ class SonucFruitsActivity : AppCompatActivity() {
                                 "${basarilar.sum()/basarilar.size}")
                         //Günlük başarısı 50' nin altındaysa
                         if(basarilar[basarilar.lastIndex]<=50f){
-                            tavsiyeler.add(olumsuz)
+                            tavsiyeler.add("Çocuğunuzun günlük başarısı beklenilenin altındadır. Çocuğunuzun uygulamayı doğru bir şekilde " +
+                                    "kullandığından emin olunuz.")
 
                             //Günlük başarısı 80' nin üzerinde ve 5' ten fazla bitirme sayısı yapılmışsa
                         }else if(basarilar[basarilar.lastIndex]>=80f&&bitirmeSayisi>=5){
