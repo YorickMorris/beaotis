@@ -82,7 +82,7 @@ class SonucFruitsActivity : AppCompatActivity() {
                         tavsiyeler.add("Doğru bir değerlendirme yapılabilmesi için çocuğunuzun bu uygulamayı haftada en az 35 kere kullanması gerekmektedir. ")
 
                         //Ortalama bitirme sayısı 5' den küçükse
-                        if(basarilar.size/bitirmeSayisi<=5){
+                        if(bitirmeSayisi/basarilar.size<5){
                             tavsiyeler.add("Uygulamayı daha çok kullanmaya çocuğunuzu teşvik etmelisiniz.")
                         }
                         Log.d("Fark ", " İlk ve son gün arasındaki fark: " +

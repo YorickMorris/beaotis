@@ -66,7 +66,7 @@ class SonucVegetablesActivity : AppCompatActivity() {
                             tavsiyeler.add("Çocuğunuzun bu aktivitedeki başarı oranı  %80 ve üzerinde ise başarılı olduğu anlamına gelmektedir. ")
                             tavsiyeler.add("Başarının sağlıklı bir şekilde hesaplanabilmesi için çocuğunuz gün içerisinde uygulamayı en az 5 kez tamamlamalıdır. ")
                             tavsiyeler.add("Doğru bir değerlendirme yapılabilmesi için çocuğunuzun bu uygulamayı haftada en az 35 kere kullanması gerekmektedir. ")
-                            if(basarilar.size/bitirmeSayisi<=5){
+                            if(bitirmeSayisi/basarilar.size<5){
                                 tavsiyeler.add("Uygulamayı daha çok kullanmaya çocuğunuzu teşvik etmelisiniz.")
                             }
                             Log.d("Fark ", " İlk ve son gün arasındaki fark: " +
