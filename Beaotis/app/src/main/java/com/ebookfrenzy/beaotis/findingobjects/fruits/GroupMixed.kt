@@ -34,11 +34,9 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
     private lateinit var recyclerView: RecyclerView
     private var mPlayer: MediaPlayer?=null
     val list:MutableList<Int> = getSoundResources(mixed_generateList())
-    var hataListe = mutableListOf<String>()
     var sayac = 0
     private var sayacDogru:Int=0
     private var sayacYanlis:Int=0
-    private val timestamp: FieldValue =FieldValue.serverTimestamp()
     private val db = Firebase.firestore
     private val c: Date = Calendar.getInstance().time
     private val df: SimpleDateFormat = SimpleDateFormat("dd-MMM-yyyy", Locale.CANADA)
@@ -50,17 +48,7 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_group_mixed)
 
-
-
-      /*  val docRef = db.collection("cities").document("BJ")
-
-        val updates = hashMapOf<String, Any>(
-            "capital" to FieldValue.delete()
-        )
-
-        docRef.update(updates).addOnCompleteListener { }*/
-
-
+        //Activity açıldığında ilk nesnenin seçmesi isteniyor.
         mPlayer = MediaPlayer.create(this, list[0])
         mPlayer?.start()
         mPlayer?.setOnCompletionListener {
@@ -79,7 +67,6 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
-        //val adapter = SubRecyclerView(fruit_generator(), this)
 
     }
 
@@ -91,8 +78,8 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
     }
 
     override fun onItemClicked(data: FindingObjectsDataClass, position: Int,imageView:ImageView) {
-        //mPlayer?.stop()
-        //mPlayer?.release()
+
+        //Eğer basılan son nesne ise FindingObjects' e geri dön
         if(sayac==8 && data.soundResource==list[sayac]){
 
             animation(imageView)
@@ -105,13 +92,18 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
                 mPlayer=null
                 onBackPressed()
             }
+            //Sonuncu nesnede hata yapıldıysa aynı şekilde hata yapıldığında yapılacakları yaptır.
         }else if(sayac==8 && data.soundResource!=list[sayac]){
             animationWrong(imageView)
             sayacYanlis++
         }
+
+        //Her bir doğru bilindiğinde arttırılan sayac 8 doğru olana kadar bu kodu koş.
         if(sayac!=8){
+            //Eğer tıklanılan nesne doğru bilindiyse bu kodları koş
             if (data.soundResource == list[sayac]) {
 
+                //Çocuğu tebrik et.
                 mPlayer = MediaPlayer.create(this, R.raw.tebrikler)
                 mPlayer?.start()
                 animation(imageView)
@@ -119,7 +111,7 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
                     mPlayer?.stop()
                     mPlayer?.release()
                     mPlayer=null
-
+                    //Bu ses tamamlandığında bir sonraki nesnenin seçilmesini iste
                     mPlayer = MediaPlayer.create(this, list[sayac+1])
                     mPlayer?.start()
                     mPlayer?.setOnCompletionListener {
@@ -149,7 +141,8 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
     }
 
     override fun onDestroy() {
-
+        //Aktivite kapatıldığında(Uygulamanın alta alınması dahil değil) yapılan doğru ve yanlış sayısını
+        //Firebase' e kaydet ve bitirme sayısını arttır.
         if(FirebaseAuth.getInstance().currentUser!=null){
             db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).
             collection(ab).document(formatDate).get().addOnSuccessListener {
@@ -196,6 +189,7 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
 
         super.onDestroy()
     }
+    //Seçilen nesne doğru ise bu animasyonu oynat
     fun animation(imageView: ImageView){
         YoYo.with(Techniques.Pulse )
             .duration(700)
@@ -203,8 +197,9 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
             .playOn(imageView)
 
     }
+    //Seçilen nesne yanlış ise bu animasyonu oynat
     fun animationWrong(imageView: ImageView){
-        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)
             .duration(700)
             .repeat(2)
             .playOn(imageView)

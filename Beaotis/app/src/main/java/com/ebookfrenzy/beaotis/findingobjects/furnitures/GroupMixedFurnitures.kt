@@ -178,7 +178,7 @@ class GroupMixedFurnitures : AppCompatActivity(), IFindingObjectsMixedOnClickLis
 
     }
     fun animationWrong(imageView: ImageView){
-        YoYo.with(Techniques.Bounce)//Hangi animasyon konulacak(Yanlış olduğunu göstermek için)
+        YoYo.with(Techniques.Bounce)
                 .duration(700)
                 .repeat(2)
                 .playOn(imageView)
