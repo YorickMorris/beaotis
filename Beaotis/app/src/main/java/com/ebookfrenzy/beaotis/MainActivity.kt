@@ -35,17 +35,27 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         generateList()
 
         auth = Firebase.auth
 
+
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
 
+
+        //Oluşturduğumuz RecyclerView' in adaptörünü burada çağırıyoruz.
+        //generatelist() oluşturacağımız listenin oluşturulduğu fonksiyon
+        //IOnItemClickListener ise bu RecyclerView için özelleştirdiğimiz onClick methodu
         val adapter = RecyclerViewAdapter(generateList(), this)
         recyclerView.adapter = adapter
         adapter.notifyDataSetChanged()
 
+
+        //Bu kod ana menüdeki sağ üst kısımda duran ve ebeveyn paneline giriş yapmayı sağlayan
+        //arayüzdür. Eğer giriş zaten yapılmışsa giriş yapma ekranı vermeden ebeveyn paneline geçiş
+        //sağlanmaktadır.
         toolbar.setNavigationOnClickListener {
             if (FirebaseAuth.getInstance().currentUser!=null){
                 // Bu kod ebeveyn modülüne geçmeyi sağlıyor.
@@ -60,12 +70,17 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
         }
     }
 
+    //ana menüde toolbar simgesi koymak için oluşturulan menü
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.menu_main, menu)
         return true
     }
 
+
+    //RecyclerView için özelleştirdiğimiz onClick methodunu burada override ederek her bir elemana
+    //tıklandığında yapılması gereken işlemler burada tanımlanıyor. Burada yapılan ise her bir
+    //elemana tıklandığında bizi farklı bir Activity' e yönlendirmesidir.
     override fun onItemClicked(data: ExampleItem, position: Int, coloumn: Int) {
         when (position) {
             0 -> {
@@ -97,6 +112,8 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
         super.onStart()
     }
 
+    //Giriş yapma ara yüzünden almış olduğumuz Firebase kullanıcısı giriş işlemini düzgün bir
+    //şekilde yaptıysa MainActivity' e bu kullanıcıyı döndürerek ebeveyn paneline yönlendiriyoruz.
     override fun girisYap(user: FirebaseUser?):FirebaseUser? {
         Log.d("Kullanıcı", "Kullanıcı: $user")
         if (user!=null){

@@ -31,7 +31,8 @@ class NumbersActivity : AppCompatActivity() ,IOnLetsStudyClickListener ,INumbers
     }
 
     override fun onItemClicked(data: LetsStudyExampleItem, position: Int,imageView: ImageView) {
-        //Her bir iteme tıklandığında ses çıkartma işlemi burada olacak.
+        //Her bir rakama tıklandığında o rakamın telaffuzu sesli şekilde verilecek
+        //Ayrıca rakamlara basıldığında animasyon gerçekleşecek
         mPlayer = MediaPlayer.create(this, data.soundResource)
         mPlayer?.start()
         animation(imageView)

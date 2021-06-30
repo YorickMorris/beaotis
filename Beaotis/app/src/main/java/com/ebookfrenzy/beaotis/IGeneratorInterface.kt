@@ -1,6 +1,7 @@
 package com.ebookfrenzy.beaotis
 
 interface IGeneratorInterface {
+    //Özelleştirilmiş RecyclerView' ın liste olarak tanımlanıp elemanlarının eklendiği kod.
      fun generateList(): List<ExampleItem> {
         val list = ArrayList<ExampleItem>()
         list.add(

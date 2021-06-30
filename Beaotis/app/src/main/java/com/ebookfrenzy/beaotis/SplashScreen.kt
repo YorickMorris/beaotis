@@ -13,10 +13,13 @@ import java.lang.Exception
 class SplashScreen : AppCompatActivity(){
     private lateinit var intentToMainActivity:Intent
 
+    //Uygulamanın başlangıç sayfası
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_splash_screen)
 
+        //Layout' da tanımlı olan videoView' e giriş videosunu oynatmak için koyuyoruz.
         try{
             val videoPath="android.resource://$packageName/raw/p720"
             video_view.setVideoPath(videoPath)
@@ -35,6 +38,7 @@ class SplashScreen : AppCompatActivity(){
 
     }
     private fun jump(){
+        //Video bittiğinde ana menüye geçiş yapılır.
         if(isFinishing)
             return
         intentToMainActivity=Intent(this, MainActivity::class.java)
@@ -43,12 +47,14 @@ class SplashScreen : AppCompatActivity(){
     }
 
     override fun onTouchEvent(event: MotionEvent?): Boolean {
+        //Eğer giriş videosu izlenmek istenmezse ekranın herhangi bir noktasına tıklanılarak direk
+        //ana menüye geçiş yapılabilir.
         jump()
         return true
     }
 
     override fun onStart() {
-        // Status barı saklamak için. Mümkünse programatik yapıp xml ile ayarla.
+        // Status barı saklamak için.
         window.decorView.systemUiVisibility = View.SYSTEM_UI_FLAG_FULLSCREEN
         super.onStart()
     }

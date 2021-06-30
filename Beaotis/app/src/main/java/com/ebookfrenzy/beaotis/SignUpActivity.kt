@@ -23,6 +23,7 @@ class SignUpActivity : AppCompatActivity() {
         auth = Firebase.auth
         onItemClick(submitButton)
     }
+    //Kayıt ol butonuna basıldığında kullanıcının mail ve şifresini kullanarak Firebase' e kaydeder.
      private fun onItemClick(view: View){
         view.setOnClickListener {
             auth.createUserWithEmailAndPassword(email.text.toString(), sifre.text.toString())
@@ -38,6 +39,7 @@ class SignUpActivity : AppCompatActivity() {
                 }
         }
     }
+    //Üyelik işleminin sonucunu kullanıcıya gösterir.
     private fun updateUI(user:FirebaseUser?){
         if(user!=null){
             Toast.makeText(this,"Üyelik işlemi tamamlandı.",Toast.LENGTH_LONG).show()

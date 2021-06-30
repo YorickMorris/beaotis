@@ -26,6 +26,7 @@ class SignInDialogFragment: DialogFragment() {
         fun girisYap(user:FirebaseUser?):FirebaseUser?
     }
     var giris:IGirisYap?=null
+    //Ana menüden giriş yapma butonuna basıldığında kod bu fragmenttan koşmaya başlar.
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         var user:FirebaseUser?=null
         Log.d(tag,"Tıklandı. 1")
@@ -40,11 +41,14 @@ class SignInDialogFragment: DialogFragment() {
                .setPositiveButton(R.string.signIn) { dialog, _ ->
                   val a=view.eposta.text.toString()
                    val b=view.sifreGir.text.toString()
+                   //Giriş yapılmadan önce mail veya şifrenin boş bıraklmadığının kontrolü.
                    if(a!="" && b!="")
                    {
                        auth.signInWithEmailAndPassword(a,b)
                            .addOnCompleteListener { task ->
 
+                               //Giriş yapılma başarılı ise buradan alınan kullanıcı bilgisi MainActivity' e
+                               //yollanır.
                                if (task.isSuccessful) {
                                    correctUser(task.isSuccessful)
                                    Log.d(tag1, "signInWithEmail:success")
@@ -66,6 +70,7 @@ class SignInDialogFragment: DialogFragment() {
                                updateUI(user,view,intent1)
                            }
 
+                       //Diğer hatalı giriş dönütleri.
                    }else if(a=="" && b!=""){
                        Toast.makeText(view.context,"Lütfen Eposta Adresinizi Girin",Toast.LENGTH_SHORT).show()
                    }else if(a!="" && b==""){
@@ -102,6 +107,7 @@ class SignInDialogFragment: DialogFragment() {
     private fun correctUser(isSuccessful:Boolean):Boolean{
         return isSuccessful
     }
+    //Fragment' ın Activity' e bağlı olduğunu kontrol etmek için yazıldı.
     override fun onAttach(context: Context) {
         super.onAttach(context)
         try{

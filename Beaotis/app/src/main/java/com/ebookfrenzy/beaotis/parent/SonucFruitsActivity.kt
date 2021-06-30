@@ -43,7 +43,7 @@ class SonucFruitsActivity : AppCompatActivity() {
 
 
         intentToParentActivity=Intent(this, ParentActivity::class.java)
-        
+        //Kullanıcı girişi kontrol edilir.
         if(FirebaseAuth.getInstance().currentUser!=null&& sayac1==1){
             db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).
             collection(ab).get()
@@ -51,17 +51,23 @@ class SonucFruitsActivity : AppCompatActivity() {
                     if (task.isSuccessful) {
                         sayac1++
 
+                        //Firebase' den her bir döküman alınır.
                         for (document in task.result!!) {
                             tarihlerList2.add(document.id)
+                            //Her bir dökümanın içerisinde tutulan bitirme sayısı doğru ve
+                            // yanlış sayıları değerlere atanır.
                             val a=document.getLong("bitirmesayisi")
                             val b=document.getLong("dogrusayisi")
                             val c=document.getLong("yanlissayisi")
 
+                            //Bu değerler boş değilse bu değerler işlem yapılabilecek şekilde Float değerlere
+                            //çevrilir.
                             if(a!=null && b!=null && c!=null){
                                 a.toFloat()
                                 b.toFloat()
                                 c.toFloat()
                                 Log.d("a,b,c: ",  "$a,$b,$c")
+                                //Başarı ölçümü yapılır.
                                 val x=((b/(c+(a*9f)))* 100f).toDouble()
                                 bitirmeSayisi+=a
 
@@ -70,21 +76,26 @@ class SonucFruitsActivity : AppCompatActivity() {
                             }
 
                         }
+                        //Genel bilgiler listeye eklendi.
                         tavsiyeler.add("Çocuğunuzun bu aktivitedeki başarı oranı  %80 ve üzerinde ise başarılı olduğu anlamına gelmektedir. ")
                         tavsiyeler.add("Başarının sağlıklı bir şekilde hesaplanabilmesi için çocuğunuz gün içerisinde uygulamayı en az 5 kez tamamlamalıdır. ")
                         tavsiyeler.add("Doğru bir değerlendirme yapılabilmesi için çocuğunuzun bu uygulamayı haftada en az 35 kere kullanması gerekmektedir. ")
+
+                        //Ortalama bitirme sayısı 5' den küçükse
                         if(bitirmeSayisi/basarilar.size<=5){
                             tavsiyeler.add("Uygulamayı daha çok kullanmaya çocuğunuzu teşvik etmelisiniz.")
                         }
                         Log.d("Fark ", " İlk ve son gün arasındaki fark: " +
                                 "${basarilar[basarilar.lastIndex]-basarilar[0]}")
 
+                        //Bir hafta içerisinde son günlerde ilk günlerdekine göre çocuğun başarısı artmışsa
                         if(basarilar[basarilar.lastIndex]-basarilar[0]>=30f&&basarilar.size>=8){
                             tavsiyeler.add("Çocuğunuz nesneleri tanımada ve öğrendiklerini hatırlama ilk gündeki durumuna göre daha iyi bir sonuç almayı başarmıştır.")
                             if(comparison(basarilar)>=30f){
                                 tavsiyeler.add("Çocuğunuz nesneleri tanımada ve öğrendiklerini hatırlama konusunda olumlu yönde gelişme göstermektedir.")
                             }
 
+                            //Çocuğun başarısı son günlerde artmak yerine azalmışsa
                         }else if (basarilar[basarilar.lastIndex]-basarilar[0]<=-30f&& basarilar.size>=8){
 
                             tavsiyeler.add(olumsuz)
@@ -93,10 +104,10 @@ class SonucFruitsActivity : AppCompatActivity() {
                                 tavsiyeler.add("Çocuğunuzun son zamanlarda ilgili aktivitede zorlanıyor olması söz konusu olup sizin gözetiminiz altında aktiviteyi tekrarlaması yararlı olacaktır. ")
                                 tavsiyeler.add(olumsuz2)
                             }
-
                         }
 
 
+                        //Haftalık başarısı 80 ve üzerindeyse
                         if(basarilar.size>=8 && basarilar.sum()/basarilar.size>=80f){
                             tavsiyeler.add("Çocuğunuz bu uygulamada yeterli başarıyı göstermiştir.")
                             tavsiyeler.add("Çocuğunuz bu aktivitede gösterdiği başarıyı diğer gruplarda da gösteriyorsa ‘Öğrenelim’ kısmındaki aktivitelere başlayabilir.")
@@ -106,9 +117,11 @@ class SonucFruitsActivity : AppCompatActivity() {
 
                         Log.d("Başarı ", " bugünkü başarı: " +
                                 "${basarilar.sum()/basarilar.size}")
+                        //Günlük başarısı 50' nin altındaysa
                         if(basarilar[basarilar.lastIndex]<=50f){
                             tavsiyeler.add(olumsuz)
 
+                            //Günlük başarısı 80' nin üzerinde ve 5' ten fazla bitirme sayısı yapılmışsa
                         }else if(basarilar[basarilar.lastIndex]>=80f&&bitirmeSayisi>=5){
                             tavsiyeler.add("Çocuğunuz bu aktivitede bugün gerekli başarıyı göstermektedir.")
                             tavsiyeler.add("Çocuğunuzun aktiviteleri belli bir süre tekrar etmemesi durumunda bazı nesne ve bilgileri unutma ihtimalleri bulunmaktadır. Bunun için bu aktiviteyi tekrar etmeleri önemlidir.")
@@ -122,8 +135,7 @@ class SonucFruitsActivity : AppCompatActivity() {
                         list_viewFruits.adapter=adapter
                         adapter.notifyDataSetChanged()
 
-
-
+                        //BarChart' a değer girişlerinin yapılması
                         for (items in tarihlerList2.indices){
                             Log.d("İtemler: ",  "$items")
                             barEntry.add(BarEntry(items.toFloat(),basarilar[items]))
@@ -131,6 +143,7 @@ class SonucFruitsActivity : AppCompatActivity() {
                             Log.d("Tarihler İndisleri ",  "${tarihlerList2.indices}")
                         }
                         Log.d("Sayac: ",  "$sayac")
+                        //BarChart özelliklerinin tanımlanması.
                         if(sayac<=tarihlerList2.size){
                             val barDataSet=BarDataSet(barEntry,"Başarı Oranları")
                             barDataSet.valueTextSize=10f
@@ -179,18 +192,20 @@ class SonucFruitsActivity : AppCompatActivity() {
         super.onBackPressed()
     }
 
+    //Listede tarih sıralamasına göre tuttuğumuz başarı oranları iki eşit gruba ayrılarak bu grupların
+    //ortalaması alınır. Ardından iki grubun farkları alınarak geriye değer döndürülür.
     fun comparison(list:ArrayList<Float>):Float{
         var a=0f
         var b=0f
         Log.d("Listenin yarısı","${list.size/2}")
-        for(i in 0..list.size/2){
+        for(i in 0 until (list.size/2)){
             a+=list[i]
         }
         Log.d("Listenin ilk yarısı","$a")
 
         //2 olmazsa 2 f dene
         a /= (list.size / 2f)
-        for(i in list.size/2..list.size){
+        for(i in list.size/2 until list.size){
             b+=list[i]
         }
         b /= (list.size / 2f)

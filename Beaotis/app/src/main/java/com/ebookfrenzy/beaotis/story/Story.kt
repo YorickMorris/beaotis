@@ -12,9 +12,11 @@ import com.google.android.youtube.player.YouTubePlayer
 import kotlinx.android.synthetic.main.activity_story.*
 
 class Story : YouTubeBaseActivity(),YouTubePlayer.OnInitializedListener,YouTubePlayer.PlayerStateChangeListener {
+    //Projeye özel olarak alınmış youtube api anahtarı.
     private val youtubeApiKey:String="AIzaSyAznR4fg2HUaTf9BlLzDvSnEYVcRWb5Rpo"
     private val recoveryRequest = 1
     private lateinit var intentToMainActivity:Intent
+    //Youtube api sinin çekildiği aktivite.
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -39,12 +41,14 @@ class Story : YouTubeBaseActivity(),YouTubePlayer.OnInitializedListener,YouTubeP
         p1: YouTubePlayer?,
         p2: Boolean
     ) {
-        //onVideoEnded fonksiyonu çalışmazsa burda fonksiyonu koştur.
+        //Oynatılacak videonun adresi
         if (!p2) {
-            p1?.cueVideo("N4F8x0iR0nk&ab") // Plays https://www.youtube.com/watch?v=fhWaJi1Hsfo
+            p1?.cueVideo("N4F8x0iR0nk")
+            //İnternet Adresi:https://www.youtube.com/watch?v=N4F8x0iR0nk&t=9s&ab_channel=AdisebabaMasal
         }
     }
 
+    //Eğer api anahtarı ile bağlanma başarısız olursa.
     override fun onInitializationFailure(
         p0: YouTubePlayer.Provider?,
         p1: YouTubeInitializationResult?
@@ -52,7 +56,7 @@ class Story : YouTubeBaseActivity(),YouTubePlayer.OnInitializedListener,YouTubeP
         if (p1?.isUserRecoverableError == true) {
             p1.getErrorDialog(this, recoveryRequest).show()
         } else {
-            Toast.makeText(this, "H", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Sistemde teknik bir sorun yaşanmaktadır.", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -79,7 +83,6 @@ class Story : YouTubeBaseActivity(),YouTubePlayer.OnInitializedListener,YouTubeP
     }
 
     override fun onVideoEnded(){
-        //video bittiğinde awards' ta achivement ilerlemesi yaptırabiliriz.
         Toast.makeText(this, "Tebrikler tüm videoyu izledin!", Toast.LENGTH_LONG).show()
     }
 

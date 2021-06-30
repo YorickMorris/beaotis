@@ -61,6 +61,7 @@ class ParentActivity : AppCompatActivity(),SignInDialogFragment.IGirisYap,IOnFin
        super.onBackPressed()
    }
 
+    //Kullanıcının çıkış yapmasını sağlar.
     fun clickLogOut(view: View) {
         if (FirebaseAuth.getInstance().currentUser!=null){
             Firebase.auth.signOut()

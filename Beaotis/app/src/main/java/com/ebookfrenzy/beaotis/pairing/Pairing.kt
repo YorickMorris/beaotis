@@ -21,8 +21,11 @@ class Pairing : AppCompatActivity() {
         setContentView(R.layout.activity_pairing)
         intentToMainActivity=Intent(this, MainActivity::class.java)
 
+        //Eşleştirme oyununda kullanılacak resimler
         val images = mutableListOf(R.drawable.ananas, R.drawable.elma, R.drawable.cilek)
+        //resimleri 2 katına çıkart.
         images.addAll(images)
+        //Resimleri karıştır.
         images.shuffle()
 
         buttons = listOf(imageButton1, imageButton2, imageButton3, imageButton4, imageButton5,
@@ -48,6 +51,8 @@ class Pairing : AppCompatActivity() {
         }
     }
 
+
+    //Eğer eşleşme olduysa eşleşen kartların görünürlüğünü azalt.
     private fun updateViews() {
         cards.forEachIndexed { index, card ->
             val button = buttons[index]

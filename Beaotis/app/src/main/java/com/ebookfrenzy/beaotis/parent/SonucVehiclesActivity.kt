@@ -173,14 +173,14 @@ class SonucVehiclesActivity : AppCompatActivity() {
         var a=0f
         var b=0f
         Log.d("Listenin yarısı","${list.size/2}")
-        for(i in 0..list.size/2){
+        for(i in 0 until (list.size/2)){
             a+=list[i]
         }
         Log.d("Listenin ilk yarısı","$a")
 
         //2 olmazsa 2 f dene
         a /= (list.size / 2f)
-        for(i in list.size/2..list.size){
+        for(i in list.size/2 until list.size){
             b+=list[i]
         }
         b /= (list.size / 2f)

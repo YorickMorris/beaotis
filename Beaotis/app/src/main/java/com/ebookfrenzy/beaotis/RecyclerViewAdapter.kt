@@ -10,8 +10,9 @@ import androidx.recyclerview.widget.RecyclerView
 
 class RecyclerViewAdapter(private val exampleList: List<ExampleItem>, private val IOnItemClickListener: IOnItemClickListener): RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewHolder>(){
 
+    //MainActivity ana menüsü için özel olarak oluşturulmuş RecyclerView.
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerViewHolder {
-
+        //Her bir RecyclerView elemanının referans alındığı layout dosyası.
         val itemView= LayoutInflater.from(parent.context).inflate(
             R.layout.deneme,
             parent, false
@@ -20,7 +21,7 @@ class RecyclerViewAdapter(private val exampleList: List<ExampleItem>, private va
     }
 
     override fun onBindViewHolder(holder: RecyclerViewHolder, position: Int) {
-
+        //RecyclerView kullanılacağı aktiviteye bağlandığında yapılması gerekenler.
         val currentItem = exampleList[position]
         holder.imageView1.setImageResource(currentItem.imageResource1)
         holder.imageView2.setImageResource(currentItem.imageResource2)
@@ -39,9 +40,11 @@ class RecyclerViewAdapter(private val exampleList: List<ExampleItem>, private va
         }
     }
 
+    //Tüm elemanların sayısını döndüren fonksiyon
     override fun getItemCount() = exampleList.size
 
    inner class RecyclerViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
+       //Her bir RecyclerView elemanının referans alındığı layout dosyasındaki tüm layout elemanları.
         val imageView1: ImageView = itemView.findViewById(R.id.img1)
         val textView1: TextView=itemView.findViewById(R.id.txt1)
 

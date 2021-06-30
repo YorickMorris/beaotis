@@ -11,6 +11,7 @@ import com.ebookfrenzy.beaotis.findingobjects.FindObjectDataClass
 class SeasonsActivity : AppCompatActivity() ,IOnLetsStudyClickListener,ISeasonsGenerator{
     private lateinit var recyclerView: RecyclerView
     private lateinit var intentToLetsStudyObjectsActivity: Intent
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.seasons)

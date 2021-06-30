@@ -35,7 +35,8 @@ class AlfabeActivity : AppCompatActivity(),IOnLetsStudyClickListener,IAlfabeGene
     }
 
     override fun onItemClicked(data: LetsStudyExampleItem, position: Int,imageView: ImageView) {
-        //Her bir iteme tıklandığında ses çıkartma işlemi burada olacak.
+        //Her bir harfe tıklandığında o rakamın telaffuzu sesli şekilde verilecek
+        //Ayrıca harflere basıldığında animasyon gerçekleşecek
         mPlayer = MediaPlayer.create(this, data.soundResource)
         mPlayer?.start()
         animation(imageView)
