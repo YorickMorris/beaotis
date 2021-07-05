@@ -5,7 +5,6 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".findingobjects.fruits.groupone.Click17">
-
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -13,7 +12,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:weightSum="4"
+        android:weightSum="5"
         android:orientation="horizontal">
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="0dp"
@@ -21,7 +20,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/elmaTextView12"
+                android:id="@+id/elmaTextView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Elma"
@@ -33,9 +32,9 @@
                 app:layout_constraintEnd_toStartOf="@id/ananasTextView4"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                android:layout_marginHorizontal="10dp"/>
+                android:layout_marginHorizontal="5dp"/>
             <ImageView
-                android:id="@+id/imageViewFruitsElma12"
+                android:id="@+id/imageViewFruitsElma14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/elma"
@@ -44,7 +43,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintEnd_toStartOf="@id/imageViewFruitsAnanas3"
-                android:layout_marginHorizontal="10dp" />
+                android:layout_marginHorizontal="5dp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -53,7 +52,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/ananasTextView11"
+                android:id="@+id/ananasTextView13"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ananas"
@@ -63,10 +62,10 @@
                 app:layout_constraintEnd_toStartOf="@id/armutTextView5"
                 app:layout_constraintStart_toEndOf="@id/elmaTextView5"
                 app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsAnanas3"
-                android:layout_marginHorizontal="10dp"
+                android:layout_marginHorizontal="5dp"
                 />
             <ImageView
-                android:id="@+id/imageViewFruitsAnanas10"
+                android:id="@+id/imageViewFruitsAnanas12"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -75,7 +74,7 @@
                 app:layout_constraintStart_toEndOf="@id/imageViewFruitsElma5"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginHorizontal="10dp"/>
+                android:layout_marginHorizontal="5dp"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="0dp"
@@ -83,7 +82,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/armutTextView12"
+                android:id="@+id/armutTextView14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Armut"
@@ -93,18 +92,18 @@
                 app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsArmut5"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                android:layout_marginHorizontal="10dp"
+                android:layout_marginHorizontal="5dp"
                 app:layout_constraintStart_toEndOf="@id/ananasTextView4"
                 />
             <ImageView
-                android:id="@+id/imageViewFruitsArmut12"
+                android:id="@+id/imageViewFruitsArmut14"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/armut"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginHorizontal="10dp"
+                android:layout_marginHorizontal="5dp"
                 app:layout_constraintStart_toEndOf="@+id/imageViewFruitsAnanas3"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -114,7 +113,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/bogurtlenTextView7"
+                android:id="@+id/bogurtlenTextView9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Böğürtlen"
@@ -124,10 +123,10 @@
                 app:layout_constraintEnd_toStartOf="@id/armutTextView5"
                 app:layout_constraintStart_toEndOf="@id/elmaTextView5"
                 app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsAnanas3"
-                android:layout_marginHorizontal="10dp"
+                android:layout_marginHorizontal="5dp"
                 />
             <ImageView
-                android:id="@+id/imageViewFruitsBogurtlen7"
+                android:id="@+id/imageViewFruitsBogurtlen9"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -136,7 +135,37 @@
                 app:layout_constraintStart_toEndOf="@id/imageViewFruitsElma5"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:layout_marginHorizontal="10dp"/>
+                android:layout_marginHorizontal="5dp"/>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/erikTextView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Erik"
+                android:layout_gravity="center"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/armutTextView5"
+                app:layout_constraintStart_toEndOf="@id/elmaTextView5"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsAnanas3"
+                android:layout_marginHorizontal="5dp"
+                />
+            <ImageView
+                android:id="@+id/imageViewFruitsErik4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:src="@drawable/erik"
+                app:layout_constraintEnd_toStartOf="@id/imageViewFruitsArmut5"
+                app:layout_constraintStart_toEndOf="@id/imageViewFruitsElma5"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginHorizontal="5dp"/>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 

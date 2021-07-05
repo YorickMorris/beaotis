@@ -119,12 +119,15 @@
         android:id="@+id/click8"
         android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click8"
         android:label="fragment_click8"
-        tools:layout="@layout/fragment_click8" >
+        tools:layout="@layout/fragment_click8">
         <action
             android:id="@+id/action_click8_to_splashFragment4"
             app:destination="@id/splashFragment4"
             app:popUpTo="@+id/splashFragment4"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_click8_to_splashFragment5"
+            app:destination="@id/splashFragment5" />
     </fragment>
     <activity
         android:id="@+id/fruitsActivity"
@@ -139,5 +142,116 @@
         <action
             android:id="@+id/action_splashFragment4_to_fruitsActivity"
             app:destination="@id/fruitsActivity" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment5"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.SplashFragment5"
+        android:label="fragment_splas5"
+        tools:layout="@layout/fragment_splas5" >
+        <action
+            android:id="@+id/action_splashFragment5_to_click9"
+            app:destination="@id/click9" />
+    </fragment>
+    <fragment
+        android:id="@+id/click9"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click9"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank" >
+        <action
+            android:id="@+id/action_click9_to_click10"
+            app:destination="@id/click10" />
+    </fragment>
+    <fragment
+        android:id="@+id/click10"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click10"
+        android:label="fragment_click10"
+        tools:layout="@layout/fragment_click10" >
+        <action
+            android:id="@+id/action_click10_to_click11"
+            app:destination="@id/click11" />
+    </fragment>
+    <fragment
+        android:id="@+id/click11"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click11"
+        android:label="fragment_click11"
+        tools:layout="@layout/fragment_click11" >
+        <action
+            android:id="@+id/action_click11_to_click12"
+            app:destination="@id/click12" />
+    </fragment>
+    <fragment
+        android:id="@+id/click12"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click12"
+        android:label="fragment_click12"
+        tools:layout="@layout/fragment_click12" >
+        <action
+            android:id="@+id/action_click12_to_click13"
+            app:destination="@id/click13" />
+    </fragment>
+    <fragment
+        android:id="@+id/click13"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click13"
+        android:label="fragment_click13"
+        tools:layout="@layout/fragment_click13" >
+        <action
+            android:id="@+id/action_click13_to_splashFragment4"
+            app:destination="@id/splashFragment4" />
+        <action
+            android:id="@+id/action_click13_to_splashFragment6"
+            app:destination="@id/splashFragment6" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashFragment6"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.SplashFragment6"
+        android:label="fragment_splash6"
+        tools:layout="@layout/fragment_splash6" >
+        <action
+            android:id="@+id/action_splashFragment6_to_click14"
+            app:destination="@id/click14" />
+    </fragment>
+    <fragment
+        android:id="@+id/click14"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click14"
+        android:label="fragment_click14"
+        tools:layout="@layout/fragment_click14" >
+        <action
+            android:id="@+id/action_click14_to_click15"
+            app:destination="@id/click15" />
+    </fragment>
+    <fragment
+        android:id="@+id/click15"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click15"
+        android:label="fragment_click15"
+        tools:layout="@layout/fragment_click15" >
+        <action
+            android:id="@+id/action_click15_to_click16"
+            app:destination="@id/click16" />
+    </fragment>
+    <fragment
+        android:id="@+id/click16"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click16"
+        android:label="fragment_click16"
+        tools:layout="@layout/fragment_click16" >
+        <action
+            android:id="@+id/action_click16_to_click17"
+            app:destination="@id/click17" />
+    </fragment>
+    <fragment
+        android:id="@+id/click17"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click17"
+        android:label="fragment_click17"
+        tools:layout="@layout/fragment_click17" >
+        <action
+            android:id="@+id/action_click17_to_click18"
+            app:destination="@id/click18" />
+    </fragment>
+    <fragment
+        android:id="@+id/click18"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupone.Click18"
+        android:label="fragment_click18"
+        tools:layout="@layout/fragment_click18" >
+        <action
+            android:id="@+id/action_click18_to_splashFragment4"
+            app:destination="@id/splashFragment4" />
     </fragment>
 </navigation>
