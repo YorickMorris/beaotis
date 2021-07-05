@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/elmaTextView9"
+                android:id="@+id/elmaTextView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Elma"
@@ -29,13 +29,13 @@
                 android:textAlignment="center"
                 android:layout_gravity="center"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsElma5"
-                app:layout_constraintEnd_toStartOf="@id/ananasTextView4"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsElma8"
+                app:layout_constraintEnd_toStartOf="@id/ananasTextView7"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginHorizontal="10dp"/>
             <ImageView
-                android:id="@+id/imageViewFruitsElma9"
+                android:id="@+id/imageViewFruitsElma8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/elma"
@@ -43,7 +43,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/imageViewFruitsAnanas3"
+                app:layout_constraintEnd_toStartOf="@id/imageViewFruitsAnanas7"
                 android:layout_marginHorizontal="10dp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -53,16 +53,16 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/ananasTextView8"
+                android:id="@+id/ananasTextView7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ananas"
                 android:layout_gravity="center"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@id/armutTextView5"
-                app:layout_constraintStart_toEndOf="@id/elmaTextView5"
-                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsAnanas3"
+                app:layout_constraintEnd_toStartOf="@id/armutTextView8"
+                app:layout_constraintStart_toEndOf="@id/elmaTextView8"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsAnanas7"
                 android:layout_marginHorizontal="10dp"
                 />
             <ImageView
@@ -71,8 +71,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/ananas"
-                app:layout_constraintEnd_toStartOf="@id/imageViewFruitsArmut5"
-                app:layout_constraintStart_toEndOf="@id/imageViewFruitsElma5"
+                app:layout_constraintEnd_toStartOf="@id/imageViewFruitsArmut8"
+                app:layout_constraintStart_toEndOf="@id/imageViewFruitsElma8"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginHorizontal="10dp"/>
@@ -83,21 +83,21 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/armutTextView9"
+                android:id="@+id/armutTextView8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Armut"
                 android:layout_gravity="center"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsArmut5"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsArmut8"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 android:layout_marginHorizontal="10dp"
-                app:layout_constraintStart_toEndOf="@id/ananasTextView4"
+                app:layout_constraintStart_toEndOf="@id/ananasTextView7"
                 />
             <ImageView
-                android:id="@+id/imageViewFruitsArmut9"
+                android:id="@+id/imageViewFruitsArmut8"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -105,7 +105,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginHorizontal="10dp"
-                app:layout_constraintStart_toEndOf="@+id/imageViewFruitsAnanas3"
+                app:layout_constraintStart_toEndOf="@+id/imageViewFruitsAnanas7"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.appcompat.widget.LinearLayoutCompat>
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -114,26 +114,26 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/bogurtlenTextView4"
+                android:id="@+id/bogurtlenTextView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Böğürtlen"
                 android:layout_gravity="center"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toStartOf="@id/armutTextView5"
-                app:layout_constraintStart_toEndOf="@id/elmaTextView5"
-                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsAnanas3"
+                app:layout_constraintEnd_toStartOf="@id/armutTextView8"
+                app:layout_constraintStart_toEndOf="@id/elmaTextView8"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsAnanas7"
                 android:layout_marginHorizontal="10dp"
                 />
             <ImageView
-                android:id="@+id/imageViewFruitsBogurtlen4"
+                android:id="@+id/imageViewFruitsBogurtlen3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/bogurtlen"
-                app:layout_constraintEnd_toStartOf="@id/imageViewFruitsArmut5"
-                app:layout_constraintStart_toEndOf="@id/imageViewFruitsElma5"
+                app:layout_constraintEnd_toStartOf="@id/imageViewFruitsArmut8"
+                app:layout_constraintStart_toEndOf="@id/imageViewFruitsElma8"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 android:layout_marginHorizontal="10dp"/>

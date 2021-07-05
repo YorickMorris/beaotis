@@ -21,7 +21,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/elmaTextView7"
+                android:id="@+id/elmaTextView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Elma"
@@ -29,13 +29,13 @@
                 android:textAlignment="center"
                 android:layout_gravity="center"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsElma5"
-                app:layout_constraintEnd_toStartOf="@id/ananasTextView4"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsElma6"
+                app:layout_constraintEnd_toStartOf="@id/ananasTextView5"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 android:layout_marginHorizontal="10dp"/>
             <ImageView
-                android:id="@+id/imageViewFruitsElma7"
+                android:id="@+id/imageViewFruitsElma6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:src="@drawable/elma"
@@ -43,7 +43,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/imageViewFruitsAnanas3"
+                app:layout_constraintEnd_toStartOf="@id/imageViewFruitsAnanas5"
                 android:layout_marginHorizontal="10dp" />
         </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -53,7 +53,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/ananasTextView6"
+                android:id="@+id/ananasTextView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Ananas"
@@ -76,21 +76,21 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/armutTextView7"
+                android:id="@+id/armutTextView6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Armut"
                 android:layout_gravity="center"
                 android:textSize="30sp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsArmut5"
+                app:layout_constraintBottom_toTopOf="@+id/imageViewFruitsArmut6"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 android:layout_marginHorizontal="10dp"
-                app:layout_constraintStart_toEndOf="@id/ananasTextView4"
+                app:layout_constraintStart_toEndOf="@id/ananasTextView5"
                 />
             <ImageView
-                android:id="@+id/imageViewFruitsArmut7"
+                android:id="@+id/imageViewFruitsArmut6"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -98,7 +98,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 android:layout_marginHorizontal="10dp"
-                app:layout_constraintStart_toEndOf="@+id/imageViewFruitsAnanas3"
+                app:layout_constraintStart_toEndOf="@+id/imageViewFruitsAnanas5"
                 app:layout_constraintTop_toTopOf="parent" />
         </androidx.appcompat.widget.LinearLayoutCompat>
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -107,7 +107,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <TextView
-                android:id="@+id/bogurtlenTextView2"
+                android:id="@+id/bogurtlenTextView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Böğürtlen"
@@ -117,7 +117,7 @@
                 android:layout_marginHorizontal="10dp"
                 />
             <ImageView
-                android:id="@+id/imageViewFruitsBogurtlen2"
+                android:id="@+id/imageViewFruitsBogurtlen1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
