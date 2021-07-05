@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
@@ -25,7 +26,7 @@ import java.util.*
 class Click8 : Fragment() {
     private var mPlayer: MediaPlayer? = null
     private val nav = R.id.action_click8_to_splashFragment4
-    //private val nav2 = R.id.action_click8_to_splashFragment5
+    private val nav2 = R.id.action_click8_to_splashFragment5
     private val item = R.raw.ananas
     private var start:Long=0
     private var finish:Long=0
@@ -79,7 +80,7 @@ class Click8 : Fragment() {
         mPlayer?.release()
         super.onDetach()
     }
-    fun animationToFinish(v:View){
+    fun animationToFinish(v:View,nav:Int){
         YoYo.with(Techniques.Pulse )
                 .duration(700)
                 .repeat(2)
@@ -136,9 +137,9 @@ class Click8 : Fragment() {
                 }
                 if (b != null) {
                     if(a<80&&b<10){
-
+                        view?.let{t1->animationToFinish(t1,nav2)}
                     }else
-                        view?.let { it1 -> animationToFinish(it1) }
+                        view?.let { it1 -> animationToFinish(it1,nav) }
 
 
                 }

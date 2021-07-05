@@ -6,9 +6,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ebookfrenzy.beaotis.R
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import java.text.SimpleDateFormat
+import java.util.*
 
 class Click10 : Fragment() {
-
+    private var start:Long=0
+    private var finish:Long=0
+    private var fark:Long=0
+    private val ab="groupFruits1"
+    private val db = Firebase.firestore
+    private val c: Date = Calendar.getInstance().time
+    private val df: SimpleDateFormat = SimpleDateFormat("dd-MMM-yyyy", Locale.CANADA)
+    private val formatDate=df.format(c)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
