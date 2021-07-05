@@ -20,7 +20,7 @@ class SplashFragment5 : Fragment() {
         mPlayer?.start()
         Handler().postDelayed({
 
-            findNavController().navigate(R.id.action_splashFragment3_to_click5)
+            findNavController().navigate(R.id.action_splashFragment5_to_click9)
             mPlayer?.stop()
             mPlayer?.release()
 

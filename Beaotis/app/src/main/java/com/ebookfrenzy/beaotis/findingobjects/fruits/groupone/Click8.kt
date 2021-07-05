@@ -18,6 +18,7 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.fragment_click6.view.*
 import kotlinx.android.synthetic.main.fragment_click7.view.*
+import kotlinx.android.synthetic.main.fragment_click8.*
 import kotlinx.android.synthetic.main.fragment_click8.view.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -36,11 +37,15 @@ class Click8 : Fragment() {
     private val c: Date = Calendar.getInstance().time
     private val df: SimpleDateFormat = SimpleDateFormat("dd-MMM-yyyy", Locale.CANADA)
     private val formatDate=df.format(c)
+    private var secildi1=0
+    private var secildi2=0
+    private var secildi3=0
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        start=System.currentTimeMillis()
         mediaPlay()
 
         val view= inflater.inflate(R.layout.fragment_click8, container, false)
@@ -55,12 +60,14 @@ class Click8 : Fragment() {
 
         }
         view.imageViewFruitsElma5.setOnClickListener {
+            secildi2++
             mPlayer?.stop()
             mPlayer?.release()
             animationWrong(view.imageViewFruitsElma5)
             firebaseYanlisEntry()
         }
         view.imageViewFruitsArmut5.setOnClickListener {
+            secildi3++
             mPlayer?.stop()
             mPlayer?.release()
             animationWrong(view.imageViewFruitsArmut5)
@@ -126,7 +133,8 @@ class Click8 : Fragment() {
 
                 Log.d("Bitirme Süresi", "$fark")
                 val sure= hashMapOf(
-                    "bitirmeSuresi" to a
+                    "bitirmeSuresi" to a,
+                    "yanlisSayisi" to b
                 )
                 if (FirebaseAuth.getInstance().currentUser!=null){
                     db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection(
@@ -137,9 +145,9 @@ class Click8 : Fragment() {
                 }
                 if (b != null) {
                     if(a<80&&b<10){
-                        view?.let{t1->animationToFinish(t1,nav2)}
-                    }else
-                        view?.let { it1 -> animationToFinish(it1,nav) }
+                        view?.let{it2->animationToFinish(it2.imageViewFruitsAnanas3,nav2)}
+                    }else if(secildi2>=1)
+                        view?.let { it1 -> animationToFinish(it1.imageViewFruitsAnanas3,nav) }
 
 
                 }
@@ -152,6 +160,7 @@ class Click8 : Fragment() {
         if(FirebaseAuth.getInstance().currentUser!=null){
             db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).
             collection(ab).document(formatDate).get().addOnSuccessListener{
+                var a=it.getLong("bitirmeSuresi")
                 var yanlis=it.getLong("yanlisSayisi")
                 if (yanlis==null){
                     yanlis=0
@@ -161,6 +170,7 @@ class Click8 : Fragment() {
 
                 Log.d("Yanlış Sayısı", "$yanlis")
                 val sure= hashMapOf(
+                    "bitirmeSuresi" to a,
                     "yanlisSayisi" to yanlis
                 )
                 if (FirebaseAuth.getInstance().currentUser!=null){

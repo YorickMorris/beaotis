@@ -100,6 +100,7 @@ class Click4 : Fragment() {
             db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).
             collection(ab).document(formatDate).get().addOnSuccessListener{
                 var a=it.getLong("bitirmeSuresi")
+                var yanlis=it.getLong("yanlisSayisi")
                 if (a==null){
                     a=0
                     a+=fark
@@ -108,7 +109,8 @@ class Click4 : Fragment() {
 
                 Log.d("Bitirme Süresi", "$fark")
                 val sure= hashMapOf(
-                    "bitirmeSuresi" to a
+                    "bitirmeSuresi" to a,
+                    "yanlisSayisi" to yanlis
                 )
                 if (FirebaseAuth.getInstance().currentUser!=null){
                     db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection(
@@ -126,6 +128,7 @@ class Click4 : Fragment() {
         if(FirebaseAuth.getInstance().currentUser!=null){
             db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).
             collection(ab).document(formatDate).get().addOnSuccessListener{
+                var a=it.getLong("bitirmeSuresi")
                 var yanlis=it.getLong("yanlisSayisi")
                 if (yanlis==null){
                     yanlis=0
@@ -135,6 +138,7 @@ class Click4 : Fragment() {
 
                 Log.d("Yanlış Sayısı", "$yanlis")
                 val sure= hashMapOf(
+                    "bitirmeSuresi" to a,
                     "yanlisSayisi" to yanlis
                 )
                 if (FirebaseAuth.getInstance().currentUser!=null){
