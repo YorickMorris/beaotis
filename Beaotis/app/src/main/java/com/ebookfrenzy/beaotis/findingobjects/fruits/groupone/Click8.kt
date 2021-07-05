@@ -146,7 +146,7 @@ class Click8 : Fragment() {
                 if (b != null) {
                     if(a<80&&b<10){
                         view?.let{it2->animationToFinish(it2.imageViewFruitsAnanas3,nav2)}
-                    }else if(secildi2>=1)
+                    }else
                         view?.let { it1 -> animationToFinish(it1.imageViewFruitsAnanas3,nav) }
 
 
