@@ -56,6 +56,7 @@ class GroupMixed : AppCompatActivity(),IFindingObjectsMixedOnClickListener,IFind
             mPlayer?.stop()
             mPlayer?.release()
             mPlayer=null
+
         }
 
         intentToFruitsActivity = Intent(this, FruitsActivity::class.java)

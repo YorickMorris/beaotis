@@ -67,7 +67,7 @@ class SonucVehiclesActivity : AppCompatActivity() {
                             tavsiyeler.add("Başarının sağlıklı bir şekilde hesaplanabilmesi için çocuğunuz gün içerisinde uygulamayı en az 5 kez tamamlamalıdır. ")
                             tavsiyeler.add("Doğru bir değerlendirme yapılabilmesi için çocuğunuzun bu uygulamayı haftada en az 35 kere kullanması gerekmektedir. ")
                             if(bitirmeSayisi/basarilar.size<5){
-                                tavsiyeler.add("Uygulamayı daha çok kullanmaya çocuğunuzu teşvik etmelisiniz.")
+                                tavsiyeler.add("Uygulamayı daha çok(Günde 5 veya 5' den daha fazla) kullanmaya çocuğunuzu teşvik etmelisiniz.")
                             }
                             Log.d("Fark ", " İlk ve son gün arasındaki fark: " +
                                     "${basarilar[basarilar.lastIndex]-basarilar[0]}")

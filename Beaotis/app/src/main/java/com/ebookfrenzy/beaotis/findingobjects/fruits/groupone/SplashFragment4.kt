@@ -20,6 +20,7 @@ class SplashFragment4 : Fragment(){
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        //4. meyvenin seslendirilmesini koy
         mPlayer=MediaPlayer.create(activity, R.raw.tebrikler)
         mPlayer?.start()
 

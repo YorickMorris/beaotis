@@ -83,7 +83,7 @@ class SonucFruitsActivity : AppCompatActivity() {
 
                         //Ortalama bitirme sayısı 5' den küçükse
                         if(bitirmeSayisi/basarilar.size<5){
-                            tavsiyeler.add("Uygulamayı daha çok kullanmaya çocuğunuzu teşvik etmelisiniz.")
+                            tavsiyeler.add("Uygulamayı daha çok(Günde 5 veya 5' den daha fazla) kullanmaya çocuğunuzu teşvik etmelisiniz.")
                         }
                         Log.d("Fark ", " İlk ve son gün arasındaki fark: " +
                                 "${basarilar[basarilar.lastIndex]-basarilar[0]}")
@@ -167,10 +167,7 @@ class SonucFruitsActivity : AppCompatActivity() {
                             barChart.xAxis.isGranularityEnabled=true
                             barChart.xAxis.setCenterAxisLabels(false)
 
-
                             barChart.xAxis.valueFormatter=IndexAxisValueFormatter(tarihlerList2)
-
-
 
                             barChart.xAxis.position= XAxis.XAxisPosition.BOTTOM
                             Log.d("Listenerİçi", tarihlerList2.toString())

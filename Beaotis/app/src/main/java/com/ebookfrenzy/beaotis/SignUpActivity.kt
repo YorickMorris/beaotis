@@ -32,7 +32,7 @@ class SignUpActivity : AppCompatActivity() {
                         val user = auth.currentUser
                         updateUI(user)
                     } else {
-                        Toast.makeText(baseContext, "Authentication failed.",
+                        Toast.makeText(baseContext, "Giriş yapma işlemi iptal oldu.",
                             Toast.LENGTH_SHORT).show()
                         updateUI(null)
                     }

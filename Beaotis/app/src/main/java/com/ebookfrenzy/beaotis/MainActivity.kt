@@ -40,10 +40,8 @@ class MainActivity : AppCompatActivity() , IGeneratorInterface, IOnItemClickList
 
         auth = Firebase.auth
 
-
         recyclerView = findViewById(R.id.recyclerView)
         recyclerView.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
-
 
         //Oluşturduğumuz RecyclerView' in adaptörünü burada çağırıyoruz.
         //generatelist() oluşturacağımız listenin oluşturulduğu fonksiyon
