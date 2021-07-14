@@ -33,7 +33,8 @@ class Click4 : Fragment() {
     private val c: Date = Calendar.getInstance().time
     private val df: SimpleDateFormat = SimpleDateFormat("dd-MMM-yyyy", Locale.CANADA)
     private val formatDate=df.format(c)
-
+    private var list:MutableList<Int>?=null
+    private var list1:MutableList<Int>?=null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -43,8 +44,11 @@ class Click4 : Fragment() {
 
         val view= inflater.inflate(R.layout.fragment_click4, container, false)
         view.imageViewFruitsArmut2.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
             animation(view.imageViewFruitsArmut2)
             finish=System.currentTimeMillis()
             fark=finish-start
@@ -52,8 +56,11 @@ class Click4 : Fragment() {
             firebaseBitirmeSuresiEntry()
         }
         view.imageViewFruitsElma2.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
             animationWrong(view.imageViewFruitsElma2)
             firebaseYanlisEntry()
         }
@@ -101,16 +108,28 @@ class Click4 : Fragment() {
             collection(ab).document(formatDate).get().addOnSuccessListener{
                 var a=it.getLong("bitirmeSuresi")
                 var yanlis=it.getLong("yanlisSayisi")
+                list= it.get("bitirmeArray") as MutableList<Int>?
+                list1= it.get("yanlisArray") as MutableList<Int>?
                 if (a==null){
                     a=0
                     a+=fark
                 }else
                     a+=fark
 
+                if(list==null){
+                    list= arrayListOf()
+
+                }
+                if(list1==null){
+                    list1= arrayListOf()
+
+                }
                 Log.d("Bitirme Süresi", "$fark")
                 val sure= hashMapOf(
                     "bitirmeSuresi" to a,
-                    "yanlisSayisi" to yanlis
+                    "yanlisSayisi" to yanlis,
+                    "bitirmeArray" to list,
+                    "yanlisArray" to list1
                 )
                 if (FirebaseAuth.getInstance().currentUser!=null){
                     db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection(
@@ -130,16 +149,28 @@ class Click4 : Fragment() {
             collection(ab).document(formatDate).get().addOnSuccessListener{
                 var a=it.getLong("bitirmeSuresi")
                 var yanlis=it.getLong("yanlisSayisi")
+                list= it.get("bitirmeArray") as MutableList<Int>?
+                list1= it.get("yanlisArray") as MutableList<Int>?
                 if (yanlis==null){
                     yanlis=0
                     yanlis+=1
                 }else
                     yanlis+=1
 
+                if(list==null){
+                    list= arrayListOf()
+
+                }
+                if(list1==null){
+                    list1= arrayListOf()
+
+                }
                 Log.d("Yanlış Sayısı", "$yanlis")
                 val sure= hashMapOf(
                     "bitirmeSuresi" to a,
-                    "yanlisSayisi" to yanlis
+                    "yanlisSayisi" to yanlis,
+                    "bitirmeArray" to list,
+                    "yanlisArray" to list1
                 )
                 if (FirebaseAuth.getInstance().currentUser!=null){
                     db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection(

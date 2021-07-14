@@ -33,6 +33,8 @@ class Click6 : Fragment() {
     private val c: Date = Calendar.getInstance().time
     private val df: SimpleDateFormat = SimpleDateFormat("dd-MMM-yyyy", Locale.CANADA)
     private val formatDate=df.format(c)
+    private var list:MutableList<Int>?=null
+    private var list1:MutableList<Int>?=null
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -42,8 +44,11 @@ class Click6 : Fragment() {
 
         val view= inflater.inflate(R.layout.fragment_click6, container, false)
         view.imageViewFruitsElma3.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
             animation(view.imageViewFruitsElma3)
             finish=System.currentTimeMillis()
             fark=finish-start
@@ -51,14 +56,20 @@ class Click6 : Fragment() {
             firebaseBitirmeSuresiEntry()
         }
         view.imageViewFruitsArmut3.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
             animationWrong(view.imageViewFruitsArmut3)
             firebaseYanlisEntry()
         }
         view.imageViewFruitsAnanas1.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
             animationWrong(view.imageViewFruitsAnanas1)
             firebaseYanlisEntry()
         }
@@ -105,16 +116,27 @@ class Click6 : Fragment() {
             collection(ab).document(formatDate).get().addOnSuccessListener{
                 var a=it.getLong("bitirmeSuresi")
                 var yanlis=it.getLong("yanlisSayisi")
+                list= it.get("bitirmeArray") as MutableList<Int>?
+                list1= it.get("yanlisArray") as MutableList<Int>?
                 if (a==null){
                     a=0
                     a+=fark
                 }else
                     a+=fark
+                if(list==null){
+                    list= arrayListOf()
 
+                }
+                if(list1==null){
+                    list1= arrayListOf()
+
+                }
                 Log.d("Bitirme Süresi", "$fark")
                 val sure= hashMapOf(
                     "bitirmeSuresi" to a,
-                    "yanlisSayisi" to yanlis
+                    "yanlisSayisi" to yanlis,
+                    "bitirmeArray" to list,
+                    "yanlisArray" to list1
                 )
                 if (FirebaseAuth.getInstance().currentUser!=null){
                     db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection(
@@ -134,16 +156,27 @@ class Click6 : Fragment() {
             collection(ab).document(formatDate).get().addOnSuccessListener{
                 var a=it.getLong("bitirmeSuresi")
                 var yanlis=it.getLong("yanlisSayisi")
+                list= it.get("bitirmeArray") as MutableList<Int>?
+                list1= it.get("yanlisArray") as MutableList<Int>?
                 if (yanlis==null){
                     yanlis=0
                     yanlis+=1
                 }else
                     yanlis+=1
+                if(list==null){
+                    list= arrayListOf()
 
+                }
+                if(list1==null){
+                    list1= arrayListOf()
+
+                }
                 Log.d("Yanlış Sayısı", "$yanlis")
                 val sure= hashMapOf(
                     "bitirmeSuresi" to a,
-                    "yanlisSayisi" to yanlis
+                    "yanlisSayisi" to yanlis,
+                    "bitirmeArray" to list,
+                    "yanlisArray" to list1
                 )
                 if (FirebaseAuth.getInstance().currentUser!=null){
                     db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection(

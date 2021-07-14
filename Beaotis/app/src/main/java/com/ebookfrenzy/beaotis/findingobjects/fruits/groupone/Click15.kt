@@ -52,26 +52,34 @@ class Click15 : Fragment() {
             firebaseBitirmeSuresiEntry()
         }
         view.imageViewFruitsArmut10.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null){
+                mPlayer?.stop()
+                mPlayer?.release()
+            }
             animationWrong(view.imageViewFruitsArmut10)
             firebaseYanlisEntry()
         }
         view.imageViewFruitsAnanas9.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null){
+                mPlayer?.stop()
+                mPlayer?.release()
+            }
             animationWrong(view.imageViewFruitsAnanas9)
             firebaseYanlisEntry()
         }
         view.imageViewFruitsBogurtlen5.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null){
+                mPlayer?.stop()
+                mPlayer?.release()
+            }
             animationWrong(view.imageViewFruitsBogurtlen5)
             firebaseYanlisEntry()
         }
         view.imageViewFruitsErik1.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null){
+                mPlayer?.stop()
+                mPlayer?.release()
+            }
             animationWrong(view.imageViewFruitsErik1)
             firebaseYanlisEntry()
         }

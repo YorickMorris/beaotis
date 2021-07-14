@@ -53,26 +53,34 @@ class Click16 : Fragment() {
             firebaseBitirmeSuresiEntry()
         }
         view.imageViewFruitsElma11.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null){
+                mPlayer?.stop()
+                mPlayer?.release()
+            }
             animationWrong(view.imageViewFruitsElma11)
             firebaseYanlisEntry()
         }
         view.imageViewFruitsAnanas10.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null){
+                mPlayer?.stop()
+                mPlayer?.release()
+            }
             animationWrong(view.imageViewFruitsAnanas10)
             firebaseYanlisEntry()
         }
         view.imageViewFruitsBogurtlen6.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null){
+                mPlayer?.stop()
+                mPlayer?.release()
+            }
             animationWrong(view.imageViewFruitsBogurtlen6)
             firebaseYanlisEntry()
         }
         view.imageViewFruitsErik2.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null){
+                mPlayer?.stop()
+                mPlayer?.release()
+            }
             animationWrong(view.imageViewFruitsErik2)
             firebaseYanlisEntry()
         }

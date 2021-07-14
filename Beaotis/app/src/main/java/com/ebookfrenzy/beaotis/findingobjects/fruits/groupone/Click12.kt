@@ -28,12 +28,13 @@ class Click12 : Fragment() {
     private var start:Long=0
     private var finish:Long=0
     private var fark:Long=0
-    private val ab="groupFruits1"
+    private val ab="groupFruits11"
     private val db = Firebase.firestore
     private val c: Date = Calendar.getInstance().time
     private val df: SimpleDateFormat = SimpleDateFormat("dd-MMM-yyyy", Locale.CANADA)
     private val formatDate=df.format(c)
-
+    private var list:MutableList<Int>?=null
+    private var list1:MutableList<Int>?=null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -45,8 +46,11 @@ class Click12 : Fragment() {
         val view = inflater.inflate(R.layout.fragment_click12, container, false)
 
         view.imageViewFruitsAnanas7.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
             animation(view.imageViewFruitsAnanas7)
             finish=System.currentTimeMillis()
             fark=finish-start
@@ -54,20 +58,29 @@ class Click12 : Fragment() {
             firebaseBitirmeSuresiEntry()
         }
         view.imageViewFruitsElma8.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
             animationWrong(view.imageViewFruitsElma8)
             firebaseYanlisEntry()
         }
         view.imageViewFruitsArmut8.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
             animationWrong(view.imageViewFruitsArmut8)
             firebaseYanlisEntry()
         }
         view.imageViewFruitsBogurtlen3.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
             animationWrong(view.imageViewFruitsBogurtlen3)
             firebaseYanlisEntry()
         }
@@ -121,15 +134,30 @@ class Click12 : Fragment() {
             db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).
             collection(ab).document(formatDate).get().addOnSuccessListener{
                 var a=it.getLong("bitirmeSuresi")
+                var yanlis=it.getLong("yanlisSayisi")
+                list= it.get("bitirmeArray") as MutableList<Int>?
+                list1= it.get("yanlisArray") as MutableList<Int>?
                 if (a==null){
                     a=0
                     a+=fark
                 }else
                     a+=fark
 
+                if(list==null){
+                    list= arrayListOf()
+
+                }
+                if(list1==null){
+                    list1= arrayListOf()
+
+                }
                 Log.d("Bitirme Süresi", "$fark")
                 val sure= hashMapOf(
-                    "bitirmeSuresi" to a
+                    "bitirmeSuresi" to a,
+                    "yanlisSayisi" to yanlis,
+                    "bitirmeArray" to list,
+                    "yanlisArray" to list1
+
                 )
                 if (FirebaseAuth.getInstance().currentUser!=null){
                     db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection(
@@ -147,16 +175,30 @@ class Click12 : Fragment() {
         if(FirebaseAuth.getInstance().currentUser!=null){
             db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).
             collection(ab).document(formatDate).get().addOnSuccessListener{
+                var a=it.getLong("bitirmeSuresi")
                 var yanlis=it.getLong("yanlisSayisi")
+                list= it.get("bitirmeArray") as MutableList<Int>?
+                list1= it.get("yanlisArray") as MutableList<Int>?
                 if (yanlis==null){
                     yanlis=0
                     yanlis+=1
                 }else
                     yanlis+=1
 
+                if(list==null){
+                    list= arrayListOf()
+
+                }
+                if(list1==null){
+                    list1= arrayListOf()
+
+                }
                 Log.d("Yanlış Sayısı", "$yanlis")
                 val sure= hashMapOf(
-                    "yanlisSayisi" to yanlis
+                    "bitirmeSuresi" to a,
+                    "yanlisSayisi" to yanlis,
+                    "bitirmeArray" to list,
+                    "yanlisArray" to list1
                 )
                 if (FirebaseAuth.getInstance().currentUser!=null){
                     db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection(

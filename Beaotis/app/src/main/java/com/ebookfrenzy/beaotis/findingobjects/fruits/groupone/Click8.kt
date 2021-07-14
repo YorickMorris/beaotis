@@ -23,7 +23,6 @@ import kotlinx.android.synthetic.main.fragment_click8.view.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 class Click8 : Fragment() {
     private var mPlayer: MediaPlayer? = null
     private val nav = R.id.action_click8_to_splashFragment4
@@ -37,9 +36,8 @@ class Click8 : Fragment() {
     private val c: Date = Calendar.getInstance().time
     private val df: SimpleDateFormat = SimpleDateFormat("dd-MMM-yyyy", Locale.CANADA)
     private val formatDate=df.format(c)
-    private var secildi1=0
-    private var secildi2=0
-    private var secildi3=0
+    private var list:MutableList<Int>?=null
+    private var list1:MutableList<Int>?=null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,8 +48,11 @@ class Click8 : Fragment() {
 
         val view= inflater.inflate(R.layout.fragment_click8, container, false)
         view.imageViewFruitsAnanas3.setOnClickListener{
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
 
             finish=System.currentTimeMillis()
             fark=finish-start
@@ -60,16 +61,20 @@ class Click8 : Fragment() {
 
         }
         view.imageViewFruitsElma5.setOnClickListener {
-            secildi2++
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
             animationWrong(view.imageViewFruitsElma5)
             firebaseYanlisEntry()
         }
         view.imageViewFruitsArmut5.setOnClickListener {
-            secildi3++
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
             animationWrong(view.imageViewFruitsArmut5)
             firebaseYanlisEntry()
         }
@@ -125,16 +130,51 @@ class Click8 : Fragment() {
             collection(ab).document(formatDate).get().addOnSuccessListener{
                 var a=it.getLong("bitirmeSuresi")
                 var b=it.getLong("yanlisSayisi")
+                list= it.get("bitirmeArray") as MutableList<Int>?
+                list1= it.get("yanlisArray") as MutableList<Int>?
+                Log.d("Bitirme Array", "$list")
+                Log.d("Yanlış Array", "$list1")
+                //var c=it.data
                 if (a==null){
                     a=0
                     a+=fark
-                }else
+                }else{
                     a+=fark
+                }
 
-                Log.d("Bitirme Süresi", "$fark")
+
+                if (list!=null){
+                    if (list?.size!! >=5){
+                        list!!.removeFirst()
+                    }
+                }
+                if (list1!=null){
+                    if (list1?.size!! >=5){
+                        list1!!.removeFirst()
+                    }
+                }
+                if(list==null){
+                    list= arrayListOf()
+
+                }
+                if(list1==null){
+                    list1= arrayListOf()
+
+                }
+                list?.add(a.toInt())
+                list1?.add(b!!.toInt())
+
+
+                if (list1!!.isEmpty()){
+                    list1!!.add(0)
+                }
+
+                Log.d("Bitirme Süresi", "$list")
                 val sure= hashMapOf(
                     "bitirmeSuresi" to a,
-                    "yanlisSayisi" to b
+                    "yanlisSayisi" to b,
+                    "bitirmeArray" to list,
+                    "yanlisArray" to list1
                 )
                 if (FirebaseAuth.getInstance().currentUser!=null){
                     db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection(
@@ -143,13 +183,12 @@ class Click8 : Fragment() {
                         Log.d("TAGLA", "DocumentSnapshot successfully written! But bitirmeSayisiAlreadyExist")
                     }
                 }
-                if (b != null) {
-                    if(a<80&&b<10){
+
+                if (list != null&&list1!=null) {
+                    if(list!!.sum()/ list!!.size<=40&& list1!!.sum()/ list1!!.size<10&&list!!.size>=5){
                         view?.let{it2->animationToFinish(it2.imageViewFruitsAnanas3,nav2)}
                     }else
                         view?.let { it1 -> animationToFinish(it1.imageViewFruitsAnanas3,nav) }
-
-
                 }
             }.addOnFailureListener {
                 Toast.makeText(view?.context,"Yapma süresi eklenemedi.", Toast.LENGTH_SHORT).show()
@@ -162,16 +201,33 @@ class Click8 : Fragment() {
             collection(ab).document(formatDate).get().addOnSuccessListener{
                 var a=it.getLong("bitirmeSuresi")
                 var yanlis=it.getLong("yanlisSayisi")
+                list= it.get("bitirmeArray") as MutableList<Int>?
+                list1= it.get("yanlisArray") as MutableList<Int>?
                 if (yanlis==null){
                     yanlis=0
                     yanlis+=1
                 }else
                     yanlis+=1
+                if (list1!=null){
+                    if (list1?.size!! >=5){
+                        list1!!.removeFirst()
+                    }
+                }
+                if(list==null){
+                    list= arrayListOf()
 
-                Log.d("Yanlış Sayısı", "$yanlis")
+                }
+                if(list1==null){
+                    list1= arrayListOf()
+
+                }
+                list1?.add(yanlis.toInt())
+                Log.d("Yanlış Sayısı", "$list1")
                 val sure= hashMapOf(
                     "bitirmeSuresi" to a,
-                    "yanlisSayisi" to yanlis
+                    "yanlisSayisi" to yanlis,
+                    "bitirmeArray" to list,
+                    "yanlisArray" to list1
                 )
                 if (FirebaseAuth.getInstance().currentUser!=null){
                     db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection(
