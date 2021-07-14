@@ -45,8 +45,11 @@ class Click2 : Fragment() {
         val view= inflater.inflate(R.layout.fragment_click2, container, false)
 
         view.imageViewFruitsArmut.setOnClickListener {
-            mPlayer?.stop()
-            mPlayer?.release()
+            if(mPlayer!=null&& mPlayer!!.isPlaying){
+                mPlayer?.stop()
+                mPlayer?.release()
+                mPlayer=null
+            }
             animation(view.imageViewFruitsArmut)
             finish=System.currentTimeMillis()
             fark=finish-start

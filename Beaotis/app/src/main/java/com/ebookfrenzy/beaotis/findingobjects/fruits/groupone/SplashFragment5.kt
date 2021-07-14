@@ -30,6 +30,16 @@ class SplashFragment5 : Fragment() {
 
 
     }
+    override fun onDestroy() {
+        mPlayer?.stop()
+        mPlayer?.release()
+        super.onDestroy()
+    }
+    override fun onDetach() {
+        mPlayer?.stop()
+        mPlayer?.release()
+        super.onDetach()
+    }
 
 
 }

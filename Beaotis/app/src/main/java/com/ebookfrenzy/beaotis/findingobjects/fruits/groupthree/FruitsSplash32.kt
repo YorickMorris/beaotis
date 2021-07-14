@@ -25,13 +25,22 @@ class FruitsSplash32 : Fragment() {
 
         Handler().postDelayed({
             findNavController().navigate(R.id.action_fruitsSplash32_to_fruitsClick32)
+            mPlayer?.stop()
+            mPlayer?.release()
         }, 3000)
 
         return inflater.inflate(R.layout.fragment_fruits_splash32, container, false)
     }
     override fun onDestroy() {
         mPlayer?.stop()
+        mPlayer?.release()
+
         super.onDestroy()
+    }
+    override fun onDetach() {
+        mPlayer?.stop()
+        mPlayer?.release()
+        super.onDetach()
     }
 
 

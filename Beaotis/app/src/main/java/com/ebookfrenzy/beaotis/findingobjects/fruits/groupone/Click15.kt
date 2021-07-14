@@ -49,7 +49,7 @@ class Click15 : Fragment() {
             finish=System.currentTimeMillis()
             fark=finish-start
             fark /= 1000
-            firebaseBitirmeSuresiEntry()
+
         }
         view.imageViewFruitsArmut10.setOnClickListener {
             if(mPlayer!=null){
@@ -57,7 +57,7 @@ class Click15 : Fragment() {
                 mPlayer?.release()
             }
             animationWrong(view.imageViewFruitsArmut10)
-            firebaseYanlisEntry()
+
         }
         view.imageViewFruitsAnanas9.setOnClickListener {
             if(mPlayer!=null){
@@ -65,7 +65,7 @@ class Click15 : Fragment() {
                 mPlayer?.release()
             }
             animationWrong(view.imageViewFruitsAnanas9)
-            firebaseYanlisEntry()
+
         }
         view.imageViewFruitsBogurtlen5.setOnClickListener {
             if(mPlayer!=null){
@@ -73,7 +73,7 @@ class Click15 : Fragment() {
                 mPlayer?.release()
             }
             animationWrong(view.imageViewFruitsBogurtlen5)
-            firebaseYanlisEntry()
+
         }
         view.imageViewFruitsErik1.setOnClickListener {
             if(mPlayer!=null){
@@ -81,7 +81,7 @@ class Click15 : Fragment() {
                 mPlayer?.release()
             }
             animationWrong(view.imageViewFruitsErik1)
-            firebaseYanlisEntry()
+
         }
 
         return view
@@ -128,59 +128,6 @@ class Click15 : Fragment() {
             .playOn(v)
 
     }
-    private fun firebaseBitirmeSuresiEntry(){
-        if(FirebaseAuth.getInstance().currentUser!=null){
-            db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).
-            collection(ab).document(formatDate).get().addOnSuccessListener{
-                var a=it.getLong("bitirmeSuresi")
-                if (a==null){
-                    a=0
-                    a+=fark
-                }else
-                    a+=fark
 
-                Log.d("Bitirme Süresi", "$fark")
-                val sure= hashMapOf(
-                    "bitirmeSuresi" to a
-                )
-                if (FirebaseAuth.getInstance().currentUser!=null){
-                    db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection(
-                        ab
-                    ).document(formatDate).set(sure).addOnSuccessListener {
-                        Log.d("TAGLA", "DocumentSnapshot successfully written! But bitirmeSayisiAlreadyExist")
-                    }
-                }
-            }.addOnFailureListener {
-                Toast.makeText(view?.context,"Yapma süresi eklenemedi.", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
-    private fun firebaseYanlisEntry(){
-        if(FirebaseAuth.getInstance().currentUser!=null){
-            db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).
-            collection(ab).document(formatDate).get().addOnSuccessListener{
-                var yanlis=it.getLong("yanlisSayisi")
-                if (yanlis==null){
-                    yanlis=0
-                    yanlis+=1
-                }else
-                    yanlis+=1
-
-                Log.d("Yanlış Sayısı", "$yanlis")
-                val sure= hashMapOf(
-                    "yanlisSayisi" to yanlis
-                )
-                if (FirebaseAuth.getInstance().currentUser!=null){
-                    db.collection("userIds").document(FirebaseAuth.getInstance().currentUser?.uid.toString()).collection(
-                        ab
-                    ).document(formatDate).set(sure).addOnSuccessListener {
-                        Log.d("TAGLA", "DocumentSnapshot successfully written! But bitirmeSayisiAlreadyExist")
-                    }
-                }
-            }.addOnFailureListener {
-                Toast.makeText(view?.context,"Yanlış sayısı eklenemedi.", Toast.LENGTH_SHORT).show()
-            }
-        }
-    }
 
 }

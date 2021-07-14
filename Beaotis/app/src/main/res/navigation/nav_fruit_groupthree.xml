@@ -103,6 +103,9 @@
         <action
             android:id="@+id/action_fruitsClick38_to_fruitsSplash34"
             app:destination="@id/fruitsSplash34" />
+        <action
+            android:id="@+id/action_fruitsClick38_to_fruitsSplash35"
+            app:destination="@id/fruitsSplash35" />
     </fragment>
     <fragment
         android:id="@+id/fruitsSplash34"
@@ -118,4 +121,124 @@
         android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.FruitsActivity"
         android:label="activity_fruits"
         tools:layout="@layout/activity_fruits" />
+    <fragment
+        android:id="@+id/fruitsSplash35"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsSplash35"
+        android:label="fragment_fruits_splash35"
+        tools:layout="@layout/fragment_fruits_splash35" >
+        <action
+            android:id="@+id/action_fruitsSplash35_to_fruitsClick39"
+            app:destination="@id/fruitsClick39" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick39"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsClick39"
+        android:label="fragment_fruits_click39"
+        tools:layout="@layout/fragment_fruits_click39" >
+        <action
+            android:id="@+id/action_fruitsClick39_to_fruitsClick310"
+            app:destination="@id/fruitsClick310" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick310"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsClick310"
+        android:label="fragment_fruits_click310"
+        tools:layout="@layout/fragment_fruits_click310" >
+        <action
+            android:id="@+id/action_fruitsClick310_to_fruitsClick311"
+            app:destination="@id/fruitsClick311" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick311"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsClick311"
+        android:label="fragment_fruits_click311"
+        tools:layout="@layout/fragment_fruits_click311" >
+        <action
+            android:id="@+id/action_fruitsClick311_to_fruitsClick312"
+            app:destination="@id/fruitsClick312" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick312"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsClick312"
+        android:label="fragment_fruits_click312"
+        tools:layout="@layout/fragment_fruits_click312" >
+        <action
+            android:id="@+id/action_fruitsClick312_to_fruitsClick313"
+            app:destination="@id/fruitsClick313" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick313"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsClick313"
+        android:label="fragment_fruits_click313"
+        tools:layout="@layout/fragment_fruits_click313" >
+        <action
+            android:id="@+id/action_fruitsClick313_to_fruitsSplash34"
+            app:destination="@id/fruitsSplash34" />
+        <action
+            android:id="@+id/action_fruitsClick313_to_fruitsSplash36"
+            app:destination="@id/fruitsSplash36" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsSplash36"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsSplash36"
+        android:label="fragment_fruits_splash36"
+        tools:layout="@layout/fragment_fruits_splash36" >
+        <action
+            android:id="@+id/action_fruitsSplash36_to_fruitsClick314"
+            app:destination="@id/fruitsClick314" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick314"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsClick314"
+        android:label="fragment_fruits_click314"
+        tools:layout="@layout/fragment_fruits_click314" >
+        <action
+            android:id="@+id/action_fruitsClick314_to_fruitsClick315"
+            app:destination="@id/fruitsClick315" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick315"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsClick315"
+        android:label="fragment_fruits_click315"
+        tools:layout="@layout/fragment_fruits_click315" >
+        <action
+            android:id="@+id/action_fruitsClick315_to_fruitsClick316"
+            app:destination="@id/fruitsClick316" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick316"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsClick316"
+        android:label="fragment_fruits_click316"
+        tools:layout="@layout/fragment_fruits_click316" >
+        <action
+            android:id="@+id/action_fruitsClick316_to_fruitsClick317"
+            app:destination="@id/fruitsClick317" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick317"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsClick317"
+        android:label="fragment_fruits_click317"
+        tools:layout="@layout/fragment_fruits_click317" >
+        <action
+            android:id="@+id/action_fruitsClick317_to_fruitsClick318"
+            app:destination="@id/fruitsClick318" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick318"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsClick318"
+        android:label="fragment_fruits_click318"
+        tools:layout="@layout/fragment_fruits_click318" >
+        <action
+            android:id="@+id/action_fruitsClick318_to_fruitsClick319"
+            app:destination="@id/fruitsClick319" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick319"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.groupthree.FruitsClick319"
+        android:label="fragment_fruits_click319"
+        tools:layout="@layout/fragment_fruits_click319" >
+        <action
+            android:id="@+id/action_fruitsClick319_to_fruitsSplash34"
+            app:destination="@id/fruitsSplash34" />
+    </fragment>
 </navigation>

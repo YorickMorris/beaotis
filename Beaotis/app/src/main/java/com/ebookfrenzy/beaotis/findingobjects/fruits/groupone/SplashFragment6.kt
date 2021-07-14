@@ -28,5 +28,15 @@ class SplashFragment6 : Fragment() {
         }, 3000)
         return inflater.inflate(R.layout.fragment_splash6, container, false)
     }
+    override fun onDestroy() {
+        mPlayer?.stop()
+        mPlayer?.release()
+        super.onDestroy()
+    }
+    override fun onDetach() {
+        mPlayer?.stop()
+        mPlayer?.release()
+        super.onDetach()
+    }
 
 }

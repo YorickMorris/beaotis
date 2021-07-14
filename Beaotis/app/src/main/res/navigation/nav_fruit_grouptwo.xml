@@ -103,6 +103,9 @@
         <action
             android:id="@+id/action_fruitsClick28_to_fruitsSplash24"
             app:destination="@id/fruitsSplash24" />
+        <action
+            android:id="@+id/action_fruitsClick28_to_fruitsSplash25"
+            app:destination="@id/fruitsSplash25" />
     </fragment>
     <fragment
         android:id="@+id/fruitsSplash24"
@@ -118,4 +121,124 @@
         android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.FruitsActivity"
         android:label="activity_fruits"
         tools:layout="@layout/activity_fruits" />
+    <fragment
+        android:id="@+id/fruitsSplash25"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsSplash25"
+        android:label="fragment_fruits_splash25"
+        tools:layout="@layout/fragment_fruits_splash25" >
+        <action
+            android:id="@+id/action_fruitsSplash25_to_fruitsClick29"
+            app:destination="@id/fruitsClick29" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick29"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsClick29"
+        android:label="fragment_fruits_click29"
+        tools:layout="@layout/fragment_fruits_click29" >
+        <action
+            android:id="@+id/action_fruitsClick29_to_fruitsClick210"
+            app:destination="@id/fruitsClick210" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick210"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsClick210"
+        android:label="fragment_fruits_click210"
+        tools:layout="@layout/fragment_fruits_click210" >
+        <action
+            android:id="@+id/action_fruitsClick210_to_fruitsClick211"
+            app:destination="@id/fruitsClick211" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick211"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsClick211"
+        android:label="fragment_fruits_click211"
+        tools:layout="@layout/fragment_fruits_click211" >
+        <action
+            android:id="@+id/action_fruitsClick211_to_fruitsClick212"
+            app:destination="@id/fruitsClick212" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick212"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsClick212"
+        android:label="fragment_fruits_click212"
+        tools:layout="@layout/fragment_fruits_click212" >
+        <action
+            android:id="@+id/action_fruitsClick212_to_fruitsClick213"
+            app:destination="@id/fruitsClick213" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick213"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsClick213"
+        android:label="fragment_fruits_click213"
+        tools:layout="@layout/fragment_fruits_click213" >
+        <action
+            android:id="@+id/action_fruitsClick213_to_fruitsSplash24"
+            app:destination="@id/fruitsSplash24" />
+        <action
+            android:id="@+id/action_fruitsClick213_to_fruitsSplash26"
+            app:destination="@id/fruitsSplash26" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsSplash26"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsSplash26"
+        android:label="fragment_fruits_splash26"
+        tools:layout="@layout/fragment_fruits_splash26" >
+        <action
+            android:id="@+id/action_fruitsSplash26_to_fruitsClick214"
+            app:destination="@id/fruitsClick214" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick214"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsClick214"
+        android:label="fragment_fruits_click214"
+        tools:layout="@layout/fragment_fruits_click214" >
+        <action
+            android:id="@+id/action_fruitsClick214_to_fruitsClick215"
+            app:destination="@id/fruitsClick215" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick215"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsClick215"
+        android:label="fragment_fruits_click215"
+        tools:layout="@layout/fragment_fruits_click215" >
+        <action
+            android:id="@+id/action_fruitsClick215_to_fruitsClick216"
+            app:destination="@id/fruitsClick216" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick216"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsClick216"
+        android:label="fragment_fruits_click216"
+        tools:layout="@layout/fragment_fruits_click216" >
+        <action
+            android:id="@+id/action_fruitsClick216_to_fruitsClick217"
+            app:destination="@id/fruitsClick217" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick217"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsClick217"
+        android:label="fragment_fruits_click217"
+        tools:layout="@layout/fragment_fruits_click217" >
+        <action
+            android:id="@+id/action_fruitsClick217_to_fruitsClick218"
+            app:destination="@id/fruitsClick218" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick218"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsClick218"
+        android:label="fragment_fruits_click218"
+        tools:layout="@layout/fragment_fruits_click218" >
+        <action
+            android:id="@+id/action_fruitsClick218_to_fruitsClick219"
+            app:destination="@id/fruitsClick219" />
+    </fragment>
+    <fragment
+        android:id="@+id/fruitsClick219"
+        android:name="com.ebookfrenzy.beaotis.findingobjects.fruits.grouptwo.FruitsClick219"
+        android:label="fragment_fruits_click219"
+        tools:layout="@layout/fragment_fruits_click219" >
+        <action
+            android:id="@+id/action_fruitsClick219_to_fruitsSplash24"
+            app:destination="@id/fruitsSplash24" />
+    </fragment>
 </navigation>
